@@ -1,0 +1,32 @@
+services:
+  rfc-db:
+    image: mariadb:latest
+    container_name: rfc-db
+    volumes:
+      - ./data:/var/lib/mysql
+    env_file: .env
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mariadb-admin", "ping", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD" ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  rfc-wp:
+    build:
+      context: .
+      dockerfile: ${DOCKERFILE:-Dockerfile}
+    image: rfc-dev
+    container_name: rfc-wp
+    depends_on:
+      - rfc-db
+    ports:
+      - "3000:80"
+    volumes:
+      - ./themes:/var/www/html/wp-content/themes
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./wp-config.php:/var/www/html/wp-config.php
+    env_file: .env
+    restart: unless-stopped
