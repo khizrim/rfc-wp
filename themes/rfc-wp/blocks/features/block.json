@@ -1,0 +1,26 @@
+{
+  "name": "acf/rfc-features",
+  "title": "RFC Преимущества",
+  "description": "Блок с преимуществами / карточками",
+  "category": "formatting",
+  "icon": "grid-view",
+  "style": [
+    "file:./style.css"
+  ],
+  "keywords": [
+    "features",
+    "карточки",
+    "рфц"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "jsx": false
+  }
+}

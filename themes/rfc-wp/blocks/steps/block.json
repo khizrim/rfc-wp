@@ -1,0 +1,26 @@
+{
+  "name": "acf/rfc-steps",
+  "title": "RFC Этапы программы",
+  "description": "Блок с этапами/шагами программы",
+  "category": "formatting",
+  "icon": "editor-ol",
+  "style": [
+    "file:./style.css"
+  ],
+  "keywords": [
+    "steps",
+    "шаги",
+    "этапы"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "jsx": false
+  }
+}

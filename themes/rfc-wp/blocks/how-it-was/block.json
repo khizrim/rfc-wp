@@ -1,0 +1,26 @@
+{
+  "name": "acf/rfc-how-it-was",
+  "title": "RFC Как это было",
+  "description": "Слайдер с эмоциями и фотографиями",
+  "category": "formatting",
+  "icon": "format-gallery",
+  "keywords": [
+    "слайдер",
+    "эмоции",
+    "как это было"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "style": [
+    "file:./style.css"
+  ],
+  "supports": {
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "jsx": false
+  }
+}

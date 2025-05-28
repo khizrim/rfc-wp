@@ -1,0 +1,87 @@
+/* RFC Hero Block Styles (ближе к макету) */
+
+.rfc-hero {
+  background-color: #0F0F0F;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.rfc-hero__badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.rfc-hero__badge {
+  background: white;
+  color: #0F0F0F;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rfc-hero__title {
+  font-size: 48px;
+  line-height: 1.25;
+  font-weight: 700;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.rfc-hero__title mark {
+  background: #FFD600;
+  color: #0F0F0F;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.rfc-hero__button {
+  background: white;
+  color: #0F0F0F;
+  padding: 20px 36px;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 18px;
+  display: inline-block;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.rfc-hero__button:hover {
+  background: #f5f5f5;
+}
+
+.rfc-hero__button-subtext {
+  display: block;
+  font-size: 15px;
+  margin-top: 6px;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .rfc-hero {
+    padding: 80px 16px;
+    gap: 36px;
+  }
+
+  .rfc-hero__title {
+    font-size: 28px;
+  }
+
+  .rfc-hero__button {
+    font-size: 16px;
+    padding: 16px 28px;
+  }
+}
