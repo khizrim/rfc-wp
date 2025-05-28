@@ -1,0 +1,26 @@
+{
+  "name": "acf/rfc-hero",
+  "title": "RFC Hero",
+  "description": "Hero-блок с заголовком, бейджами и кнопкой",
+  "category": "formatting",
+  "icon": "megaphone",
+  "style": [
+    "file:./style.css"
+  ],
+  "keywords": [
+    "hero",
+    "rfc",
+    "заголовок"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "full"
+    ],
+    "jsx": false
+  }
+}

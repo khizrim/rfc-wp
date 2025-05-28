@@ -2,8 +2,7 @@
 
 // 🔄 Универсальная функция для чтения переменных окружения и *_FILE
 if (!function_exists('getenv_docker')) {
-  function getenv_docker($env, $default = null)
-  {
+  function getenv_docker($env, $default = null) {
     $fileEnv = getenv($env . '_FILE');
     if ($fileEnv && file_exists($fileEnv)) {
       return rtrim(file_get_contents($fileEnv), "\r\n");
@@ -50,6 +49,7 @@ define('DISALLOW_FILE_EDIT',     filter_var(getenv_docker('DISALLOW_FILE_EDIT', 
 define('WP_AUTO_UPDATE_CORE',    getenv_docker('WP_AUTO_UPDATE_CORE', 'minor'));
 define('WP_DEBUG',               filter_var(getenv_docker('WP_DEBUG', false), FILTER_VALIDATE_BOOLEAN));
 define('WP_DEBUG_DISPLAY',       filter_var(getenv_docker('WP_DEBUG_DISPLAY', false), FILTER_VALIDATE_BOOLEAN));
+define('WP_POST_REVISIONS', 0); // Отключаем ревизии
 
 // 📋 Префикс таблиц базы данных
 $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');

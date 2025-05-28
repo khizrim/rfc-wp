@@ -1,0 +1,46 @@
+/* RFC Cards Mix */
+
+.rfc-cards-mix {
+  background: #0F0F0F;
+  padding: 80px 20px;
+  color: white;
+}
+
+.rfc-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.rfc-card {
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+}
+
+.rfc-card--text {
+  background: linear-gradient(135deg, #FF6A00, #FF2EB2);
+  color: white;
+}
+
+.rfc-card--text .rfc-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.rfc-card--text .rfc-card__description {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.rfc-card--image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  object-fit: cover;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "acf/rfc-section-heading",
+  "title": "RFC Заголовок раздела",
+  "description": "Блок с заголовком раздела и подзаголовком",
+  "style": [
+    "file:./style.css"
+  ],
+  "category": "formatting",
+  "icon": "heading",
+  "keywords": [
+    "heading",
+    "section",
+    "title"
+  ],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

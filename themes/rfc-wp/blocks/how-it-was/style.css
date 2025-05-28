@@ -1,0 +1,72 @@
+/* RFC How It Was */
+
+.rfc-how-it-was {
+  background: #0F0F0F;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+}
+
+.rfc-hiw__headline {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.rfc-hiw__slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 40px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 24px;
+}
+
+.rfc-hiw__slide {
+  flex: 0 0 90%;
+  max-width: 960px;
+  scroll-snap-align: start;
+  background: #1A1A1A;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.rfc-hiw__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.rfc-hiw__description {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  opacity: 0.85;
+}
+
+.rfc-hiw__image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .rfc-hiw__slide {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .rfc-hiw__text {
+    flex: 1;
+    padding-right: 24px;
+  }
+
+  .rfc-hiw__image {
+    flex: 1;
+  }
+}

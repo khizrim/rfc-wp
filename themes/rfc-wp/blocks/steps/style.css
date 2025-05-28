@@ -1,0 +1,107 @@
+/* RFC Steps Block */
+
+.rfc-steps {
+  background: #0F0F0F;
+  padding: 100px 20px;
+  color: white;
+}
+
+.rfc-steps__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.rfc-step {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px;
+  padding: 32px;
+  gap: 20px;
+  position: relative;
+}
+
+.rfc-step__number {
+  font-size: 48px;
+  font-weight: 800;
+  opacity: 0.2;
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.rfc-step__content {
+  flex: 1 1 60%;
+  padding-left: 80px;
+}
+
+.rfc-step__title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.rfc-step__description {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.rfc-step__image {
+  flex: 1 1 30%;
+  text-align: right;
+}
+
+.rfc-step__image img {
+  max-height: 120px;
+  height: auto;
+  width: auto;
+}
+
+/* Цветовые темы */
+.rfc-step--black {
+  background: #1A1A1A;
+}
+
+.rfc-step--white {
+  background: #F4F4F4;
+  color: #0F0F0F;
+}
+
+.rfc-step--gradient-pink {
+  background: linear-gradient(135deg, #E82AFF, #FF2EB2);
+}
+
+.rfc-step--gradient-orange {
+  background: linear-gradient(135deg, #FF6A00, #FF2E00);
+}
+
+.rfc-step--gradient-mix {
+  background: linear-gradient(135deg, #FF6A00, #FF2EB2);
+}
+
+@media (max-width: 768px) {
+  .rfc-step {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+
+  .rfc-step__content {
+    padding-left: 0;
+  }
+
+  .rfc-step__number {
+    position: static;
+    opacity: 0.5;
+    margin-bottom: 12px;
+  }
+
+  .rfc-step__image {
+    text-align: center;
+  }
+}

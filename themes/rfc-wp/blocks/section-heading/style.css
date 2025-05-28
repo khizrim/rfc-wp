@@ -1,0 +1,40 @@
+.section-heading {
+  text-align: center;
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+.section-heading--right {
+  text-align: right;
+}
+
+.section-heading mark {
+  background: linear-gradient(90deg, #ff477e, #ff9055);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-heading.with-line {
+  position: relative;
+}
+
+.section-heading.with-line.line-left::before,
+.section-heading.with-line.line-right::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 150px;
+  height: 2px;
+  background: linear-gradient(90deg, #ff477e, #ff9055);
+}
+
+.section-heading.with-line.line-left::before {
+  left: 0;
+}
+
+.section-heading.with-line.line-right::after {
+  right: 0;
+}

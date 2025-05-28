@@ -1,0 +1,81 @@
+/* RFC Mentors Slider */
+
+.rfc-mentors {
+  background: #0F0F0F;
+  padding: 80px 20px;
+  color: white;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.rfc-mentors__track {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.rfc-mentor {
+  background: #1A1A1A;
+  border-radius: 24px;
+  padding: 32px 24px;
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.rfc-mentor__logo {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+.rfc-mentor__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background-size: cover;
+  background-position: center;
+  border: 6px solid #FF2EB2;
+}
+
+.rfc-mentor__name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.rfc-mentor__facts {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rfc-mentor__more {
+  background: linear-gradient(90deg, #FF5A1F, #FF2EB2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.rfc-mentor__modal {
+  display: none;
+  background: #111;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 16px;
+}
+
+.rfc-mentor__socials a {
+  margin: 0 6px;
+  text-decoration: none;
+  font-size: 20px;
+}
