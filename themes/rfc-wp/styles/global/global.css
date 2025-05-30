@@ -1,0 +1,30 @@
+:root {
+  --color-bg: #202020;
+  --color-bg-secondary: #2c2c2c;
+  --color-bg-tertiary: #d9d9d9;
+  --color-text: #f2f2f2;
+  --color-muted: #bbbbbb;
+  --color-accent: #ff477e;
+  --color-accent-hover: #ff628c;
+  --color-border: #1c1c1c;
+  --color-nav-link: #222222;
+  --color-nav-link-hover: var(--color-accent);
+  --color-footer-text: var(--color-muted);
+  --font-heading: 'Jost', sans-serif;
+  --font-main: 'Inter', sans-serif;
+  --font-digits: 'Supertalls', monospace;
+  --font-size-base: 16px;
+  --font-size-title: 64px;
+  --font-size-subtitle: 1.25rem;
+  --font-size-footer: 0.875rem;
+  --line-height: 1.6;
+  --container-width: 1180px;
+  --container-padding: 20px;
+  --color-gradient: linear-gradient(90deg, var(--color-accent), #ff9055);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -17,6 +17,7 @@ function register_mentor_cpt() {
     'search_items' => 'Поиск наставников',
     'not_found' => 'Наставники не найдены',
     'menu_name' => 'Наставники',
+    'capability_type' => 'post',
   ];
 
   $args = [

@@ -1,37 +1,16 @@
-:root {
-  --color-bg: #0f0f10;
-  --color-text: #ffffff;
-  --color-muted: #bbbbbb;
-  --color-accent: #ff477e;
-  --color-accent-hover: #ff628c;
-  --color-border: #1c1c1c;
-  --color-nav-link: #222222;
-  --color-nav-link-hover: var(--color-accent);
-  --color-footer-text: var(--color-muted);
-  --font-main: 'Montserrat', sans-serif;
-  --font-size-base: 16px;
-  --font-size-title: 2.5rem;
-  --font-size-subtitle: 1.25rem;
-  --font-size-footer: 0.875rem;
-  --line-height: 1.6;
-  --container-width: 1200px;
-  --container-padding: 20px;
-  --color-gradient: linear-gradient(90deg, var(--color-accent), #ff9055);
-}
+/* Нормализация, шрифты и глобальные стили */
+@import url("../vendor/normalise.css");
+@import url("../vendor/fonts.css");
+@import url("./global/global.css");
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Страница */
+@import url("./page/page.css");
 
-.page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-main), sans-serif;
-  line-height: var(--line-height);
-  font-size: var(--font-size-base);
-}
+/* Шапка */
+@import url("./header/header.css");
+
+/* Основной контент */
+@import url("./main/main.css");
+
+/* Футер */
+@import url("./footer/footer.css");

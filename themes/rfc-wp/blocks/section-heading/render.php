@@ -11,8 +11,14 @@ if ($with_line) {
 ?>
 
 <section class="<?= $class ?>">
-  <h2 class="section-heading__text"><?= $heading ?></h2>
-  <?php if ($subheading): ?>
-    <p class="section-heading__subtext"><?= $subheading ?></p>
+  <?php if ($with_line): ?>
+    <div class="section-heading__line"></div>
   <?php endif; ?>
+
+  <div class="section-heading__content">
+    <h2 class="section-heading__text"><?= $heading ?></h2>
+    <?php if ($subheading): ?>
+      <p class="section-heading__subtext"><?= $subheading ?></p>
+    <?php endif; ?>
+  </div>
 </section>

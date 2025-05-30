@@ -1,0 +1,20 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main), sans-serif;
+  line-height: var(--line-height);
+  font-size: var(--font-size-base);
+}
+
+.page.modal-open {
+  overflow: hidden;
+}
+
+.page.mobile-menu--open {
+  overflow: hidden;
+}
