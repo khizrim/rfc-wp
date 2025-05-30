@@ -1,6 +1,6 @@
 .PHONY: all setup doom extract build up stop down update-image import-db setup-plugins \
         import-plugins upgrade-plugins activate-plugins extract-plugins extract-data \
-        build-image reset clean init-dirs logs shell dbshell wait-for-db
+        build-image reset clean init-dirs logs shell dbshell wait-for-db check-env
 
 include .env
 export
@@ -31,9 +31,15 @@ MYSQL_DUMP_CLI   = docker-compose exec -T $(DB_CONTAINER) mariadb-dump
 #     SHORTCUTS
 # -----------------
 
-up: init-dirs
+up: check-env init-dirs
 	@echo "🚀 Сборка и запуск проекта..."
 	docker-compose up -d
+	@echo "⏳ Ожидание готовности сервисов..."
+	@until docker-compose ps | grep -q "healthy"; do \
+		echo "⌛ Ожидание готовности сервисов..."; \
+		sleep 5; \
+	done
+	@echo "✅ Сервисы готовы!"
 
 down:
 	docker-compose down
@@ -49,20 +55,28 @@ update-image:
 	docker-compose up -d
 
 init-dirs:
-	@mkdir -p $(PLUGINS) $(THEMES) $(DATA) $(TEMP)
+	@mkdir -p $(PLUGINS) $(THEMES) $(DATA) $(TEMP) $(EXPORT)
 
-wait-for-db:
-	@echo "⏳ Ожидание доступности базы данных..."
-	@until $(MYSQL_CLI) -u root -p"$(MYSQL_ROOT_PASSWORD)" -e "SHOW DATABASES;" >/dev/null 2>&1; do \
-		echo "⌛ MariaDB ещё не готова..."; \
-		sleep 2; \
-	done
+check-env:
+	@if [ ! -f .env ]; then \
+		echo "❌ Файл .env не найден!"; \
+		exit 1; \
+	fi
+	@if [ ! -f wp-config.php ]; then \
+		echo "❌ Файл wp-config.php не найден!"; \
+		exit 1; \
+	fi
 
 # -----------------
 #     SETUP
 # -----------------
 
-setup: init-dirs up wait-for-db
+setup: check-env init-dirs up
+	@echo "🔄 Настройка WordPress..."
+	@if ! $(WP_CLI) core is-installed --allow-root; then \
+		echo "📦 Установка WordPress..."; \
+		$(WP_CLI) core install --url=localhost:3000 --title="RFC Camp" --admin_user=admin --admin_password=admin --admin_email=admin@example.com --allow-root; \
+	fi
 	make restore
 	make sync-plugins
 	make clean
@@ -73,12 +87,16 @@ setup: init-dirs up wait-for-db
 # -----------------
 
 backup:
+	@echo "💾 Создание резервной копии базы данных..."
+	@mkdir -p $(EXPORT)
 	$(MYSQL_DUMP_CLI) -u root -p"$(MYSQL_ROOT_PASSWORD)" $(MYSQL_DATABASE) --skip-comments 2>/dev/null | gzip - -c > $(WP_DUMP)
+	@echo "✅ Резервная копия создана: $(WP_DUMP)"
 
 restore:
 	@if [ -f $(WP_DUMP) ]; then \
 		echo "♻️  Восстановление базы из $(WP_DUMP)..."; \
 		cat $(WP_DUMP) | gzip -d - -c | $(MYSQL_CLI) -u root -p"$(MYSQL_ROOT_PASSWORD)" $(MYSQL_DATABASE); \
+		echo "✅ База данных восстановлена."; \
 	else \
 		echo "⚠️  Файл $(WP_DUMP) не найден. Пропуск восстановления."; \
 	fi
@@ -91,7 +109,7 @@ sync-plugins:
 	@if [ -f $(EXPORT)/plugins.tgz ]; then \
 		echo "📦 Установка плагинов из $(EXPORT)/plugins.tgz..."; \
 		mkdir -p $(PLUGINS); \
-		tar -xzf $(EXPORT)/plugins.tgz; \
+		tar -xzf $(EXPORT)/plugins.tgz -C $(PLUGINS); \
 		for dir in $(PLUGINS)/*; do \
 			if [ -d "$$dir" ]; then \
 				name=$$(basename $$dir); \
@@ -110,7 +128,9 @@ sync-plugins:
 extract: extract-plugins backup
 
 extract-plugins:
+	@echo "📦 Архивирование плагинов..."
 	tar cfz $(EXPORT)/plugins.tgz $(PLUGINS)
+	@echo "✅ Плагины заархивированы."
 
 extract-data: backup
 
@@ -119,25 +139,32 @@ extract-data: backup
 # -----------------
 
 build-image: stop clean
+	@echo "🏗️  Сборка production образа..."
 	docker build --target prod_image -t business-secrets-wordpress .
+	@echo "✅ Образ собран."
 
 # -----------------
 #     CLEANUP
 # -----------------
 
 reset:
+	@echo "🧹 Очистка данных..."
 	rm -rf $(DATA) $(PLUGINS) $(TEMP)
+	@echo "✅ Данные очищены."
 
 clean:
+	@echo "🧹 Удаление стандартных тем и плагинов..."
 	rm -rf $(THEMES)/twentytwentyfour \
 	       $(THEMES)/twentytwentythree
 	rm -rf $(PLUGINS)/akismet
 	rm -rf $(PLUGINS)/hello.php
+	@echo "✅ Очистка завершена."
 
 doom:
+	@echo "💀 Удаление всех данных..."
 	docker-compose down -v --remove-orphans
 	make clean reset
-	@echo "💀 Все данные удалены."
+	@echo "✅ Все данные удалены."
 
 # -----------------
 #     UTILITIES

@@ -9,10 +9,11 @@ services:
     ports:
       - "3306:3306"
     healthcheck:
-      test: [ "CMD", "mariadb-admin", "ping", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
       interval: 5s
-      timeout: 3s
-      retries: 10
+      timeout: 5s
+      retries: 20
+      start_period: 30s
 
   rfc-wp:
     build:
@@ -21,12 +22,20 @@ services:
     image: rfc-dev
     container_name: rfc-wp
     depends_on:
-      - rfc-db
+      rfc-db:
+        condition: service_healthy
     ports:
       - "3000:80"
     volumes:
       - ./themes:/var/www/html/wp-content/themes
       - ./plugins:/var/www/html/wp-content/plugins
       - ./wp-config.php:/var/www/html/wp-config.php
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     env_file: .env
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/wp-admin/install.php"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 40s

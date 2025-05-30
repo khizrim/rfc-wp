@@ -1,4 +1,8 @@
 .section-heading {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
   text-align: center;
 }
 
@@ -10,31 +14,88 @@
   text-align: right;
 }
 
+.section-heading__line {
+  width: 100%;
+  flex-grow: 1;
+  height: 3px;
+  background: linear-gradient(90deg,
+      rgba(234, 82, 52, 0.50) 0%,
+      rgba(213, 50, 137, 0.50) 22.12%,
+      rgba(33, 33, 33, 0.50) 82.21%);
+  order: 2;
+}
+
+.section-heading__content {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+  gap: 40px;
+}
+
+/* Изменяем порядок для правого выравнивания */
+.section-heading--right .section-heading__line {
+  order: 1;
+}
+
+.section-heading--right .section-heading__content {
+  order: 2;
+}
+
+.section-heading__text {
+  color: #FFF;
+  font-family: Jost, sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: uppercase;
+  margin: 0;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.section-heading__subtext {
+  color: #B1B1B1;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 28px */
+}
+
 .section-heading mark {
-  background: linear-gradient(90deg, #ff477e, #ff9055);
+  background: linear-gradient(90deg, #D53289, #EA5234);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.section-heading.with-line {
-  position: relative;
-}
+@media (max-width: 1180px) {
+  .section-heading {
+    flex-direction: column;
+    align-items: start;
+  }
 
-.section-heading.with-line.line-left::before,
-.section-heading.with-line.line-right::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 150px;
-  height: 2px;
-  background: linear-gradient(90deg, #ff477e, #ff9055);
-}
+  .section-heading__content {
+    gap: 20px;
+  }
 
-.section-heading.with-line.line-left::before {
-  left: 0;
-}
+  .section-heading__line {
+    order: 1;
+  }
 
-.section-heading.with-line.line-right::after {
-  right: 0;
+  .section-heading__text {
+    text-align: start;
+    font-size: 36px;
+    order: 2;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .section-heading__subtext {
+    text-align: start;
+    font-size: 14px;
+  }
+
 }

@@ -7,8 +7,10 @@
 get_header();
 ?>
 
-<main id="main" class="site-main">
+<main class="main">
+  <div class="main__inner">
     <?php the_content(); ?>
+  </div>
 </main>
 
 <?php

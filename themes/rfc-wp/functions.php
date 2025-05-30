@@ -34,7 +34,7 @@ add_action('wp_enqueue_scripts', 'rfc_enqueue_assets');
 function rfc_enqueue_scripts() {
   wp_enqueue_script(
     'header-menu',
-    get_template_directory_uri() . '/assets/js/header-menu.js',
+    get_template_directory_uri() . '/scripts/header-menu.js',
     [],
     null,
     true
@@ -55,3 +55,14 @@ function rfc_allowed_block_types($allowed_block_types, $block_editor_context) {
   return array_map(fn($block) => "acf/rfc-{$block}", rfc_get_block_list());
 }
 add_filter('allowed_block_types_all', 'rfc_allowed_block_types', 10, 2);
+
+
+function enqueue_robot_slider_assets() {
+  wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+  wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', [], null, true);
+  wp_enqueue_script('robot-slider-init', get_template_directory_uri() . '/scripts/robot-slider.js', ['swiper-js'], null, true);
+  wp_enqueue_script('mentor-slider-init', get_template_directory_uri() . '/scripts/mentor-slider.js', ['swiper-js'], null, true);
+  wp_enqueue_script('mentor-popup-init', get_template_directory_uri() . '/scripts/mentor-popup.js', [], null, true);
+
+}
+add_action('wp_enqueue_scripts', 'enqueue_robot_slider_assets');
