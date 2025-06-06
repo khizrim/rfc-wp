@@ -1,36 +1,49 @@
 /* Header Layout */
 .header {
+  position: sticky;
+  z-index: 10;
+  /* или больше, чтобы шапка была поверх всего */
+  top: 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(62, 62, 62, 0.40);
-  border: 2px solid rgba(255, 255, 255, 0.10);
-  filter: drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.07));
-  border-radius: 0 0 25px 25px;
-  padding: 24px 40px;
+
   width: 100%;
-  color: var(--color-text);
   max-width: var(--container-width);
+  margin-bottom: 35px;
+  padding: 24px 40px;
+
+  color: var(--color-text);
+  border: 2px solid rgba(255, 255, 255, 0.10);
+  border-radius: 0 0 25px 25px;
+  background-color: rgba(62, 62, 62, 0.8);
+
+  filter: drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.07));
 }
 
 /* Left Section */
 .header__left {
   display: flex;
   align-items: center;
+
   gap: 20px;
 }
 
 .header__icon {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   width: 44px;
   height: 44px;
-  border-radius: 10px;
-  border: 1px solid #D53289;
-  background: linear-gradient(178deg, rgba(213, 50, 137, 0.20) 0%, rgba(234, 82, 52, 0.20) 99.76%);
+
   cursor: pointer;
   transition: all 0.3s ease;
+
+  border: 1px solid #D53289;
+  border-radius: 10px;
+  background: linear-gradient(178deg, rgba(213, 50, 137, 0.20) 0%, rgba(234, 82, 52, 0.20) 99.76%);
 }
 
 .header__icon svg {
@@ -39,25 +52,31 @@
 }
 
 .header__button {
-  color: var(--color-text);
   display: none;
+
   box-sizing: border-box;
   padding: 18px 44px;
-  font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 11px;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
-  border: 2px solid rgba(255, 255, 255, .25);
-  border-radius: 20px;
-  backdrop-filter: blur(75px);
+
   cursor: pointer;
   transition: all 0.5s ease;
+
+  color: var(--color-text);
+  border: 2px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+
+  font-family: 'Jost', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 11px;
+
+  backdrop-filter: blur(75px);
 }
 
 /* Logo Section */
 .header__logo {
   display: flex;
+
   width: 80px;
 }
 
@@ -70,65 +89,77 @@
 .header__right {
   display: flex;
   align-items: center;
+
   gap: 20px;
 }
 
 .header__contact {
   display: none;
+
   gap: 10px;
 }
 
 .header__status {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
   align-items: center;
-  line-height: 11px;
+  justify-content: space-between;
+
+  width: 100%;
+
   font-family: 'Jost', sans-serif;
   font-size: 16px;
   font-weight: 200;
+  line-height: 11px;
 }
 
 .header__phone {
   display: flex;
-  flex-direction: column;
   align-items: end;
-  gap: 10px;
+  flex-direction: column;
+
+  color: var(--color-text);
+
   font-family: 'Jost', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--color-text);
+
+  gap: 10px;
 }
 
 .header__phone-link {
-  color: #FFF;
+  transition: color 0.3s ease;
   text-align: center;
+
+  color: #FFF;
+
   font-family: Jost;
   font-size: 18px;
-  line-height: 15px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
+  line-height: 15px;
+
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: auto;
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
-  transition: color 0.3s ease;
 }
 
 .header__social {
   display: none;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   gap: 5px;
 }
 
 .header__social-icon {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   transition: transform 0.3s ease;
 }
 
@@ -138,32 +169,39 @@
 
 .header__age {
   display: none;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #D53289;
+  border-radius: 50%;
+  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+
   font-family: 'Jost', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
-  border: 1px solid #D53289;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 /* Mobile Menu */
 .mobile-menu {
   position: fixed;
+  z-index: 999;
   top: 100px;
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #1E1E1E;
-  padding: 40px;
+
   display: none;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 999;
   overflow-y: auto;
+  flex-direction: column;
+
+  padding: 40px;
+
+  background-color: #1E1E1E;
+
+  gap: 20px;
 }
 
 .mobile-menu--open {
@@ -171,32 +209,38 @@
 }
 
 .mobile-menu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
   gap: 20px;
 }
 
 .mobile-menu__divider {
-  border-radius: 50px;
-  background: linear-gradient(90deg, rgba(234, 82, 52, 0.50) 0%, rgba(213, 50, 137, 0.50) 22.12%, rgba(33, 33, 33, 0.50) 82.21%);
-  height: 2px;
   width: 100%;
-  outline: none;
+  height: 2px;
+
   border: none;
+  border-radius: 50px;
+  outline: none;
+  background: linear-gradient(90deg, rgba(234, 82, 52, 0.50) 0%, rgba(213, 50, 137, 0.50) 22.12%, rgba(33, 33, 33, 0.50) 82.21%);
 }
 
 .mobile-menu__link {
+  transition: color 0.3s ease;
+  text-decoration: none;
+
   color: #FFFEFE;
+
   font-family: Inter;
   font-size: 20px;
-  line-height: 24px;
-  font-style: normal;
   font-weight: 300;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-style: normal;
+  line-height: 24px;
 }
 
 .mobile-menu__link:hover {
@@ -204,17 +248,20 @@
 }
 
 .mobile-menu__callback-btn {
-  font-family: 'Jost', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
+  width: fit-content;
   padding: 25px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  color: white;
   border: 2px solid transparent;
   border-radius: 20px;
   background: linear-gradient(90deg, #EA5234, #D53289);
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: fit-content;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .mobile-menu__callback-btn:hover {
@@ -224,31 +271,37 @@
 .mobile-menu__social {
   display: flex;
   flex-direction: column;
+
   gap: 20px;
 }
 
 .mobile-menu__social-title {
+  color: #FDFDFD;
+
   font-family: 'Jost', sans-serif;
   font-size: 22px;
   font-weight: 300;
   line-height: 15px;
-  color: #FDFDFD;
 }
 
 .mobile-menu__social-icons {
   display: flex;
   justify-content: space-between;
+
+  max-width: 200px;
   padding: 16px 42px;
-  gap: 40px;
+
+  border: 1px solid #D53289;
   border-radius: 20px;
   background: linear-gradient(178deg, rgba(213, 50, 137, 0.2) 0%, rgba(234, 82, 52, 0.2) 99.76%);
-  border: 1px solid #D53289;
-  max-width: 200px;
+
+  gap: 40px;
 }
 
 .mobile-menu__social-icon {
   width: 28px;
   height: 28px;
+
   transition: transform 0.3s ease;
 }
 
@@ -258,30 +311,39 @@
 
 .mobile-menu__contact {
   display: flex;
-  gap: 50px;
+
   color: #FDFDFD;
+
   font-family: 'Jost', sans-serif;
   font-size: 16px;
+
+  gap: 50px;
 }
 
 .mobile-menu__age {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #D53289;
+  border-radius: 50%;
+  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+
   font-family: 'Jost', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
-  border: 1px solid #D53289;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 }
 
 /* Media Queries */
 @media (min-width: 1180px) {
   .header {
+    top: 28px;
+
     margin-top: 28px;
+
     border-radius: 25px;
   }
 
@@ -309,13 +371,13 @@
 /* Hover Effects */
 @media (hover: hover) {
   .header__icon:hover {
-    background: linear-gradient(178deg, rgba(213, 50, 137, 0.30) 0%, rgba(234, 82, 52, 0.30) 99.76%);
     border-color: #D53289;
+    background: linear-gradient(178deg, rgba(213, 50, 137, 0.30) 0%, rgba(234, 82, 52, 0.30) 99.76%);
   }
 
   .header__button:hover {
-    background: linear-gradient(178deg, rgba(213, 50, 137, 0.40) 0%, rgba(234, 82, 52, 0.40) 99.76%);
     border-color: #D53289;
+    background: linear-gradient(178deg, rgba(213, 50, 137, 0.40) 0%, rgba(234, 82, 52, 0.40) 99.76%);
   }
 
   .header__phone-link:hover {

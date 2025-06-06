@@ -10,9 +10,9 @@
   --color-nav-link: #222222;
   --color-nav-link-hover: var(--color-accent);
   --color-footer-text: var(--color-muted);
-  --font-heading: 'Jost', sans-serif;
-  --font-main: 'Inter', sans-serif;
-  --font-digits: 'Supertalls', monospace;
+  --font-heading: "Jost", sans-serif;
+  --font-main: "Inter", sans-serif;
+  --font-digits: "Supertalls", monospace;
   --font-size-base: 16px;
   --font-size-title: 64px;
   --font-size-subtitle: 1.25rem;
@@ -27,4 +27,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 150px;
 }

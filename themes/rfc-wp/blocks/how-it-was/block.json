@@ -4,23 +4,16 @@
   "description": "Слайдер с эмоциями и фотографиями",
   "category": "formatting",
   "icon": "format-gallery",
-  "keywords": [
-    "слайдер",
-    "эмоции",
-    "как это было"
-  ],
+  "keywords": ["слайдер", "эмоции", "как это было"],
   "acf": {
     "mode": "edit",
     "renderTemplate": "render.php"
   },
-  "style": [
-    "file:./style.css"
-  ],
+  "style": ["file:./style.css"],
+  "script": ["file:./script.js"],
   "supports": {
     "anchor": true,
-    "align": [
-      "full"
-    ],
+    "align": ["full"],
     "jsx": false
   }
 }

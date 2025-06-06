@@ -1,0 +1,17 @@
+{
+  "name": "acf/rfc-trial-form",
+  "title": "Форма пробного периода",
+  "description": "Блок с формой для запроса пробного периода.",
+  "category": "widgets",
+  "icon": "email",
+  "keywords": ["contact", "form", "trial", "request"],
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": false,
+    "mode": false
+  },
+  "style": "file:./style.css"
+}

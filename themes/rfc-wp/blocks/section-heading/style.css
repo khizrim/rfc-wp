@@ -1,101 +1,189 @@
 .section-heading {
   display: flex;
   align-items: center;
+
   width: 100%;
+  margin-bottom: 40px;
+
   gap: 24px;
-  text-align: center;
 }
 
 .section-heading--left {
+  flex-direction: row;
+
   text-align: left;
 }
 
 .section-heading--right {
-  text-align: right;
-}
+  flex-direction: row-reverse;
 
-.section-heading__line {
-  width: 100%;
-  flex-grow: 1;
-  height: 3px;
-  background: linear-gradient(90deg,
-      rgba(234, 82, 52, 0.50) 0%,
-      rgba(213, 50, 137, 0.50) 22.12%,
-      rgba(33, 33, 33, 0.50) 82.21%);
-  order: 2;
+  text-align: right;
 }
 
 .section-heading__content {
   display: flex;
   flex-direction: column;
-  order: 1;
+
+  width: 100%;
+
   gap: 40px;
 }
 
-/* Изменяем порядок для правого выравнивания */
-.section-heading--right .section-heading__line {
-  order: 1;
+.section-heading__inner {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  gap: 24px;
 }
 
-.section-heading--right .section-heading__content {
-  order: 2;
+.section-heading__line {
+  flex-grow: 1;
+  flex-shrink: 1;
+
+  min-width: 100px;
+  height: 3px;
+
+  background: linear-gradient(90deg,
+      rgba(234, 82, 52, 0.5) 0%,
+      rgba(213, 50, 137, 0.5) 22.12%,
+      rgba(33, 33, 33, 0.5) 82.21%);
 }
 
+.section-heading--left .section-heading__line {
+  background: linear-gradient(250deg,
+      rgba(234, 82, 52, 0.5) 0%,
+      rgba(213, 50, 137, 0.5) 22.12%,
+      rgba(33, 33, 33, 0.5) 82.21%);
+}
+
+/* Заголовок занимает максимум по тексту */
 .section-heading__text {
-  color: #FFF;
+  flex-shrink: 0;
+
+  min-width: 0;
+  margin: 0;
+
+  white-space: normal;
+  text-transform: uppercase;
+  word-break: normal;
+
+  color: #fff;
+
   font-family: Jost, sans-serif;
   font-size: 64px;
-  font-style: normal;
   font-weight: 600;
   line-height: 120%;
-  text-transform: uppercase;
-  margin: 0;
-  flex-wrap: nowrap;
-  white-space: nowrap;
+
+  overflow-wrap: break-word;
 }
 
 .section-heading__subtext {
-  color: #B1B1B1;
-  font-family: Inter;
+  max-width: 80%;
+
+  color: #b1b1b1;
+
+  font-family: Inter, sans-serif;
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   line-height: 140%;
-  /* 28px */
 }
 
+/* Градиент для выделенного текста */
 .section-heading mark {
-  background: linear-gradient(90deg, #D53289, #EA5234);
-  background-clip: text;
+  white-space: normal;
+  word-break: break-word;
+
+  background: linear-gradient(90deg, #d53289, #ea5234);
   -webkit-background-clip: text;
+  background-clip: text;
+
   -webkit-text-fill-color: transparent;
 }
 
+.section-heading--right .section-heading__content {
+  align-items: flex-end;
+}
+
+.section-heading--left .section-heading__inner {
+  flex-direction: row-reverse;
+}
+
+.section-heading--left .section-heading__text,
+.section-heading--left .section-heading__subtext {
+  text-align: left;
+}
+
+.section-heading--right .section-heading__text,
+.section-heading--right .section-heading__subtext {
+  text-align: right;
+}
+
+
 @media (max-width: 1180px) {
   .section-heading {
+    align-items: flex-start;
     flex-direction: column;
-    align-items: start;
+
+    text-align: start;
+
+    gap: 0;
   }
 
   .section-heading__content {
+    width: 100%;
+
     gap: 20px;
   }
 
+  .section-heading__inner {
+    align-items: flex-start;
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 16px;
+  }
+
+  .section-heading--left .section-heading__inner {
+    flex-direction: column;
+  }
+
   .section-heading__line {
-    order: 1;
+    width: 100%;
+  }
+
+  .section-heading--left .section-heading__line {
+    background: linear-gradient(90deg,
+        rgba(234, 82, 52, 0.5) 0%,
+        rgba(213, 50, 137, 0.5) 22.12%,
+        rgba(33, 33, 33, 0.5) 82.21%);
   }
 
   .section-heading__text {
+    width: 100%;
+
     text-align: start;
+
     font-size: 36px;
-    order: 2;
-    flex-wrap: wrap;
-    white-space: normal;
   }
 
   .section-heading__subtext {
+    max-width: unset;
+
     text-align: start;
+
     font-size: 14px;
   }
 
+  .section-heading--right .section-heading__content {
+    align-items: flex-start;
+  }
+
+  .section-heading--right .section-heading__text,
+  .section-heading--right .section-heading__subtext {
+    text-align: left;
+  }
 }

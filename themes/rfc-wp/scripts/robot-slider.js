@@ -6,23 +6,32 @@ function updateRobotPanel(swiperInstance) {
   document.getElementById('robot-defense').textContent = activeSlide.dataset.defense;
 }
 
-const swiper = new Swiper('.rfc-robots__slider', {
+const robotSwiper = new Swiper('.rfc-robots__slider', {
   loop: true,
+  slidesPerView: 'auto',
   centeredSlides: true,
-  slidesPerView: 1,
   navigation: {
-    nextEl: '.rfc-robots__nav--next',
-    prevEl: '.rfc-robots__nav--prev',
+    nextEl: '.rfc-robots__button--next',
+    prevEl: '.rfc-robots__button--prev',
   },
   effect: 'coverflow',
   coverflowEffect: {
     rotate: 0,
     stretch: 0,
-    scale: 0.5,
+    scale: 0.75,
     depth: 100,
     slideShadows: false,
   },
-  width: 600,
+  breakpoints: {
+    0: {
+      slidesPerView: 'auto',
+      spaceBetween: 20
+    },
+    768: {
+      slidesPerView: 'auto',
+      spaceBetween: 160,
+    }
+  },
   on: {
     init(swiper) {
       updateRobotPanel(swiper);

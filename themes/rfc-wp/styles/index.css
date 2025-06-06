@@ -12,5 +12,11 @@
 /* Основной контент */
 @import url("./main/main.css");
 
+/* Блоки */
+@import url("./shift-info/shift-info.css");
+
+/* Модальное окно */
+@import url("./registration-modal/registration-modal.css");
+
 /* Футер */
 @import url("./footer/footer.css");

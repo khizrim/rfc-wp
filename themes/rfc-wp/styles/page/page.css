@@ -1,14 +1,18 @@
 .page {
   display: flex;
-  flex-direction: column;
+  overflow-x: hidden;
   align-items: center;
+  flex-direction: column;
+
   width: 100%;
   min-height: 100dvh;
-  background-color: var(--color-bg);
+
   color: var(--color-text);
+  background-color: var(--color-bg);
+
   font-family: var(--font-main), sans-serif;
-  line-height: var(--line-height);
   font-size: var(--font-size-base);
+  line-height: var(--line-height);
 }
 
 .page.modal-open {

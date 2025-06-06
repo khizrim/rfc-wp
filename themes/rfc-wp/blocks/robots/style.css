@@ -1,10 +1,294 @@
-.swiper {
-  width: var(--container-width);
+.rfc-robots {
+  position: relative;
+
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 150px;
+
+  background: center -50px/70% no-repeat url(../../images/robot-background-blur.png);
 }
 
-.swiper-slide {
+
+.rfc-robots__slider.swiper {
   display: flex;
-  justify-content: center;
   align-items: center;
-  width: 600px;
+  justify-content: center;
+
+  width: 100%;
+  height: 320px;
+}
+
+.swiper-slide.rfc-robot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 400px;
+}
+
+.swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.5;
+}
+
+.rfc-robot__image {
+  width: 100%;
+}
+
+.rfc-robots__panel {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 845px;
+  height: 200px;
+
+  background: center center no-repeat url(../../images/robot-panel-back.svg);
+
+  gap: 40px;
+}
+
+.rfc-robot__info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.robot-name {
+  margin-bottom: 10px;
+
+  text-transform: uppercase;
+
+  color: #FFF;
+
+  font-family: Jost;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 17px;
+
+}
+
+.robot-team {
+  opacity: .5;
+  color: #FFF;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 12px;
+}
+
+.rfc-robot__stats {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.rfc-robot__stats>div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 240px;
+
+  gap: 10px;
+}
+
+.robot-stat {
+  color: #F3CFC8;
+
+  font-family: Jost;
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 17px;
+
+}
+
+.robot-stat__label {
+  opacity: .5;
+  color: #FFF;
+
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 12px;
+}
+
+.rfc-robots__button {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 88px;
+  height: 60px;
+  padding: 1px;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  background: linear-gradient(106deg, #D53289 0%, #EA5234 99.76%);
+}
+
+.rfc-robots__button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+
+  border-radius: 20px;
+  background: var(--color-bg);
+}
+
+.rfc-robots__button--prev {
+  top: 20px;
+  left: 80px;
+
+}
+
+.rfc-robots__button--next {
+  top: 20px;
+  right: 80px;
+}
+
+.rfc-robots__panel {
+  position: relative;
+}
+
+@media (hover: hover) {
+  .rfc-robots__button:hover span {
+    background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+  }
+}
+
+@media (max-width: 768px) {
+  .rfc-robots {
+    width: calc(100% + 80px);
+    margin-bottom: 100px;
+
+    background-position: top;
+    background-size: 150%;
+  }
+
+  .robot-name {
+    color: #FFF;
+
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+
+  }
+
+  .robot-team {
+    text-align: center;
+
+    opacity: .5;
+    color: #FFF;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .rfc-robots__panel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 390px;
+    height: 240px;
+
+    background: center center no-repeat url(../../images/robot-panel-back-mobile.svg);
+
+    gap: 10px;
+
+  }
+
+  .rfc-robot__info {
+    max-width: 150px;
+  }
+
+  .robot-stat {
+    color: #F3CFC8;
+
+    font-family: Jost;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+
+  }
+
+  .robot-stat__label {
+    width: min-content;
+
+    text-align: center;
+    white-space: pre-line;
+
+    opacity: .5;
+    color: #FFF;
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .rfc-robot__stats {
+    display: flex;
+
+    width: 100%;
+    max-width: 180px;
+
+    gap: 10px;
+  }
+
+  .rfc-robot__stats>div {
+    width: 100%;
+  }
+
+  .rfc-robots__button {
+    width: 60px;
+
+    background: none;
+  }
+
+  .rfc-robots__button--prev {
+    top: 40px;
+    left: 50px;
+
+  }
+
+  .rfc-robots__button--next {
+    top: 40px;
+    right: 50px;
+  }
+
 }

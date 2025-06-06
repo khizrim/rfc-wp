@@ -1,46 +1,140 @@
-/* RFC Cards Mix */
-
+/* Block */
 .rfc-cards-mix {
-  background: #0F0F0F;
-  padding: 80px 20px;
-  color: white;
-}
-
-.rfc-cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
+
+  margin-bottom: 150px;
+
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 20px;
 }
 
-.rfc-card {
-  border-radius: 20px;
-  overflow: hidden;
+/* Reverse odd rows */
+.rfc-cards-mix > *:nth-child(4n + 3) {
+  order: 1;
+}
+
+.rfc-cards-mix > *:nth-child(4n + 4) {
+  order: 0;
+}
+
+/* Card Border */
+.rfc-cards-mix__card-border {
+  height: 270px;
+  padding: 4px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 106, 0, 0.5),
+    rgba(255, 46, 178, 0.5)
+  );
+
+  clip-path: path(
+    "M580 214.5c0 10-6 19-15.1 23L494 268a25 25 0 0 1-9.9 2H25a25 25 0 0 1-25-25V25A25 25 0 0 1 25 0h530a25 25 0 0 1 25 25v189.5Z"
+  );
+}
+
+/* Card Base */
+.rfc-cards-mix__card {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 24px;
+
+  height: 100%;
+
+  background: linear-gradient(135deg, #ff6a00, #ff2eb2);
+
+  gap: 20px;
+  clip-path: path(
+    "M572 210.3c0 8.4-5 16-12.6 19.3l-70.8 30.7a21 21 0 0 1-8.3 1.7H21a21 21 0 0 1-21-21V21A21 21 0 0 1 21 0h530a21 21 0 0 1 21 21v189.3Z"
+  );
 }
 
-.rfc-card--text {
-  background: linear-gradient(135deg, #FF6A00, #FF2EB2);
-  color: white;
+/* Card Modifiers */
+.rfc-cards-mix__card--text {
+  padding: 55px 45px;
 }
 
-.rfc-card--text .rfc-card__title {
+.rfc-cards-mix__card--image {
+  padding: 0;
+}
+
+/* Card Elements */
+.rfc-cards-mix__card-title {
+  margin: 0;
+
+  text-transform: uppercase;
+
+  color: #fff8f8;
+
+  font-family: Jost, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.rfc-cards-mix__card-description {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: Inter, sans-serif;
   font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-.rfc-card--text .rfc-card__description {
-  font-size: 16px;
-  line-height: 1.5;
-}
+.rfc-cards-mix__card-image {
+  display: block;
 
-.rfc-card--image img {
   width: 100%;
   height: auto;
-  display: block;
-  border-radius: 20px;
+
   object-fit: cover;
+}
+
+/* Media Queries */
+@media (max-width: 1180px) {
+  .rfc-cards-mix {
+    margin-bottom: 100px;
+
+    grid-template-columns: 310px;
+    gap: 20px;
+  }
+
+  /* Reset order for mobile */
+  .rfc-cards-mix > * {
+    order: 0;
+  }
+
+  .rfc-cards-mix__card-border {
+    width: 310px;
+    height: 200px;
+    padding: 2px;
+
+    clip-path: path(
+      "M1.10345e-05 28.5149L1.10348e-05 20C1.10353e-05 8.95432 8.95432 5.88372e-06 20 5.66789e-06L290 3.92172e-07C301.046 1.76343e-07 310 8.95431 310 20L310 28.911L310 159.939C310 166.87 306.411 173.308 300.515 176.952L268.056 197.013C264.897 198.966 261.256 200 257.542 200L20 200C8.95432 200 1.10282e-05 191.046 1.10286e-05 180L1.1029e-05 171.09L1.10345e-05 28.5149Z"
+    );
+  }
+
+  .rfc-cards-mix__card {
+    clip-path: path(
+      "M5.93918e-06 27.9446L5.93949e-06 20C5.93992e-06 8.9543 8.95431 5.76389e-06 20 5.54961e-06L286 3.89341e-07C297.046 1.7506e-07 306 8.9543 306 20L306 28.3327L306 156.475C306 163.429 302.387 169.885 296.46 173.522L264.64 193.047C261.493 194.978 257.872 196 254.18 196L20 196C8.95432 196 5.933e-06 187.046 5.93343e-06 176L5.93376e-06 167.668L5.93918e-06 27.9446Z"
+    );
+  }
+
+  .rfc-cards-mix__card--text {
+    padding: 38px 14px;
+  }
+
+  .rfc-cards-mix__card-title {
+    letter-spacing: -0.8px;
+
+    font-size: 20px;
+  }
+
+  .rfc-cards-mix__card-description {
+    font-size: 14px;
+  }
 }

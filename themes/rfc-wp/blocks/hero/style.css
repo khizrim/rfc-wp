@@ -1,87 +1,346 @@
-/* RFC Hero Block Styles (ближе к макету) */
-
 .rfc-hero {
-  background-color: #0F0F0F;
-  padding: 100px 20px;
-  color: white;
-  text-align: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.rfc-hero__container {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+
+  width: 100%;
+  max-width: 1180px;
+  min-height: 550px;
+  margin: 0 auto;
+}
+
+.rfc-hero__bg-container {
+  position: absolute;
+  top: 6px;
+  left: 0;
+
+  width: 100%;
+  height: 440px;
+}
+
+.rfc-hero__bg {
+  position: absolute;
+  z-index: 1;
+
+  overflow: hidden;
+
+  width: 100%;
+  height: 100%;
+
+}
+
+.rfc-hero__bg::after {
+  position: absolute;
+  z-index: 2;
+
+  content: '';
+  pointer-events: none;
+
+  opacity: .5;
+  background: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  inset: 0;
+}
+
+.rfc-hero__bg-squares {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+.rfc-hero__img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  /* Маска как раньше — не меняй */
+  mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.rfc-hero__bg-overlay {
+  position: absolute;
+  z-index: 2;
+
+  inset: 0;
+}
+
+.rfc-hero__content {
+  z-index: 3;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 48px;
+  justify-content: flex-end;
+
+  max-width: 42%;
+  height: 100%;
+
+  pointer-events: auto;
+
+  gap: 30px;
+}
+
+.rfc-hero__title {
+  margin: 0;
+  padding: 0;
+
+  text-transform: uppercase;
+
+  color: #fff;
+
+  font-family: Jost;
+  font-size: 52px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 60px;
+}
+
+.rfc-hero__title mark {
+  white-space: normal;
+  word-break: break-word;
+
+  background: linear-gradient(90deg, #d53289, #ea5234);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }
 
 .rfc-hero__badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+
+  gap: 30px;
+}
+
+.rfc-hero__badges-mobile {
+  display: none;
 }
 
 .rfc-hero__badge {
-  background: white;
-  color: #0F0F0F;
-  padding: 12px 24px;
-  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+
+  padding: 15px 25px;
+
+  opacity: 0.75;
+  color: #FFF;
+  border: 0.5px solid #D9D9D9;
+  border-radius: 10px;
+
+  font-family: Inter;
   font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 12px;
+
+  gap: 10px;
 }
 
-.rfc-hero__title {
-  font-size: 48px;
-  line-height: 1.25;
-  font-weight: 700;
-  max-width: 960px;
-  margin: 0 auto;
+.rfc-hero__badge svg {
+  width: 15px;
+  height: 15px;
 }
 
-.rfc-hero__title mark {
-  background: #FFD600;
-  color: #0F0F0F;
-  padding: 4px 6px;
-  border-radius: 4px;
-  font-weight: 700;
+.rfc-hero__buttons {
+  z-index: 1;
+
+  display: flex;
+  justify-content: flex-end;
+
+  width: 100%;
+
+  gap: 20px;
 }
 
 .rfc-hero__button {
-  background: white;
-  color: #0F0F0F;
-  padding: 20px 36px;
-  border-radius: 60px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  display: inline-block;
-  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 15px 30px;
+  padding: 20px 30px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-align: center;
+  text-decoration: none;
+
+  color: #F2F2F2;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #EA5234, #D53289);
+
+  gap: 10px;
 }
 
-.rfc-hero__button:hover {
-  background: #f5f5f5;
+.rfc-hero__button-text {
+  text-transform: uppercase;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 20px;
 }
 
 .rfc-hero__button-subtext {
-  display: block;
-  font-size: 15px;
-  margin-top: 6px;
-  opacity: 0.6;
+  opacity: .5;
+
+  font-family: Inter;
+  font-size: 14px;
   font-weight: 400;
+  font-style: normal;
+  line-height: 10px;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
+.rfc-hero__next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 80px;
+  padding: 40px;
+
+  border: 2px solid rgba(255, 255, 255, 0.10);
+  border-radius: 25px;
+  background: rgba(62, 62, 62, 0.40);
+
+  filter: drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.07));
+}
+
+.rfc-hero__next-button svg {
+  width: 40px;
+}
+
+@media (max-width: 1180px) {
   .rfc-hero {
-    padding: 80px 16px;
-    gap: 36px;
+    margin-bottom: 30px;
+  }
+
+  .rfc-hero__bg-squares {
+    display: none;
+  }
+
+  .rfc-hero__container {
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+  .rfc-hero__bg-container {
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+
+    margin-bottom: -150px;
+  }
+
+  .rfc-hero__bg {
+    position: relative;
+
+    width: 100%;
+    max-height: 420px;
+  }
+
+  .rfc-hero__img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 25px;
+
+    mask-image: none;
+    -webkit-mask-image: none;
+    object-fit: cover;
+  }
+
+  .rfc-hero__bg::after {
+    display: none;
+  }
+
+  .rfc-hero__next-button {
+    display: none;
+  }
+
+  .rfc-hero__content {
+    width: 100%;
+    max-width: unset;
+    margin-top: 42px;
+    padding: 26px;
+
+    border: 2px solid #7E7E7E;
+    border-radius: 25px;
+    background: rgba(60, 11, 37, 0.20);
+
+    backdrop-filter: blur(10px);
   }
 
   .rfc-hero__title {
+    text-align: center;
+
+    color: #FFF;
+
     font-size: 28px;
+    line-height: 28px;
   }
 
-  .rfc-hero__button {
-    font-size: 16px;
-    padding: 16px 28px;
+  .rfc-hero__title mark {
+    background: #FFF;
+    background-clip: text;
   }
+
+  .rfc-hero__badges {
+    display: none;
+  }
+
+  .rfc-hero__badges-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 10px;
+  }
+
+  .rfc-hero__badge {
+    padding: 10px 15px;
+
+    font-size: 10px;
+    line-height: 7px;
+  }
+}
+
+@media (hover: hover) {
+  .rfc-hero__button:hover {
+    cursor: pointer;
+
+    background: linear-gradient(268deg, rgba(213, 50, 137, 0.70) 0%, rgba(234, 82, 52, 0.70) 99.76%);
+
+  }
+
+  .rfc-hero__next-button:hover {
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.10);
+  }
+
 }

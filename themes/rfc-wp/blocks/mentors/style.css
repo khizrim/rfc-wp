@@ -1,8 +1,10 @@
-/* === Mentors block === */
 .mentors {
-  overflow: hidden;
   position: relative;
+
+  overflow: hidden;
+
   width: calc(100% + 80px);
+  margin-bottom: 150px;
 }
 
 .mentors__swiper {
@@ -11,17 +13,24 @@
 }
 
 .mentors__swiper .swiper-slide {
-  width: 100%;
-  max-width: 320px;
   flex-shrink: 0;
+
+  width: 100%;
+  max-width: 360px;
+}
+
+.mentors__swiper .swiper-slide:not(.swiper-slide-active) .mentors__card-bg {
+  opacity: .2;
+
+  filter: blur(50px);
 }
 
 .mentors__card-wrapper {
+  flex-shrink: 0;
+
   width: 100%;
   max-width: 320px;
-  flex-shrink: 0;
 }
-
 
 .mentors__card-wrapper {
   position: relative;
@@ -29,133 +38,157 @@
 
 .mentors__card-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  z-index: 0;
+  bottom: 50px;
+  left: 50px;
+
   width: 135px;
   height: 135px;
+
   border-radius: 50%;
   background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
-  z-index: 0;
 }
 
 .mentors__card {
   position: relative;
   z-index: 1;
-  backdrop-filter: blur(85px);
-  background: rgba(30, 30, 30, 0.01);
-  border-radius: 20px;
-  padding: 25px 55px;
+
   display: flex;
-  gap: 20px;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+
+  padding: 25px 55px;
+
   border: 4px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(30, 30, 30, 0.01);
+
+  backdrop-filter: blur(85px);
+  gap: 20px;
   filter: drop-shadow(0px 4.286px 42.857px rgba(0, 0, 0, 0.07));
 }
-
 
 .mentors__logo {
   width: 75px;
 }
 
 .mentors__photo-ring {
-  width: 162px;
-  height: 162px;
-  border-radius: 50%;
-  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
-  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 162px;
+  height: 162px;
+  padding: 15px;
+
+  border-radius: 50%;
+  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
 }
 
 .mentors__photo {
   width: 100%;
   height: 100%;
+
   border-radius: 50%;
-  background-size: cover;
-  background-position: center;
   background: #2C2C2C;
+  background-position: center;
+  background-size: cover;
 }
 
 .mentors__image {
   width: 100%;
   height: 100%;
+
   border-radius: 50%;
+
   object-fit: cover;
 }
 
 .mentors__image--placeholder {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #2C2C2C;
-  color: #FFF8F8;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 300;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  color: #FFF8F8;
+  border-radius: 50%;
+  background: #2C2C2C;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
 }
 
-
 .mentors__name {
+  text-align: center;
+  text-transform: uppercase;
+
   color: #FFF8F8;
+
   font-family: Jost;
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   line-height: 120%;
-  text-transform: uppercase;
-  text-align: center;
 }
 
 .mentors__facts {
-  color: #FFF;
-  font-family: Inter;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 140%;
   display: flex;
   align-items: center;
+
+  color: #FFF;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
+
   gap: 34px;
 }
 
 .mentors__fact {
-  padding: 12px 22px;
   display: flex;
   align-items: center;
-  gap: 10px;
+
+  padding: 12px 22px;
+
   white-space: nowrap;
+
   border: 1px solid #D9D9D9;
   border-radius: 8px;
+
+  gap: 10px;
 }
 
 .mentors__fact::after {
-  content: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M12.903 3.64282L10.2634 6.27466L9.95868 6.57837L10.2634 6.88208L12.903 9.51294L10.0036 12.4016L7.362 9.7688L7.05927 9.46704L6.75653 9.7688L4.15985 12.3547L1.26044 9.46606L3.85516 6.88208L4.15985 6.57837L3.85516 6.27466L1.26141 3.68872L4.15985 0.800049L6.75653 3.38794L7.05927 3.6897L7.362 3.38794L10.0036 0.75415L12.903 3.64282Z' stroke='white' stroke-width='0.857143'/%3E%3C/svg%3E%0A");
   width: 14px;
   height: 13px;
+
+  content: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M12.903 3.64282L10.2634 6.27466L9.95868 6.57837L10.2634 6.88208L12.903 9.51294L10.0036 12.4016L7.362 9.7688L7.05927 9.46704L6.75653 9.7688L4.15985 12.3547L1.26044 9.46606L3.85516 6.88208L4.15985 6.57837L3.85516 6.27466L1.26141 3.68872L4.15985 0.800049L6.75653 3.38794L7.05927 3.6897L7.362 3.38794L10.0036 0.75415L12.903 3.64282Z' stroke='white' stroke-width='0.857143'/%3E%3C/svg%3E%0A");
 }
 
 .mentors__more {
+  padding: 16px 48px;
+
   color: #FFF;
+  border: 1px solid #D53289;
+  border-radius: 8px;
+  background: linear-gradient(268deg, rgba(213, 50, 137, 0.50) 0%, rgba(234, 82, 52, 0.50) 99.76%);
+
   font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   line-height: 140%;
-  padding: 16px 48px;
-  background: linear-gradient(268deg, rgba(213, 50, 137, 0.50) 0%, rgba(234, 82, 52, 0.50) 99.76%);
-  border: 1px solid #D53289;
+
   filter: drop-shadow(11.088px 11.088px 55.438px rgba(0, 0, 0, 0.10));
-  border-radius: 8px;
   backdrop-filter: blur(75px);
 }
-
 
 .mentors__modal {
   display: none;
@@ -167,17 +200,19 @@
 
 .mentors__socials {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+
   gap: 20px;
 }
 
 .mentors__social {
-  width: 44px;
-  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 44px;
+  height: 44px;
 }
 
 .mentors__social svg {
@@ -185,30 +220,35 @@
   height: 100%;
 }
 
-
 .mentors__buttons {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+
   margin-top: 30px;
+
+  gap: 50px;
 }
 
 .mentors__button {
-  border-radius: 8px;
-  padding: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 2px;
+
   cursor: pointer;
-  outline: none;
+
   border: none;
+  border-radius: 8px;
+  outline: none;
 }
 
 .mentors__button span {
   width: 100%;
   height: 100%;
   padding: 16px 44px;
+
   border-radius: 8px;
   background: var(--color-bg);
 }
@@ -223,11 +263,13 @@
 
 .mentors__modal {
   position: fixed;
-  inset: 0;
-  display: none;
-  justify-content: center;
-  align-items: center;
   z-index: 10;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  inset: 0;
 }
 
 .mentors__modal.active {
@@ -236,21 +278,25 @@
 
 .mentors__modal-overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
   z-index: 1;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  inset: 0;
+  backdrop-filter: blur(10px);
 }
 
 .mentors__modal-wrapper {
   position: relative;
   z-index: 2;
-  max-width: 600px;
+
   width: 90%;
+  max-width: 600px;
 }
 
 .mentors__card--modal {
   max-width: 465px;
+
   pointer-events: auto;
 }
 
@@ -264,14 +310,18 @@
 
 .mentors__modal.active .mentors__description {
   display: block;
-  color: #FFF;
+
+  max-width: 260px;
+
   text-align: center;
+
+  color: #FFF;
+
   font-family: Inter;
   font-size: 16px;
-  font-style: normal;
   font-weight: 400;
+  font-style: normal;
   line-height: 140%;
-  max-width: 260px;
 }
 
 .mentors__card--modal .mentors__more {
@@ -280,31 +330,32 @@
 
 .mentors__modal-close {
   position: absolute;
+  z-index: 3;
   top: 12px;
   right: 12px;
-  font-size: 24px;
-  color: #fff;
-  background: none;
-  border: none;
-  z-index: 3;
+
   cursor: pointer;
+
+  color: #fff;
+  border: none;
+  background: none;
+
+  font-size: 24px;
 }
 
 
 /* === Responsive: tablet === */
-@media (min-width: 768px) {
+@media (max-width: 1180px) {
   .mentors {
-    /* tablet styles */
+    margin-bottom: 100px;
   }
 
   .mentors__card {
-    /* card layout for tablet */
+    padding: 20px;
   }
 
   .mentors__swiper .swiper-slide {
-    width: 100%;
-    max-width: 360px;
-    flex-shrink: 0;
+    max-width: 320px;
   }
 
   /* other tablet-specific adjustments */
@@ -321,9 +372,10 @@
   }
 
   .mentors__more:hover {
-    /* hover effect for desktop */
-    background: linear-gradient(268deg, rgba(213, 50, 137, 0.70) 0%, rgba(234, 82, 52, 0.70) 99.76%);
     cursor: pointer;
+    /* hover effect for desktop */
+
+    background: linear-gradient(268deg, rgba(213, 50, 137, 0.70) 0%, rgba(234, 82, 52, 0.70) 99.76%);
   }
 
   .mentors__button:hover span {
