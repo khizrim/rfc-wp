@@ -11,7 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // добавить кнопку закрытия
       const closeBtn = document.createElement('button');
       closeBtn.className = 'mentors__modal-close';
-      closeBtn.innerHTML = '&times;';
+      closeBtn.innerHTML = `
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6.25 23.75L15 15M15 15L23.75 6.25M15 15L6.25 6.25M15 15L23.75 23.75" stroke="#9D8F94" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      `;
       closeBtn.addEventListener('click', () => {
         modal.classList.remove('active');
         document.body.classList.remove('modal-open');

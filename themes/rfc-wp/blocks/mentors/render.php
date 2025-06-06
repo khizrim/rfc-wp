@@ -62,9 +62,9 @@ if (!$mentor_ids) return;
                 <?php if ($telegram): ?>
                   <a class="mentors__social" href="<?php echo esc_url($telegram); ?>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44">
-                      <path fill="url(#a)" d="M22 3.7a18.3 18.3 0 1 0 0 36.6 18.3 18.3 0 0 0 0-36.6ZM30.5 16c-.3 3-1.5 10-2 13.2-.3 1.4-.8 1.8-1.3 1.9-1 0-1.9-.7-3-1.4l-4-2.7c-1.8-1.2-.6-1.9.4-3 .3-.2 5-4.5 5-4.9a.4.4 0 0 0 0-.3h-.4c-.2 0-2.7 1.7-7.7 5-.8.6-1.4.8-2 .8-.7 0-2-.4-2.9-.7-1.1-.3-2-.5-2-1.2 0-.3.5-.6 1.4-1l10.7-4.6c5.1-2.1 6.1-2.5 6.8-2.5.2 0 .5 0 .8.2l.2.5v.7Z" />
+                      <path fill="url(#telegram-gradient)" d="M22 3.7a18.3 18.3 0 1 0 0 36.6 18.3 18.3 0 0 0 0-36.6ZM30.5 16c-.3 3-1.5 10-2 13.2-.3 1.4-.8 1.8-1.3 1.9-1 0-1.9-.7-3-1.4l-4-2.7c-1.8-1.2-.6-1.9.4-3 .3-.2 5-4.5 5-4.9a.4.4 0 0 0 0-.3h-.4c-.2 0-2.7 1.7-7.7 5-.8.6-1.4.8-2 .8-.7 0-2-.4-2.9-.7-1.1-.3-2-.5-2-1.2 0-.3.5-.6 1.4-1l10.7-4.6c5.1-2.1 6.1-2.5 6.8-2.5.2 0 .5 0 .8.2l.2.5v.7Z" />
                       <defs>
-                        <linearGradient id="a" x1="40.3" x2="2.8" y1="3.7" y2="4.7" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="telegram-gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
                           <stop stop-color="#D53289" />
                           <stop offset="1" stop-color="#EA5234" />
                         </linearGradient>
@@ -75,28 +75,27 @@ if (!$mentor_ids) return;
                 <?php if ($whatsapp): ?>
                   <a class="mentors__social" href="<?php echo esc_url($whatsapp); ?>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 44 44">
-                      <mask id="a" width="36" height="36" x="4" y="4" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+                      <mask id="whatsapp-mask" width="36" height="36" x="4" y="4" maskUnits="userSpaceOnUse" style="mask-type:luminance">
                         <path fill="#fff" d="M4.6 4.6h34.8v34.8H4.6V4.6Z" />
                       </mask>
-                      <g mask="url(#a)">
-                        <path fill="url(#b)" d="m25.3 4.8-1-.1A16.7 16.7 0 0 0 7.8 12a16.7 16.7 0 0 0-1.3 17.7 2.4 2.4 0 0 1 .2 1.9l-2.2 7.9.9-.3 7.4-2c.5 0 1 0 1.6.2A17.3 17.3 0 1 0 25.3 4.8Zm4.6 24a5 5 0 0 1-5 1.1c-3.8-1-7.2-3.5-9.4-6.8-.8-1.2-1.5-2.4-2-3.8a4.6 4.6 0 0 1 1-4.6 2.3 2.3 0 0 1 2.4-.8c.4.1.6.6 1 1 .2.8.5 1.5.9 2.3a1.7 1.7 0 0 1-.4 2.4c-.8.7-.7 1.3 0 2.1 1.2 1.9 3 3.4 5 4.3.7.2 1.1.3 1.5-.3l.6-.7c1-1.3.7-1.3 2.4-.6l1.5.8c.5.3 1.3.6 1.4 1a2.7 2.7 0 0 1-.9 2.7Z" />
+                      <g mask="url(#whatsapp-mask)">
+                        <path fill="url(#whatsapp-gradient)" d="m25.3 4.8-1-.1A16.7 16.7 0 0 0 7.8 12a16.7 16.7 0 0 0-1.3 17.7 2.4 2.4 0 0 1 .2 1.9l-2.2 7.9.9-.3 7.4-2c.5 0 1 0 1.6.2A17.3 17.3 0 1 0 25.3 4.8Zm4.6 24a5 5 0 0 1-5 1.1c-3.8-1-7.2-3.5-9.4-6.8-.8-1.2-1.5-2.4-2-3.8a4.6 4.6 0 0 1 1-4.6 2.3 2.3 0 0 1 2.4-.8c.4.1.6.6 1 1 .2.8.5 1.5.9 2.3a1.7 1.7 0 0 1-.4 2.4c-.8.7-.7 1.3 0 2.1 1.2 1.9 3 3.4 5 4.3.7.2 1.1.3 1.5-.3l.6-.7c1-1.3.7-1.3 2.4-.6l1.5.8c.5.3 1.3.6 1.4 1a2.7 2.7 0 0 1-.9 2.7Z" />
                       </g>
                       <defs>
-                        <linearGradient id="b" x1="39.4" x2="3.8" y1="4.5" y2="5.5" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="whatsapp-gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
                           <stop stop-color="#D53289" />
                           <stop offset="1" stop-color="#EA5234" />
                         </linearGradient>
                       </defs>
                     </svg>
-
                   </a>
                 <?php endif; ?>
                 <?php if ($instagram): ?>
                   <a class="mentors__social" href="<?php echo esc_url($instagram); ?>" target="_blank">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 43">
-                      <path fill="url(#a)" d="M23.3 3.6H29c1.9.2 3.2.5 4.3 1a8.8 8.8 0 0 1 5.2 5.2c.5 1.1.8 2.4 1 4.3V29c-.2 1.9-.5 3.2-1 4.3a8.8 8.8 0 0 1-2 3.2c-.9 1-2 1.6-3.2 2-1.1.5-2.4.8-4.3 1H14c-1.9-.2-3.2-.5-4.3-1a8.8 8.8 0 0 1-3.2-2c-1-.9-1.6-2-2-3.2-.5-1.1-.8-2.4-1-4.3V14c.2-1.9.5-3.2 1-4.3a8.8 8.8 0 0 1 2-3.2c.9-1 2-1.6 3.2-2 1.1-.5 2.4-.8 4.3-1h9.2Zm-1.8 9a9 9 0 1 0 0 17.9 9 9 0 0 0 0-18Zm0 3.5a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8m9.4-6.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4Z" />
+                      <path fill="url(#instagram-gradient)" d="M23.3 3.6H29c1.9.2 3.2.5 4.3 1a8.8 8.8 0 0 1 5.2 5.2c.5 1.1.8 2.4 1 4.3V29c-.2 1.9-.5 3.2-1 4.3a8.8 8.8 0 0 1-2 3.2c-.9 1-2 1.6-3.2 2-1.1.5-2.4.8-4.3 1H14c-1.9-.2-3.2-.5-4.3-1a8.8 8.8 0 0 1-3.2-2c-1-.9-1.6-2-2-3.2-.5-1.1-.8-2.4-1-4.3V14c.2-1.9.5-3.2 1-4.3a8.8 8.8 0 0 1 2-3.2c.9-1 2-1.6 3.2-2 1.1-.5 2.4-.8 4.3-1h9.2Zm-1.8 9a9 9 0 1 0 0 17.9 9 9 0 0 0 0-18Zm0 3.5a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8m9.4-6.2a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4Z" />
                       <defs>
-                        <linearGradient id="a" x1="39.4" x2="2.7" y1="3.6" y2="4.6" gradientUnits="userSpaceOnUse">
+                        <linearGradient id="instagram-gradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
                           <stop stop-color="#D53289" />
                           <stop offset="1" stop-color="#EA5234" />
                         </linearGradient>

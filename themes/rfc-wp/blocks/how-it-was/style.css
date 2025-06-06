@@ -30,7 +30,7 @@
 
   text-transform: uppercase;
 
-  color: #FFF;
+  color: #fff;
 
   font-family: Jost;
   font-size: 52px;
@@ -46,13 +46,12 @@
   min-height: 64px;
 
   opacity: 0.75;
-  color: #B1B1B1;
+  color: #b1b1b1;
 
   font-family: Inter;
   font-size: 20px;
   font-weight: 400;
   font-style: normal;
-
 }
 
 .rfc-hiw__slider {
@@ -64,7 +63,7 @@
 .rfc-how-it-was .rfc-hiw__slide.swiper-slide {
   height: 180px;
 
-  border: 4px solid rgba(255, 255, 255, 0.50);
+  border: 4px solid rgba(255, 255, 255, 0.5);
   border-radius: 25px;
 }
 
@@ -98,14 +97,16 @@
   height: 80px;
 
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, filter 0.3s ease;
 
   opacity: 0.4;
   border-radius: 25px;
+  filter: grayscale(100%);
 }
 
 .rfc-how-it-was .rfc-hiw__thumb.swiper-slide-thumb-active {
   opacity: 1;
+  filter: grayscale(0%);
 }
 
 .rfc-hiw__thumb-image {
@@ -158,7 +159,7 @@
   border: none;
   border-radius: 20px;
   outline: none;
-  background: linear-gradient(106deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
 }
 
 .rfc-hiw__button span {
@@ -176,7 +177,6 @@
 .rfc-hiw__button--prev {
   top: 20px;
   left: 80px;
-
 }
 
 .rfc-hiw__button--next {
@@ -186,9 +186,8 @@
 
 @media (hover: hover) {
   .rfc-hiw__button:hover span {
-    background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
   }
-
 }
 
 @media (max-width: 1180px) {
@@ -216,7 +215,6 @@
   .rfc-hiw__description {
     font-size: 20px;
     font-weight: 400;
-
   }
 
   .rfc-hiw__mobile-nav {
@@ -265,11 +263,11 @@
   }
 
   .rfc-hiw__button--prev {
-    background: linear-gradient(106deg, #D53289 0%, #EA5234 99.76%);
+    background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
   }
 
   .rfc-hiw__button--next {
-    background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
   }
 
   .rfc-hiw__thumbs.swiper {

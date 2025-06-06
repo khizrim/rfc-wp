@@ -20,7 +20,7 @@
 }
 
 .mentors__swiper .swiper-slide:not(.swiper-slide-active) .mentors__card-bg {
-  opacity: .2;
+  opacity: 0.2;
 
   filter: blur(50px);
 }
@@ -46,7 +46,7 @@
   height: 135px;
 
   border-radius: 50%;
-  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
 }
 
 .mentors__card {
@@ -83,7 +83,7 @@
   padding: 15px;
 
   border-radius: 50%;
-  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
 }
 
 .mentors__photo {
@@ -91,7 +91,7 @@
   height: 100%;
 
   border-radius: 50%;
-  background: #2C2C2C;
+  background: #2c2c2c;
   background-position: center;
   background-size: cover;
 }
@@ -113,9 +113,9 @@
   width: 100%;
   height: 100%;
 
-  color: #FFF8F8;
+  color: #fff8f8;
   border-radius: 50%;
-  background: #2C2C2C;
+  background: #2c2c2c;
 
   font-family: Inter;
   font-size: 14px;
@@ -127,7 +127,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: #FFF8F8;
+  color: #fff8f8;
 
   font-family: Jost;
   font-size: 20px;
@@ -140,7 +140,7 @@
   display: flex;
   align-items: center;
 
-  color: #FFF;
+  color: #fff;
 
   font-family: Inter;
   font-size: 14px;
@@ -159,7 +159,7 @@
 
   white-space: nowrap;
 
-  border: 1px solid #D9D9D9;
+  border: 1px solid #d9d9d9;
   border-radius: 8px;
 
   gap: 10px;
@@ -175,10 +175,14 @@
 .mentors__more {
   padding: 16px 48px;
 
-  color: #FFF;
-  border: 1px solid #D53289;
+  color: #fff;
+  border: 1px solid #d53289;
   border-radius: 8px;
-  background: linear-gradient(268deg, rgba(213, 50, 137, 0.50) 0%, rgba(234, 82, 52, 0.50) 99.76%);
+  background: linear-gradient(
+    268deg,
+    rgba(213, 50, 137, 0.5) 0%,
+    rgba(234, 82, 52, 0.5) 99.76%
+  );
 
   font-family: Inter;
   font-size: 14px;
@@ -186,7 +190,7 @@
   font-style: normal;
   line-height: 140%;
 
-  filter: drop-shadow(11.088px 11.088px 55.438px rgba(0, 0, 0, 0.10));
+  filter: drop-shadow(11.088px 11.088px 55.438px rgba(0, 0, 0, 0.1));
   backdrop-filter: blur(75px);
 }
 
@@ -202,22 +206,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  width: 100%;
   gap: 20px;
+  flex-shrink: 0;
 }
 
 .mentors__social {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 44px;
   height: 44px;
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .mentors__social svg {
   width: 100%;
   height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  display: block;
 }
 
 .mentors__buttons {
@@ -254,11 +264,11 @@
 }
 
 .mentors__button--prev {
-  background: linear-gradient(106deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
 }
 
 .mentors__button--next {
-  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
 }
 
 .mentors__modal {
@@ -291,7 +301,7 @@
   z-index: 2;
 
   width: 90%;
-  max-width: 600px;
+  width: 465px;
 }
 
 .mentors__card--modal {
@@ -302,10 +312,15 @@
 
 .mentors__modal-content {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .mentors__modal.active .mentors__modal-content {
   display: flex;
+  min-width: 280px;
 }
 
 .mentors__modal.active .mentors__description {
@@ -315,7 +330,7 @@
 
   text-align: center;
 
-  color: #FFF;
+  color: #fff;
 
   font-family: Inter;
   font-size: 16px;
@@ -342,7 +357,6 @@
 
   font-size: 24px;
 }
-
 
 /* === Responsive: tablet === */
 @media (max-width: 1180px) {
@@ -375,10 +389,14 @@
     cursor: pointer;
     /* hover effect for desktop */
 
-    background: linear-gradient(268deg, rgba(213, 50, 137, 0.70) 0%, rgba(234, 82, 52, 0.70) 99.76%);
+    background: linear-gradient(
+      268deg,
+      rgba(213, 50, 137, 0.7) 0%,
+      rgba(234, 82, 52, 0.7) 99.76%
+    );
   }
 
   .mentors__button:hover span {
-    background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
   }
 }

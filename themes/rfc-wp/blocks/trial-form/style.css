@@ -118,12 +118,39 @@
   margin: 0 0 10px 0;
 }
 
-.trial-form__acceptance input[type="checkbox"] {
+/* Скрываем стандартный вид чекбокса */
+.trial-form__acceptance {
+  appearance: none;
   width: 18px;
   height: 18px;
-  margin-right: 8px;
+  border-radius: 2px;
+  border: 1px solid #d9d9d9;
+  background: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+}
 
-  accent-color: #ff2eb2;
+/* Галочка — в цвет границы */
+.trial-form__acceptance:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid #d9d9d9;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Выровнять текст */
+.wpcf7-list-item label {
+  display: inline-flex;
+  gap: 10px;
+  vertical-align: middle;
+  line-height: 1.4;
 }
 
 /* Кнопка отправки */

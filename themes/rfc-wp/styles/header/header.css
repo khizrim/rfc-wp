@@ -15,7 +15,7 @@
   padding: 24px 40px;
 
   color: var(--color-text);
-  border: 2px solid rgba(255, 255, 255, 0.10);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 0 25px 25px;
   background-color: rgba(62, 62, 62, 0.8);
 
@@ -41,9 +41,13 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  border: 1px solid #D53289;
+  border: 1px solid #d53289;
   border-radius: 10px;
-  background: linear-gradient(178deg, rgba(213, 50, 137, 0.20) 0%, rgba(234, 82, 52, 0.20) 99.76%);
+  background: linear-gradient(
+    178deg,
+    rgba(213, 50, 137, 0.2) 0%,
+    rgba(234, 82, 52, 0.2) 99.76%
+  );
 }
 
 .header__icon svg {
@@ -61,16 +65,17 @@
   transition: all 0.5s ease;
 
   color: var(--color-text);
-  border: 2px solid rgba(255, 255, 255, .25);
+  border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: 20px;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 11px;
 
   backdrop-filter: blur(75px);
+  text-decoration: none;
 }
 
 /* Logo Section */
@@ -106,7 +111,7 @@
 
   width: 100%;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 200;
   line-height: 11px;
@@ -119,7 +124,7 @@
 
   color: var(--color-text);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 400;
 
@@ -130,7 +135,7 @@
   transition: color 0.3s ease;
   text-align: center;
 
-  color: #FFF;
+  color: #fff;
 
   font-family: Jost;
   font-size: 18px;
@@ -163,10 +168,6 @@
   transition: transform 0.3s ease;
 }
 
-.header__social-icon:hover {
-  transform: scale(1.1);
-}
-
 .header__age {
   display: none;
   align-items: center;
@@ -175,11 +176,11 @@
   width: 40px;
   height: 40px;
 
-  border: 1px solid #D53289;
+  border: 1px solid #d53289;
   border-radius: 50%;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -199,7 +200,7 @@
 
   padding: 40px;
 
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 
   gap: 20px;
 }
@@ -227,14 +228,19 @@
   border: none;
   border-radius: 50px;
   outline: none;
-  background: linear-gradient(90deg, rgba(234, 82, 52, 0.50) 0%, rgba(213, 50, 137, 0.50) 22.12%, rgba(33, 33, 33, 0.50) 82.21%);
+  background: linear-gradient(
+    90deg,
+    rgba(234, 82, 52, 0.5) 0%,
+    rgba(213, 50, 137, 0.5) 22.12%,
+    rgba(33, 33, 33, 0.5) 82.21%
+  );
 }
 
 .mobile-menu__link {
   transition: color 0.3s ease;
   text-decoration: none;
 
-  color: #FFFEFE;
+  color: #fffefe;
 
   font-family: Inter;
   font-size: 20px;
@@ -257,9 +263,9 @@
   color: white;
   border: 2px solid transparent;
   border-radius: 20px;
-  background: linear-gradient(90deg, #EA5234, #D53289);
+  background: linear-gradient(90deg, #ea5234, #d53289);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 14px;
   font-weight: 500;
 }
@@ -276,9 +282,9 @@
 }
 
 .mobile-menu__social-title {
-  color: #FDFDFD;
+  color: #fdfdfd;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 22px;
   font-weight: 300;
   line-height: 15px;
@@ -291,9 +297,13 @@
   max-width: 200px;
   padding: 16px 42px;
 
-  border: 1px solid #D53289;
+  border: 1px solid #d53289;
   border-radius: 20px;
-  background: linear-gradient(178deg, rgba(213, 50, 137, 0.2) 0%, rgba(234, 82, 52, 0.2) 99.76%);
+  background: linear-gradient(
+    178deg,
+    rgba(213, 50, 137, 0.2) 0%,
+    rgba(234, 82, 52, 0.2) 99.76%
+  );
 
   gap: 40px;
 }
@@ -312,9 +322,9 @@
 .mobile-menu__contact {
   display: flex;
 
-  color: #FDFDFD;
+  color: #fdfdfd;
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
 
   gap: 50px;
@@ -328,11 +338,11 @@
   width: 40px;
   height: 40px;
 
-  border: 1px solid #D53289;
+  border: 1px solid #d53289;
   border-radius: 50%;
-  background: linear-gradient(178deg, #D53289 0%, #EA5234 99.76%);
+  background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
 
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -371,13 +381,21 @@
 /* Hover Effects */
 @media (hover: hover) {
   .header__icon:hover {
-    border-color: #D53289;
-    background: linear-gradient(178deg, rgba(213, 50, 137, 0.30) 0%, rgba(234, 82, 52, 0.30) 99.76%);
+    border-color: #d53289;
+    background: linear-gradient(
+      178deg,
+      rgba(213, 50, 137, 0.3) 0%,
+      rgba(234, 82, 52, 0.3) 99.76%
+    );
   }
 
   .header__button:hover {
-    border-color: #D53289;
-    background: linear-gradient(178deg, rgba(213, 50, 137, 0.40) 0%, rgba(234, 82, 52, 0.40) 99.76%);
+    border-color: #d53289;
+    background: linear-gradient(
+      178deg,
+      rgba(213, 50, 137, 0.4) 0%,
+      rgba(234, 82, 52, 0.4) 99.76%
+    );
   }
 
   .header__phone-link:hover {

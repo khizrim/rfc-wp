@@ -108,6 +108,15 @@
     order: 0;
   }
 
+  /* Reverse odd rows */
+  .rfc-cards-mix > *:nth-child(4n + 3) {
+    order: 0;
+  }
+
+  .rfc-cards-mix > *:nth-child(4n + 4) {
+    order: 0;
+  }
+
   .rfc-cards-mix__card-border {
     width: 310px;
     height: 200px;
