@@ -2,6 +2,7 @@ const mentorsSwiper = new Swiper('.mentors__swiper', {
   loop: true,
   centeredSlides: true,
   spaceBetween: 90,
+  initialSlide: 2,
   effect: 'coverflow',
   parallax: true,
   autoHeight: true,
