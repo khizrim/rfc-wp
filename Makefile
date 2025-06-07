@@ -139,8 +139,8 @@ extract-data: backup
 # -----------------
 
 build-image: stop clean
-	@echo "🏗️  Сборка production образа..."
-	docker build --target prod_image -t business-secrets-wordpress .
+	@echo "🏗️  Сборка Docker образа..."
+	docker build -t business-secrets-wordpress .
 	@echo "✅ Образ собран."
 
 # -----------------

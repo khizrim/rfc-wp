@@ -122,6 +122,8 @@ function get_default_shift_callback() {
   } else {
     wp_send_json_error(['message' => 'Нет доступных смен']);
   }
+
+  wp_die();
 }
 
 add_action('wp_ajax_get_shift_by_field', 'get_shift_by_field_callback');
@@ -176,5 +178,5 @@ function get_shift_by_field_callback() {
   }
 
 
-  wp_die(); // Обязательно!
+  wp_die();
 }
