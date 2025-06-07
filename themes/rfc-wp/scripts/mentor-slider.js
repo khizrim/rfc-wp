@@ -2,9 +2,10 @@ const mentorsSwiper = new Swiper('.mentors__swiper', {
   loop: true,
   centeredSlides: true,
   centeredSlidesBounds: true,
-  spaceBetween: 90,
-  initialSlide: 2,
   effect: 'coverflow',
+  autoHeight: true,
+  scrollable: true,
+  watchOverflow: true,
   coverflowEffect: {
     rotate: 0,
     stretch: 0,

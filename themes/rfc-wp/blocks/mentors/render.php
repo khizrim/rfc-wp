@@ -5,7 +5,13 @@
  */
 $mentor_ids = get_field('mentors');
 if (!$mentor_ids) return;
+
+if (count($mentor_ids) === 3) {
+  $mentor_ids = array_merge($mentor_ids, $mentor_ids);
+}
 ?>
+
+
 
 <section class="mentors">
   <div class="swiper mentors__swiper">
