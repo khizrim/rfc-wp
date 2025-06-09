@@ -67,7 +67,7 @@ function generate_date_options($posts, $field_name, $input_format = 'd/m/Y', $ou
     <?php the_content(); ?>
 
     <div class="shift" id="shift">
-      <h2 class="shift__title section-heading section-heading__text">
+      <h2 class="shift__title rfc-section-heading rfc-section-heading__text">
         Выбери <mark>удобную смену!</mark>
       </h2>
 

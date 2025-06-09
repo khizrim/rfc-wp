@@ -186,7 +186,7 @@
 
 @media (hover: hover) {
   .rfc-hiw__button:hover span {
-    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+    background: var(--gradient-main);
   }
 }
 
@@ -267,7 +267,7 @@
   }
 
   .rfc-hiw__button--next {
-    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+    background: var(--gradient-main);
   }
 
   .rfc-hiw__thumbs.swiper {

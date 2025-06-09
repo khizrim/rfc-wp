@@ -1,4 +1,4 @@
-.mentors {
+.rfc-mentors {
   position: relative;
 
   overflow: hidden;
@@ -7,35 +7,37 @@
   margin-bottom: 150px;
 }
 
-.mentors__swiper {
+.rfc-mentors__swiper {
   width: 100%;
   height: 100%;
 }
 
-.mentors__swiper .swiper-slide {
+.rfc-mentors__swiper .swiper-slide {
   flex-shrink: 0;
 
   width: 100%;
   max-width: 360px;
 }
 
-.mentors__swiper .swiper-slide:not(.swiper-slide-active) .mentors__card-bg {
+.rfc-mentors__swiper
+  .swiper-slide:not(.swiper-slide-active)
+  .rfc-mentors__card-bg {
   opacity: 0.2;
 
   filter: blur(50px);
 }
 
-.mentors__card-wrapper {
+.rfc-mentors__card-wrapper {
   flex-shrink: 0;
 
   width: 100%;
 }
 
-.mentors__card-wrapper {
+.rfc-mentors__card-wrapper {
   position: relative;
 }
 
-.mentors__card-bg {
+.rfc-mentors__card-bg {
   position: absolute;
   z-index: 0;
   bottom: 50px;
@@ -45,10 +47,10 @@
   height: 135px;
 
   border-radius: 50%;
-  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
 }
 
-.mentors__card {
+.rfc-mentors__card {
   position: relative;
   z-index: 1;
 
@@ -68,11 +70,11 @@
   filter: drop-shadow(0px 4.286px 42.857px rgba(0, 0, 0, 0.07));
 }
 
-.mentors__logo {
+.rfc-mentors__logo {
   width: 75px;
 }
 
-.mentors__photo-ring {
+.rfc-mentors__photo-ring {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,10 +84,10 @@
   padding: 15px;
 
   border-radius: 50%;
-  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
 }
 
-.mentors__photo {
+.rfc-mentors__photo {
   width: 100%;
   height: 100%;
 
@@ -95,7 +97,7 @@
   background-size: cover;
 }
 
-.mentors__image {
+.rfc-mentors__image {
   width: 100%;
   height: 100%;
 
@@ -104,7 +106,7 @@
   object-fit: cover;
 }
 
-.mentors__image--placeholder {
+.rfc-mentors__image--placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +124,7 @@
   font-style: normal;
 }
 
-.mentors__name {
+.rfc-mentors__name {
   text-align: center;
   text-transform: uppercase;
 
@@ -135,7 +137,7 @@
   line-height: 120%;
 }
 
-.mentors__facts {
+.rfc-mentors__facts {
   display: flex;
   align-items: center;
 
@@ -150,7 +152,7 @@
   gap: 34px;
 }
 
-.mentors__fact {
+.rfc-mentors__fact {
   display: flex;
   align-items: center;
 
@@ -164,14 +166,14 @@
   gap: 10px;
 }
 
-.mentors__fact::after {
+.rfc-mentors__fact::after {
   width: 14px;
   height: 13px;
 
   content: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M12.903 3.64282L10.2634 6.27466L9.95868 6.57837L10.2634 6.88208L12.903 9.51294L10.0036 12.4016L7.362 9.7688L7.05927 9.46704L6.75653 9.7688L4.15985 12.3547L1.26044 9.46606L3.85516 6.88208L4.15985 6.57837L3.85516 6.27466L1.26141 3.68872L4.15985 0.800049L6.75653 3.38794L7.05927 3.6897L7.362 3.38794L10.0036 0.75415L12.903 3.64282Z' stroke='white' stroke-width='0.857143'/%3E%3C/svg%3E%0A");
 }
 
-.mentors__more {
+.rfc-mentors__more {
   padding: 16px 48px;
 
   color: #fff;
@@ -193,15 +195,11 @@
   backdrop-filter: blur(75px);
 }
 
-.mentors__modal {
+.rfc-mentors__description {
   display: none;
 }
 
-.mentors__description {
-  display: none;
-}
-
-.mentors__socials {
+.rfc-mentors__socials {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -210,7 +208,7 @@
   flex-shrink: 0;
 }
 
-.mentors__social {
+.rfc-mentors__social {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -221,7 +219,7 @@
   min-height: 44px;
 }
 
-.mentors__social svg {
+.rfc-mentors__social svg {
   width: 100%;
   height: 100%;
   min-width: 44px;
@@ -229,7 +227,7 @@
   display: block;
 }
 
-.mentors__buttons {
+.rfc-mentors__buttons {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,7 +237,7 @@
   gap: 50px;
 }
 
-.mentors__button {
+.rfc-mentors__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,7 +251,7 @@
   outline: none;
 }
 
-.mentors__button span {
+.rfc-mentors__button span {
   width: 100%;
   height: 100%;
   padding: 16px 44px;
@@ -262,15 +260,15 @@
   background: var(--color-bg);
 }
 
-.mentors__button--prev {
+.rfc-mentors__button--prev {
   background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
 }
 
-.mentors__button--next {
-  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+.rfc-mentors__button--next {
+  background: var(--gradient-main);
 }
 
-.mentors__modal {
+.rfc-mentors__modal {
   position: fixed;
   z-index: 10;
 
@@ -281,11 +279,11 @@
   inset: 0;
 }
 
-.mentors__modal.active {
+.rfc-mentors__modal.active {
   display: flex;
 }
 
-.mentors__modal-overlay {
+.rfc-mentors__modal-overlay {
   position: absolute;
   z-index: 1;
 
@@ -295,7 +293,7 @@
   backdrop-filter: blur(10px);
 }
 
-.mentors__modal-wrapper {
+.rfc-mentors__modal-wrapper {
   position: relative;
   z-index: 2;
 
@@ -303,13 +301,13 @@
   width: 465px;
 }
 
-.mentors__card--modal {
+.rfc-mentors__card--modal {
   max-width: 465px;
 
   pointer-events: auto;
 }
 
-.mentors__modal-content {
+.rfc-mentors__modal-content {
   display: none;
   flex-direction: column;
   align-items: center;
@@ -317,12 +315,12 @@
   box-sizing: border-box;
 }
 
-.mentors__modal.active .mentors__modal-content {
+.rfc-mentors__modal.active .rfc-mentors__modal-content {
   display: flex;
   min-width: 280px;
 }
 
-.mentors__modal.active .mentors__description {
+.rfc-mentors__modal.active .rfc-mentors__description {
   display: block;
 
   max-width: 260px;
@@ -338,11 +336,11 @@
   line-height: 140%;
 }
 
-.mentors__card--modal .mentors__more {
+.rfc-mentors__card--modal .rfc-mentors__more {
   display: none;
 }
 
-.mentors__modal-close {
+.rfc-mentors__modal-close {
   position: absolute;
   z-index: 3;
   top: 12px;
@@ -357,36 +355,23 @@
   font-size: 24px;
 }
 
-/* === Responsive: tablet === */
 @media (max-width: 1180px) {
-  .mentors {
+  .rfc-mentors {
     margin-bottom: 100px;
   }
 
-  .mentors__card {
+  .rfc-mentors__card {
     padding: 20px;
   }
 
-  .mentors__swiper .swiper-slide {
+  .rfc-mentors__swiper .swiper-slide {
     max-width: 320px;
   }
-
-  /* other tablet-specific adjustments */
 }
 
-/* === Responsive: desktop === */
 @media (hover: hover) {
-  .mentors {
-    /* desktop styles */
-  }
-
-  .mentors__card {
-    /* layout/grid for desktop */
-  }
-
-  .mentors__more:hover {
+  .rfc-mentors__more:hover {
     cursor: pointer;
-    /* hover effect for desktop */
 
     background: linear-gradient(
       268deg,
@@ -395,7 +380,7 @@
     );
   }
 
-  .mentors__button:hover span {
-    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+  .rfc-mentors__button:hover span {
+    background: var(--gradient-main);
   }
 }

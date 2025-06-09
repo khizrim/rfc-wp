@@ -64,7 +64,6 @@
   height: 100%;
 
   object-fit: cover;
-  /* Маска как раньше — не меняй */
   mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
@@ -174,7 +173,6 @@
   flex-direction: column;
 
   width: 100%;
-  padding: 15px 30px;
   padding: 20px 30px;
 
   cursor: pointer;
@@ -184,8 +182,8 @@
 
   color: #F2F2F2;
   border: 2px solid transparent;
-  border-radius: 20px;
-  background: linear-gradient(90deg, #EA5234, #D53289);
+  border-radius: var(--radius-main);
+  background: var(--gradient-main);
 
   gap: 10px;
 }

@@ -1,4 +1,3 @@
-/* RFC Steps Block */
 
 .rfc-steps {
   margin-bottom: 180px;
@@ -36,7 +35,6 @@
   z-index: 1;
 
   order: 1;
-  /* 79.258px */
 
   text-align: center;
   text-transform: uppercase;
@@ -83,7 +81,6 @@
 }
 
 .rfc-step__title {
-  /* 38.4px */
   letter-spacing: -1.28px;
   text-transform: uppercase;
 
@@ -115,7 +112,6 @@
   height: auto;
 }
 
-/* Цветовые темы */
 .rfc-step--black {
   background: #212121;
 }
@@ -135,7 +131,7 @@
 }
 
 .rfc-step--gradient-orange {
-  background: linear-gradient(268deg, #D53289 0%, #EA5234 99.76%);
+  background: var(--gradient-main);
 }
 
 .rfc-step--gradient-mix {

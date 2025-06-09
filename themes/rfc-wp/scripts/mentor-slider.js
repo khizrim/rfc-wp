@@ -1,4 +1,4 @@
-const mentorsSwiper = new Swiper('.mentors__swiper', {
+const mentorsSwiper = new Swiper('.rfc-mentors__swiper', {
   loop: true,
   centeredSlides: true,
   centeredSlidesBounds: true,
@@ -14,8 +14,8 @@ const mentorsSwiper = new Swiper('.mentors__swiper', {
     slideShadows: false,
   },
   navigation: {
-    nextEl: '.mentors__button--next',
-    prevEl: '.mentors__button--prev',
+    nextEl: '.rfc-mentors__button--next',
+    prevEl: '.rfc-mentors__button--prev',
   },
   breakpoints: {
     0: {

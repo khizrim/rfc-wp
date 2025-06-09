@@ -142,9 +142,9 @@
   cursor: pointer;
 
   border: none;
-  border-radius: 20px;
+  border-radius: var(--radius-main);
   outline: none;
-  background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
 }
 
 .rfc-robots__button span {
@@ -169,13 +169,10 @@
   right: 80px;
 }
 
-.rfc-robots__panel {
-  position: relative;
-}
 
 @media (hover: hover) {
   .rfc-robots__button:hover span {
-    background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+    background: var(--gradient-main);
   }
 }
 

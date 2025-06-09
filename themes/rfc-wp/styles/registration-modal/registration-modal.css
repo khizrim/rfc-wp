@@ -12,7 +12,7 @@
   backdrop-filter: blur(10px);
 }
 
-.registration-modal .trial-form__input-phone {
+.registration-modal .rfc-trial-form__input-phone {
   margin-bottom: 0;
 }
 
@@ -154,7 +154,7 @@
   color: #fff;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(268deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
   box-shadow: 0 2px 12px rgba(255, 46, 178, 0.1);
 
   font-family: Jost, sans-serif;
