@@ -16,9 +16,15 @@ $button_subtext = get_field('button_subtext');
     <div class="rfc-hero__bg-container">
       <div class="rfc-hero__bg">
         <?php if ($image): ?>
-          <video class="rfc-hero__img" autoplay muted loop playsinline>
-            <source src="<?php echo esc_url($image['url']); ?>" type="video/mp4">
-          </video>
+          <?php
+          $file_type = wp_check_filetype($image['url']);
+          if ($file_type['type'] === 'video/mp4'): ?>
+            <video class="rfc-hero__img" autoplay muted loop playsinline>
+              <source src="<?php echo esc_url($image['url']); ?>" type="video/mp4">
+            </video>
+          <?php else: ?>
+            <img class="rfc-hero__img" src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+          <?php endif; ?>
         <?php endif; ?>
         <div class="rfc-hero__bg-overlay"></div>
         <span class="rfc-hero__bg-squares">

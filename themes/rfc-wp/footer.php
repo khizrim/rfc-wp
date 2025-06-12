@@ -51,9 +51,9 @@ $telegram = get_field('telegram_link', 'option');
 
 </footer>
 
-<div class="mentors__modal" id="mentor-modal">
-  <div class="mentors__modal-overlay"></div>
-  <div class="mentors__modal-wrapper">
+<div class="rfc-mentors__modal" id="mentor-modal">
+  <div class="rfc-mentors__modal-overlay"></div>
+  <div class="rfc-mentors__modal-wrapper">
     <!-- карточка будет вставлена сюда динамически -->
   </div>
 </div>

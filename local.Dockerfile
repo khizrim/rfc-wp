@@ -1,7 +1,6 @@
 FROM wordpress:latest
 
 ARG WP_CLI=/usr/local/bin/wp
-ARG WP_VERSION=6.8.1
 ARG WP_ROOT=/var/www/html
 
 # Установка WP-CLI
@@ -24,3 +23,6 @@ COPY wp-config.php $WP_ROOT
 COPY uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 
 WORKDIR $WP_ROOT
+
+RUN chown -R www-data:www-data ${WP_ROOT}
+
