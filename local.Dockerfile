@@ -20,4 +20,7 @@ COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # Копируем wp-config.php, если есть
 COPY wp-config.php $WP_ROOT
 
+# Копируем кастомные PHP-настройки
+COPY uploads.ini /usr/local/etc/php/conf.d/uploads.ini
+
 WORKDIR $WP_ROOT
