@@ -11,4 +11,7 @@ RUN curl -o $WP_CLI https://raw.githubusercontent.com/wp-cli/builds/gh-pages/pha
 # Копируем wp-config.php, если есть
 COPY wp-config.php $WP_ROOT
 
+# Копируем кастомные PHP-настройки
+COPY uploads.ini /usr/local/etc/php/conf.d/uploads.ini
+
 WORKDIR $WP_ROOT
