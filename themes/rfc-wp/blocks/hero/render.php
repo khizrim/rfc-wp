@@ -16,7 +16,9 @@ $button_subtext = get_field('button_subtext');
     <div class="rfc-hero__bg-container">
       <div class="rfc-hero__bg">
         <?php if ($image): ?>
-          <img src="<?php echo esc_url($image['url']); ?>" alt="" class="rfc-hero__img" />
+          <video class="rfc-hero__img" autoplay muted loop playsinline>
+            <source src="<?php echo esc_url($image['url']); ?>" type="video/mp4">
+          </video>
         <?php endif; ?>
         <div class="rfc-hero__bg-overlay"></div>
         <span class="rfc-hero__bg-squares">
