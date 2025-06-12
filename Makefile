@@ -129,7 +129,7 @@ extract: extract-plugins backup
 
 extract-plugins:
 	@echo "📦 Архивирование плагинов..."
-	tar cfz $(EXPORT)/plugins.tgz $(PLUGINS)
+	tar cfz $(EXPORT)/plugins.tgz -C $(PLUGINS) .
 	@echo "✅ Плагины заархивированы."
 
 extract-data: backup
