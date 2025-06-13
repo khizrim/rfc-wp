@@ -179,7 +179,7 @@
   text-decoration: none;
 
   color: #f2f2f2;
-  border: 2px solid transparent;
+  border: 2px solid rgba(255, 255, 255, 0.25);
   border-radius: var(--radius-main);
   background: var(--gradient-main);
 

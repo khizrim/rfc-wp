@@ -208,12 +208,13 @@
 
     word-break: break-word;
 
-    font-size: 52px;
+    font-size: 24px;
     font-weight: 400;
   }
 
   .rfc-hiw__description {
-    font-size: 20px;
+    min-height: 100px;
+    font-size: 14px;
     font-weight: 400;
   }
 
@@ -230,7 +231,7 @@
   .rfc-hiw__slide.swiper-slide {
     height: auto;
 
-    aspect-ratio: 27 / 35;
+    aspect-ratio: 25 / 30;
   }
 
   .rfc-how-it-was .rfc-hiw__slide.swiper-slide {

@@ -267,7 +267,7 @@
   .registration-modal__form .wpcf7-acceptance .wpcf7-list-item label {
     display: flex;
     align-items: flex-start;
-
+    flex-shrink: 0;
     gap: 10px;
   }
 }
