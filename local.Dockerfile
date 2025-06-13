@@ -24,5 +24,4 @@ COPY uploads.ini /usr/local/etc/php/conf.d/uploads.ini
 
 WORKDIR $WP_ROOT
 
-RUN chown -R www-data:www-data ${WP_ROOT}
-
+RUN mkdir -p ${WP_ROOT}/wp-content/uploads && chown -R www-data:www-data ${WP_ROOT}

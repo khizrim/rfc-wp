@@ -1,6 +1,6 @@
 .PHONY: all setup doom extract build up stop down update-image import-db setup-plugins \
         import-plugins upgrade-plugins activate-plugins extract-plugins extract-data \
-        build-image reset clean init-dirs logs shell dbshell wait-for-db check-env
+        extract-uploads build-image reset clean init-dirs logs shell dbshell wait-for-db check-env
 
 include .env
 export
@@ -20,6 +20,7 @@ THEMES           = ./themes
 DATA             = ./data
 TEMP             = ./temp
 EXPORT           = ./export
+UPLOADS          = ./uploads
 
 WP_DUMP          = $(EXPORT)/backup.sql.gz
 
@@ -55,7 +56,7 @@ update-image:
 	docker-compose up -d
 
 init-dirs:
-	@mkdir -p $(PLUGINS) $(THEMES) $(DATA) $(TEMP) $(EXPORT)
+	@mkdir -p $(PLUGINS) $(THEMES) $(DATA) $(TEMP) $(EXPORT) $(UPLOADS)
 
 check-env:
 	@if [ ! -f .env ]; then \
@@ -90,7 +91,10 @@ backup:
 	@echo "💾 Создание резервной копии базы данных..."
 	@mkdir -p $(EXPORT)
 	$(MYSQL_DUMP_CLI) -u root -p"$(MYSQL_ROOT_PASSWORD)" $(MYSQL_DATABASE) --skip-comments 2>/dev/null | gzip - -c > $(WP_DUMP)
-	@echo "✅ Резервная копия создана: $(WP_DUMP)"
+	@echo "✅ Резервная копия базы создана: $(WP_DUMP)"
+	@echo "💾 Архивирование изображений..."
+	tar cfz $(EXPORT)/uploads.tgz -C $(UPLOADS) .
+	@echo "✅ Изображения заархивированы: $(EXPORT)/uploads.tgz"
 
 restore:
 	@if [ -f $(WP_DUMP) ]; then \
@@ -98,7 +102,15 @@ restore:
 		cat $(WP_DUMP) | gzip -d - -c | $(MYSQL_CLI) -u root -p"$(MYSQL_ROOT_PASSWORD)" $(MYSQL_DATABASE); \
 		echo "✅ База данных восстановлена."; \
 	else \
-		echo "⚠️  Файл $(WP_DUMP) не найден. Пропуск восстановления."; \
+		echo "⚠️  Файл $(WP_DUMP) не найден. Пропуск восстановления базы."; \
+	fi
+	@if [ -f $(EXPORT)/uploads.tgz ]; then \
+		echo "♻️  Восстановление изображений из $(EXPORT)/uploads.tgz..."; \
+		mkdir -p $(UPLOADS); \
+		tar xfz $(EXPORT)/uploads.tgz -C $(UPLOADS); \
+		echo "✅ Изображения восстановлены."; \
+	else \
+		echo "⚠️  Файл $(EXPORT)/uploads.tgz не найден. Пропуск восстановления изображений."; \
 	fi
 
 # -----------------
@@ -125,7 +137,7 @@ sync-plugins:
 #     EXTRACT
 # -----------------
 
-extract: extract-plugins backup
+extract: extract-plugins extract-data extract-uploads
 
 extract-plugins:
 	@echo "📦 Архивирование плагинов..."
@@ -133,6 +145,11 @@ extract-plugins:
 	@echo "✅ Плагины заархивированы."
 
 extract-data: backup
+
+extract-uploads:
+	@echo "📦 Архивирование изображений..."
+	tar cfz $(EXPORT)/uploads.tgz -C $(UPLOADS) .
+	@echo "✅ Изображения заархивированы."
 
 # -----------------
 #     BUILD
@@ -149,7 +166,7 @@ build-image: stop clean
 
 reset:
 	@echo "🧹 Очистка данных..."
-	rm -rf $(DATA) $(PLUGINS) $(TEMP)
+	rm -rf $(DATA) $(PLUGINS) $(TEMP) $(UPLOADS)
 	@echo "✅ Данные очищены."
 
 clean:
