@@ -12,11 +12,17 @@
 /* Основной контент */
 @import url("./main/main.css");
 
+/* WordPress блоки */
+@import url("./blocks/blocks.css");
+
 /* Блоки */
 @import url("./shift-info/shift-info.css");
 
 /* Модальное окно */
 @import url("./registration-modal/registration-modal.css");
+
+/* Страница 404 */
+@import url("./not-found/not-found.css");
 
 /* Футер */
 @import url("./footer/footer.css");

@@ -11,16 +11,48 @@
   --color-nav-link: #222222;
   --color-nav-link-hover: var(--color-accent);
   --color-footer-text: var(--color-muted);
+  --color-heading: #fff;
+
+  /* Typography */
   --font-heading: "Jost", sans-serif;
   --font-main: "Inter", sans-serif;
   --font-digits: "Supertalls", monospace;
+
+  /* Font Sizes */
   --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-h1: 32px;
+  --font-size-h2: 32px;
+  --font-size-h3: 28px;
+  --font-size-h4: 24px;
+  --font-size-h5: 20px;
+  --font-size-h6: 16px;
   --font-size-title: 64px;
-  --font-size-subtitle: 1.25rem;
-  --font-size-footer: 0.875rem;
+  --font-size-subtitle: 20px;
+  --font-size-footer: 14px;
+
+  /* Mobile Font Sizes */
+  --font-size-base-mobile: 15px;
+  --font-size-h1-mobile: 28px;
+  --font-size-h2-mobile: 28px;
+  --font-size-h3-mobile: 24px;
+  --font-size-h4-mobile: 20px;
+  --font-size-h5-mobile: 18px;
+  --font-size-h6-mobile: 16px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Other */
   --line-height: 1.6;
   --container-width: 1180px;
   --container-padding: 20px;
+  --border-width: 1px;
+  --transition-speed: 0.3s;
   --gradient-main: linear-gradient(
     268deg,
     var(--color-accent),

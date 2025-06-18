@@ -1,4 +1,4 @@
-name: Deploy to Server
+name: Deploy to FTP Server
 
 on:
   push:
@@ -6,35 +6,19 @@ on:
       - master
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: 🔐 Backup database on server (only if exists)
-        uses: appleboy/ssh-action@master
+      - name: 📂 Upload theme via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          script: |
-            if docker ps -a --format '{{.Names}}' | grep -q '^rfc-db$$'; then
-              cd /root/rfc
-              mkdir -p export
-              make extract
-            else
-              echo "No container to backup — skipping."
-            fi
-
-      - name: 📤 Copy files to server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          source: "."
-          target: "/root/rfc"
-          overwrite: true
-          strip_components: 1
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          local-dir: ./themes/rfc-wp
+          server-dir: /wp-content/themes/rfc-wp/

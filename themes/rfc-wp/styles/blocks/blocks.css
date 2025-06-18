@@ -1,0 +1,202 @@
+/* WordPress Block Styles */
+
+/* Typography */
+.wp-block-post-content {
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+}
+
+/* Headings */
+.wp-block-heading,
+.wp-block-post-content h1,
+.wp-block-post-content h2,
+.wp-block-post-content h3,
+.wp-block-post-content h4,
+.wp-block-post-content h5,
+.wp-block-post-content h6 {
+  margin: var(--spacing-xl) 0 var(--spacing-md);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.wp-block-heading,
+.wp-block-post-content h1,
+.wp-block-post-content h2 {
+  font-size: var(--font-size-h1);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--color-heading, var(--color-text));
+}
+
+.wp-block-post-content h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 600;
+  color: var(--color-heading, var(--color-text));
+}
+
+.wp-block-post-content h4 {
+  font-size: var(--font-size-h4);
+  font-weight: 600;
+  color: var(--color-heading, var(--color-text));
+}
+
+.wp-block-post-content h5 {
+  font-size: var(--font-size-h5);
+  font-weight: 500;
+  color: var(--color-heading, var(--color-text));
+}
+
+.wp-block-post-content h6 {
+  font-size: var(--font-size-h6);
+  font-weight: 500;
+  color: var(--color-heading, var(--color-text));
+}
+
+/* Paragraphs */
+.wp-block-post-content p {
+  margin: 0 0 var(--spacing-lg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: calc(var(--font-size-base) + 1px);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* Privacy Policy Specific */
+.privacy-policy-tutorial {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Lists */
+.wp-block-post-content ul,
+.wp-block-post-content ol {
+  margin: var(--spacing-lg) 0;
+  padding-left: var(--spacing-xl);
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+.wp-block-post-content li {
+  margin: var(--spacing-sm) 0;
+}
+
+/* Links */
+.wp-block-post-content a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  transition: color var(--transition-speed) ease;
+}
+
+.wp-block-post-content a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Blockquotes */
+.wp-block-post-content blockquote {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  border-left: var(--border-width) solid var(--color-accent);
+  background: var(--color-bg-secondary);
+  font-style: italic;
+}
+
+.wp-block-post-content blockquote p {
+  margin: 0;
+}
+
+/* Code */
+.wp-block-post-content code {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-small);
+  font-family: var(--font-digits);
+  font-size: var(--font-size-sm);
+}
+
+/* Tables */
+.wp-block-post-content table {
+  width: 100%;
+  margin: var(--spacing-xl) 0;
+  border-collapse: collapse;
+}
+
+.wp-block-post-content th,
+.wp-block-post-content td {
+  padding: var(--spacing-md);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.wp-block-post-content th {
+  background: var(--color-bg-secondary);
+  font-weight: 500;
+}
+
+/* Images */
+.wp-block-post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-main);
+}
+
+.wp-block-post-content figure {
+  margin: var(--spacing-xl) 0;
+}
+
+.wp-block-post-content figcaption {
+  margin-top: var(--spacing-sm);
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+/* Separator */
+.wp-block-post-content hr {
+  margin: var(--spacing-xl) 0;
+  border: none;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+/* Media Queries */
+@media (max-width: 1180px) {
+  .wp-block-heading,
+  .wp-block-post-content h1,
+  .wp-block-post-content h2 {
+    font-size: var(--font-size-h1-mobile);
+  }
+
+  .wp-block-post-content h3 {
+    font-size: var(--font-size-h3-mobile);
+  }
+
+  .wp-block-post-content h4 {
+    font-size: var(--font-size-h4-mobile);
+  }
+
+  .wp-block-post-content h5 {
+    font-size: var(--font-size-h5-mobile);
+  }
+
+  .wp-block-post-content h6 {
+    font-size: var(--font-size-h6-mobile);
+  }
+
+  .wp-block-post-content p {
+    font-size: var(--font-size-base-mobile);
+  }
+}
+
+/* Emphasized text */
+.wp-block-post-content .emph,
+.wp-block-post-content .highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+  background: var(--color-bg-tertiary);
+  padding: 0 0.2em;
+  border-radius: var(--radius-small);
+}
