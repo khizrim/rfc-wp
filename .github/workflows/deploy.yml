@@ -20,5 +20,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
-          local-dir: ./themes/rfc-wp
+          local-dir: ./themes/rfc-wp/
           server-dir: /wp-content/themes/rfc-wp/
