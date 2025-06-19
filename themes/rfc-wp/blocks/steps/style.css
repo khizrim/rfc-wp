@@ -1,5 +1,5 @@
 .rfc-steps {
-  margin-bottom: 180px;
+  margin-bottom: 120px;
 
   color: var(--color-white);
 }
@@ -29,6 +29,10 @@
   gap: 20px;
 }
 
+.rfc-step:last-child {
+  border-radius: var(--radius-large);
+}
+
 .rfc-step__number {
   position: relative;
   z-index: 1;
@@ -40,34 +44,11 @@
 
   color: var(--color-white);
 
-  font-family: Supertalls;
-  font-size: 66.048px;
+  font-family: var(--font-digits);
+  font-size: 56px;
   font-weight: 400;
   font-style: normal;
   line-height: 120%;
-}
-
-.rfc-step__number-shadow {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  text-align: center;
-  text-transform: uppercase;
-  pointer-events: none;
-
-  opacity: 0.2;
-  color: #f4cbc3;
-
-  font-family: Supertalls;
-  font-size: 99.072px;
-  font-weight: 400;
-  font-style: normal;
-
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
 }
 
 .rfc-step__content {
@@ -103,13 +84,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto;
+  flex-grow: 1;
   order: 2;
+  position: relative;
 }
 
 .rfc-step__image img {
-  width: 100%;
-  width: 150px;
+  width: 150%;
   height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%);
 }
 
 .rfc-step--black {
@@ -118,12 +105,7 @@
 
 .rfc-step--white {
   color: #212121;
-  background: #e0e0e0;
-}
-
-.rfc-step--white .rfc-step__number-shadow {
-  opacity: 0.1;
-  color: #212121;
+  background: #cfcfcf;
 }
 
 .rfc-step--gradient-pink {
@@ -145,30 +127,23 @@
   .rfc-step {
     flex-wrap: nowrap;
 
-    padding: 5px 50px 25px 60px;
+    border-radius: var(--radius-large) var(--radius-large) 0 0;
+
+    padding: 45px 50px 45px 60px;
   }
 
   .rfc-step__content {
     order: 2;
 
-    padding-left: 150px;
-
-    gap: 30px;
+    gap: 12px;
   }
 
   .rfc-step__number {
     order: 1;
 
-    min-width: 150px;
+    min-width: 320px;
 
-    font-size: 96px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 120%;
-  }
-
-  .rfc-step__number-shadow {
-    font-size: 144px;
+    font-size: 150px;
     font-weight: 400;
     font-style: normal;
     line-height: 120%;
@@ -180,9 +155,15 @@
 
   .rfc-step__image {
     order: 3;
+    min-width: 350px;
+    position: relative;
   }
 
   .rfc-step__image img {
-    width: 250px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%);
   }
 }

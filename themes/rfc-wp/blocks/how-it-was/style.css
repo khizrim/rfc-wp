@@ -57,14 +57,20 @@
 .rfc-hiw__slider {
   position: relative;
 
-  margin-bottom: 20px;
+  height: 300px;
+  margin-bottom: 40px;
+
+  overflow: visible;
 }
 
 .rfc-how-it-was .rfc-hiw__slide.swiper-slide {
-  height: 180px;
+  width: 400px;
+  height: 240px;
 
   border: 4px solid var(--color-white-50);
   border-radius: var(--radius-large);
+
+  transition: transform 0.3s ease;
 }
 
 .rfc-hiw__image {
@@ -77,48 +83,6 @@
   height: 100%;
 
   border-radius: var(--radius-main);
-
-  object-fit: cover;
-}
-
-.rfc-hiw__thumbs {
-  position: relative;
-  z-index: 1;
-
-  overflow: hidden;
-
-  width: 100%;
-  height: 80px;
-}
-
-.rfc-how-it-was .rfc-hiw__thumb.swiper-slide {
-  overflow: hidden;
-
-  height: 80px;
-
-  cursor: pointer;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-
-  opacity: 0.4;
-  border-radius: var(--radius-large);
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-
-.rfc-how-it-was .rfc-hiw__thumb.swiper-slide-thumb-active {
-  opacity: 1;
-  -webkit-filter: grayscale(0%);
-  filter: grayscale(0%);
-}
-
-.rfc-hiw__thumb-image {
-  width: 100%;
-  height: 100%;
-}
-
-.rfc-hiw__thumb-image img {
-  width: 100%;
-  height: 100%;
 
   object-fit: cover;
 }
@@ -144,7 +108,11 @@
 }
 
 .rfc-hiw__mobile-nav {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 50px;
 }
 
 .rfc-hiw__button {
@@ -220,24 +188,14 @@
     font-weight: 400;
   }
 
-  .rfc-hiw__mobile-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 30px;
-
-    gap: 50px;
-  }
-
-  .rfc-hiw__slide.swiper-slide {
-    height: auto;
-
-    aspect-ratio: 25 / 30;
+  .rfc-hiw__slider {
+    height: 250px;
+    margin-bottom: 30px;
   }
 
   .rfc-how-it-was .rfc-hiw__slide.swiper-slide {
-    height: auto;
+    width: 280px;
+    height: 200px;
   }
 
   .rfc-hiw__button {
@@ -272,8 +230,15 @@
   .rfc-hiw__button--next {
     background: var(--gradient-main);
   }
+}
 
-  .rfc-hiw__thumbs.swiper {
-    display: none;
+@media (max-width: 768px) {
+  .rfc-hiw__slider {
+    height: 200px;
+  }
+
+  .rfc-how-it-was .rfc-hiw__slide.swiper-slide {
+    width: 220px;
+    height: 160px;
   }
 }

@@ -22,12 +22,7 @@
     rgba(255, 106, 0, 0.5),
     rgba(255, 46, 178, 0.5)
   );
-  -webkit-clip-path: path(
-    "M580 214.5c0 10-6 19-15.1 23L494 268a25 25 0 0 1-9.9 2H25a25 25 0 0 1-25-25V25A25 25 0 0 1 25 0h530a25 25 0 0 1 25 25v189.5Z"
-  );
-  clip-path: path(
-    "M580 214.5c0 10-6 19-15.1 23L494 268a25 25 0 0 1-9.9 2H25a25 25 0 0 1-25-25V25A25 25 0 0 1 25 0h530a25 25 0 0 1 25 25v189.5Z"
-  );
+  border-radius: var(--radius-large);
 }
 
 /* Card Base */
@@ -38,19 +33,14 @@
   justify-content: center;
   height: 100%;
   gap: 20px;
-  padding: 55px 45px; /* общий padding для текста и изображения */
+  padding: 55px 45px;
   background: linear-gradient(135deg, #ff6a00, #ff2eb2);
-  -webkit-clip-path: path(
-    "M572 210.3c0 8.4-5 16-12.6 19.3l-70.8 30.7a21 21 0 0 1-8.3 1.7H21a21 21 0 0 1-21-21V21A21 21 0 0 1 21 0h530a21 21 0 0 1 21 21v189.3Z"
-  );
-  clip-path: path(
-    "M572 210.3c0 8.4-5 16-12.6 19.3l-70.8 30.7a21 21 0 0 1-8.3 1.7H21a21 21 0 0 1-21-21V21A21 21 0 0 1 21 0h530a21 21 0 0 1 21 21v189.3Z"
-  );
+  border-radius: var(--radius-large);
 }
 
 /* Modifiers */
 .rfc-cards-mix__card--image {
-  padding: 0; /* у изображений убираем padding */
+  padding: 0;
   flex: 1;
   display: flex;
   align-items: stretch;
@@ -82,10 +72,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: var(--radius-large);
 }
 
-/* Media Queries — один универсальный брейкпоинт */
 @media (max-width: 1180px) {
   .rfc-cards-mix {
     margin-bottom: var(--spacing-section-mobile);

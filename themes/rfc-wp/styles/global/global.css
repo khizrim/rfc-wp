@@ -16,7 +16,7 @@
   /* Typography */
   --font-heading: "Jost", sans-serif;
   --font-main: "Inter", sans-serif;
-  --font-digits: "Supertalls", monospace;
+  --font-digits: "Cyberspace", monospace;
 
   /* Font Sizes */
   --font-size-base: 16px;
@@ -109,7 +109,7 @@
   --color-focus-shadow: rgba(255, 46, 178, 0.15);
 
   /* Common Spacing */
-  --spacing-section: 150px;
+  --spacing-section: 100px;
   --spacing-section-mobile: 100px;
   --spacing-component: 40px;
   --spacing-element: 30px;

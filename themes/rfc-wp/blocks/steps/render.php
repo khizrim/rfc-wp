@@ -12,7 +12,7 @@ $steps = get_field('steps');
     <?php foreach ($steps as $index => $step): ?>
       <div class="rfc-step rfc-step--<?php echo esc_attr($step['color']); ?>">
         <div class="rfc-step__number">
-          <div class="rfc-step__number-shadow"><?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?></div><?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
+          <?php echo str_pad($index + 1, 2, '0', STR_PAD_LEFT); ?>
         </div>
 
         <div class="rfc-step__content">

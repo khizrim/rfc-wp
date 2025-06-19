@@ -1,5 +1,5 @@
 .shift {
-  margin-bottom: 200px;
+  margin-bottom: var(--spacing-section);
 }
 
 .shift-filter-wrapper {

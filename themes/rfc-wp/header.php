@@ -87,6 +87,30 @@ $telegram = get_field('telegram_link', 'option');
       </div>
   </header>
 
+  <!-- Desktop Navigation Bar -->
+  <nav class="nav-bar">
+    <div class="nav-bar__container">
+      <ul class="nav-bar__list">
+        <?php
+        // Get all blocks from the current page
+        $blocks = parse_blocks(get_the_content());
+
+        // Filter for section heading blocks and create menu items
+        foreach ($blocks as $block) {
+          if ($block['blockName'] === 'acf/rfc-section-heading') {
+            $heading = $block['attrs']['data']['heading-text'] ?? '';
+            $id = $block['attrs']['data']['heading-id'] ?? '';
+
+            if ($heading && $id) {
+              echo '<li class="nav-bar__item"><a href="#' . esc_attr($id) . '" class="nav-bar__link">' . wp_strip_all_tags($heading) . '</a></li>';
+            }
+          }
+        }
+        ?>
+      </ul>
+    </div>
+  </nav>
+
   <nav class="mobile-menu" data-mobile-menu>
     <ul class="mobile-menu__list">
       <li class="mobile-menu__item"><a href="/" class="mobile-menu__link">Главная</a></li>

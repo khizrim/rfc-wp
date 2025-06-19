@@ -5,6 +5,7 @@
  */
 
 $image = get_field('background_image');
+$poster = get_field('background_image_poster');
 $badges = get_field('badges');
 $title = get_field('title');
 $button_text = get_field('button_text');
@@ -19,7 +20,7 @@ $button_subtext = get_field('button_subtext');
           <?php
           $file_type = wp_check_filetype($image['url']);
           if ($file_type['type'] === 'video/mp4'): ?>
-            <video class="rfc-hero__img" autoplay muted loop playsinline>
+            <video class="rfc-hero__img" autoplay muted loop playsinline poster="<?php echo esc_url($poster['url']); ?>">
               <source src="<?php echo esc_url($image['url']); ?>" type="video/mp4">
             </video>
           <?php else: ?>
@@ -27,14 +28,6 @@ $button_subtext = get_field('button_subtext');
           <?php endif; ?>
         <?php endif; ?>
         <div class="rfc-hero__bg-overlay"></div>
-        <span class="rfc-hero__bg-squares">
-          <svg width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect opacity="0.5" x="16.5" y="4.5" width="13" height="13" rx="1.5" transform="rotate(90 16.5 4.5)" stroke="white" />
-            <rect opacity="0.5" x="42.5" y="4.5" width="13" height="13" rx="1.5" transform="rotate(90 42.5 4.5)" stroke="white" />
-            <rect opacity="0.5" x="16.5" y="25.5" width="13" height="13" rx="1.5" transform="rotate(90 16.5 25.5)" stroke="white" />
-            <rect opacity="0.5" x="42.5" y="25.5" width="13" height="13" rx="1.5" transform="rotate(90 42.5 25.5)" stroke="white" />
-          </svg>
-        </span>
       </div>
     </div>
 
