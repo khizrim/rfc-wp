@@ -62,12 +62,12 @@
   height: 100%;
 
   object-fit: cover;
-  mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
   -webkit-mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
+  mask-image: url('data:image/svg+xml;utf8,<svg width="1161" height="427" viewBox="0 0 1161 427" xmlns="http://www.w3.org/2000/svg"><path d="M1076.65 0.0078125C1090.15 0.350188 1101 11.4087 1101 25V34.5L1101.01 35.1455C1101.34 48.4398 1112.06 59.1552 1125.35 59.4922L1126 59.5H1135.23C1149.14 59.5001 1160.38 70.8598 1160.22 84.7725L1156.77 402.272L1156.75 402.912C1156.28 416.101 1145.6 426.66 1132.41 426.992L1131.77 427H523.5L522.854 426.992C509.56 426.655 498.845 415.94 498.508 402.646L498.5 402V287.5C498.5 273.909 487.654 262.85 474.146 262.508L473.5 262.5H25L24.3545 262.492C11.0602 262.155 0.34475 251.44 0.0078125 238.146L0 237.5V25C2.53676e-07 11.4087 10.8457 0.350186 24.3545 0.0078125L25 0H1076L1076.65 0.0078125Z" fill="white"/></svg>');
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
 .rfc-hero__bg-overlay {
@@ -98,7 +98,7 @@
 
   text-transform: uppercase;
 
-  color: #fff;
+  color: var(--color-white);
 
   font-family: Jost;
   font-size: 52px;
@@ -114,8 +114,8 @@
   background: linear-gradient(90deg, #d53289, #ea5234);
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }
 
 .rfc-hero__badges {
@@ -136,7 +136,7 @@
   padding: 15px 25px;
 
   opacity: 0.75;
-  color: #fff;
+  color: var(--color-white);
   border: 0.5px solid #d9d9d9;
   border-radius: 10px;
 
@@ -179,7 +179,7 @@
   text-decoration: none;
 
   color: #f2f2f2;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid var(--color-white-25);
   border-radius: var(--radius-main);
   background: var(--gradient-main);
 
@@ -215,9 +215,9 @@
   height: 80px;
   padding: 40px;
 
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 25px;
-  background: rgba(62, 62, 62, 0.4);
+  border: 2px solid var(--color-white-10);
+  border-radius: var(--radius-large);
+  background: var(--color-bg-card);
 
   filter: drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.07));
 }
@@ -283,23 +283,25 @@
     padding: 26px;
 
     border: 2px solid #7e7e7e;
-    border-radius: 25px;
+    border-radius: var(--radius-large);
     background: rgba(60, 11, 37, 0.2);
 
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: var(--blur-small);
+    backdrop-filter: var(--blur-small);
   }
 
   .rfc-hero__title {
     text-align: center;
 
-    color: #fff;
+    color: var(--color-white);
 
     font-size: 28px;
     line-height: 28px;
   }
 
   .rfc-hero__title mark {
-    background: #fff;
+    background: var(--color-white);
+    -webkit-background-clip: text;
     background-clip: text;
   }
 

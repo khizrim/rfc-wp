@@ -2,7 +2,7 @@
   position: relative;
 
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: var(--spacing-section);
 }
 
 .rfc-hiw__content {
@@ -30,7 +30,7 @@
 
   text-transform: uppercase;
 
-  color: #fff;
+  color: var(--color-white);
 
   font-family: Jost;
   font-size: 52px;
@@ -63,8 +63,8 @@
 .rfc-how-it-was .rfc-hiw__slide.swiper-slide {
   height: 180px;
 
-  border: 4px solid rgba(255, 255, 255, 0.5);
-  border-radius: 25px;
+  border: 4px solid var(--color-white-50);
+  border-radius: var(--radius-large);
 }
 
 .rfc-hiw__image {
@@ -76,7 +76,7 @@
   width: 100%;
   height: 100%;
 
-  border-radius: 20px;
+  border-radius: var(--radius-main);
 
   object-fit: cover;
 }
@@ -100,12 +100,14 @@
   transition: opacity 0.3s ease, filter 0.3s ease;
 
   opacity: 0.4;
-  border-radius: 25px;
+  border-radius: var(--radius-large);
+  -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
 .rfc-how-it-was .rfc-hiw__thumb.swiper-slide-thumb-active {
   opacity: 1;
+  -webkit-filter: grayscale(0%);
   filter: grayscale(0%);
 }
 
@@ -157,7 +159,7 @@
   cursor: pointer;
 
   border: none;
-  border-radius: 20px;
+  border-radius: var(--radius-main);
   outline: none;
   background: linear-gradient(106deg, #d53289 0%, #ea5234 99.76%);
 }
@@ -170,7 +172,7 @@
   width: calc(100% - 2px);
   height: calc(100% - 2px);
 
-  border-radius: 20px;
+  border-radius: var(--radius-main);
   background: var(--color-bg);
 }
 
@@ -192,7 +194,7 @@
 
 @media (max-width: 1180px) {
   .rfc-how-it-was {
-    margin-bottom: 100px;
+    margin-bottom: var(--spacing-section-mobile);
   }
 
   .rfc-hiw__desktop-nav {

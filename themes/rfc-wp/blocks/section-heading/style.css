@@ -45,17 +45,21 @@
   min-width: 100px;
   height: 3px;
 
-  background: linear-gradient(90deg,
-      rgba(234, 82, 52, 0.5) 0%,
-      rgba(213, 50, 137, 0.5) 22.12%,
-      rgba(33, 33, 33, 0.5) 82.21%);
+  background: linear-gradient(
+    90deg,
+    rgba(234, 82, 52, 0.5) 0%,
+    rgba(213, 50, 137, 0.5) 22.12%,
+    rgba(33, 33, 33, 0.5) 82.21%
+  );
 }
 
 .rfc-section-heading--left .rfc-section-heading__line {
-  background: linear-gradient(250deg,
-      rgba(234, 82, 52, 0.5) 0%,
-      rgba(213, 50, 137, 0.5) 22.12%,
-      rgba(33, 33, 33, 0.5) 82.21%);
+  background: linear-gradient(
+    250deg,
+    rgba(234, 82, 52, 0.5) 0%,
+    rgba(213, 50, 137, 0.5) 22.12%,
+    rgba(33, 33, 33, 0.5) 82.21%
+  );
 }
 
 .rfc-section-heading__text {
@@ -68,7 +72,7 @@
   text-transform: uppercase;
   word-break: normal;
 
-  color: #fff;
+  color: var(--color-white);
 
   font-family: Jost, sans-serif;
   font-size: 64px;
@@ -81,7 +85,7 @@
 .rfc-section-heading__subtext {
   max-width: 80%;
 
-  color: #b1b1b1;
+  color: var(--color-gray-light);
 
   font-family: Inter, sans-serif;
   font-size: 20px;
@@ -99,6 +103,7 @@
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }
 
 .rfc-section-heading--right .rfc-section-heading__content {
@@ -118,7 +123,6 @@
 .rfc-section-heading--right .rfc-section-heading__subtext {
   text-align: right;
 }
-
 
 @media (max-width: 1180px) {
   .rfc-section-heading {
@@ -154,10 +158,12 @@
   }
 
   .rfc-section-heading--left .rfc-section-heading__line {
-    background: linear-gradient(90deg,
-        rgba(234, 82, 52, 0.5) 0%,
-        rgba(213, 50, 137, 0.5) 22.12%,
-        rgba(33, 33, 33, 0.5) 82.21%);
+    background: linear-gradient(
+      90deg,
+      rgba(234, 82, 52, 0.5) 0%,
+      rgba(213, 50, 137, 0.5) 22.12%,
+      rgba(33, 33, 33, 0.5) 82.21%
+    );
   }
 
   .rfc-section-heading__text {

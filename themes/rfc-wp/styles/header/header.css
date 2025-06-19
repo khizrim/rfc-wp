@@ -16,9 +16,10 @@
 
   color: var(--color-text);
   border: 2px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 25px 25px;
-  background-color: rgba(62, 62, 62, 0.8);
-
+  border-radius: 0 0 var(--radius-large) var(--radius-large);
+  background-color: rgba(62, 62, 62, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   filter: drop-shadow(0px 5px 50px rgba(0, 0, 0, 0.07));
 }
 
@@ -42,7 +43,7 @@
   transition: all 0.3s ease;
 
   border: 1px solid #d53289;
-  border-radius: 10px;
+  border-radius: var(--radius-medium);
   background: linear-gradient(
     178deg,
     rgba(213, 50, 137, 0.2) 0%,
@@ -65,8 +66,8 @@
   transition: all 0.5s ease;
 
   color: var(--color-text);
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
+  border: 2px solid var(--color-white-25);
+  border-radius: var(--radius-main);
   background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
 
   font-family: "Jost", sans-serif;
@@ -173,8 +174,8 @@
   align-items: center;
   justify-content: center;
 
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 
   border: 1px solid #d53289;
   border-radius: 50%;
@@ -354,7 +355,7 @@
 
     margin-top: 28px;
 
-    border-radius: 25px;
+    border-radius: var(--radius-large);
   }
 
   .header__button {

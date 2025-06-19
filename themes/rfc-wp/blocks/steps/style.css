@@ -1,8 +1,7 @@
-
 .rfc-steps {
   margin-bottom: 180px;
 
-  color: white;
+  color: var(--color-white);
 }
 
 .rfc-steps__inner {
@@ -24,8 +23,8 @@
 
   padding: 25px;
 
-  border: 2px solid rgba(255, 255, 255, 0.40);
-  border-radius: 25px;
+  border: 2px solid var(--color-white-40);
+  border-radius: var(--radius-large);
 
   gap: 20px;
 }
@@ -39,7 +38,7 @@
   text-align: center;
   text-transform: uppercase;
 
-  color: #FFF;
+  color: var(--color-white);
 
   font-family: Supertalls;
   font-size: 66.048px;
@@ -60,13 +59,14 @@
   pointer-events: none;
 
   opacity: 0.2;
-  color: #F4CBC3;
+  color: #f4cbc3;
 
   font-family: Supertalls;
   font-size: 99.072px;
   font-weight: 400;
   font-style: normal;
 
+  -webkit-filter: blur(5px);
   filter: blur(5px);
 }
 
@@ -118,7 +118,7 @@
 
 .rfc-step--white {
   color: #212121;
-  background: #E0E0E0;
+  background: #e0e0e0;
 }
 
 .rfc-step--white .rfc-step__number-shadow {
@@ -127,7 +127,7 @@
 }
 
 .rfc-step--gradient-pink {
-  background: linear-gradient(135deg, #E82AFF, #FF2EB2);
+  background: linear-gradient(135deg, #e82aff, #ff2eb2);
 }
 
 .rfc-step--gradient-orange {
@@ -135,7 +135,7 @@
 }
 
 .rfc-step--gradient-mix {
-  background: linear-gradient(269deg, #EA5234 0%, #D53289 99.98%);
+  background: linear-gradient(269deg, #ea5234 0%, #d53289 99.98%);
 }
 
 @media (min-width: 1180px) {
@@ -145,8 +145,7 @@
   .rfc-step {
     flex-wrap: nowrap;
 
-      padding: 5px 50px 25px 60px;
-
+    padding: 5px 50px 25px 60px;
   }
 
   .rfc-step__content {
