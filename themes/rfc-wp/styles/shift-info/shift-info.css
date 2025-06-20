@@ -212,7 +212,6 @@
   font-weight: bold;
   width: max-content;
   background: linear-gradient(268.45deg, #d53289 0%, #ea5234 99.76%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(2px);
 
   clip-path: polygon(0% 0%, 100% 0%, 100% 80%, calc(100% - 20px) 100%, 0% 100%);
