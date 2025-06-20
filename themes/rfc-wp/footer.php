@@ -8,7 +8,7 @@ $rutube = get_field('rutube_link', 'option');
 
 <footer class="footer">
   <div class="footer__container">
-    <div class="footer__social">a
+    <div class="footer__social">
       <p class="footer__social-title">Контакты</p>
       <div class="footer__social-icons">
         <a href="<?php echo esc_url($vk); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">

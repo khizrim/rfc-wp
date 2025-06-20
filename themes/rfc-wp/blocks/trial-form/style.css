@@ -257,12 +257,14 @@
 
 span.wpcf7-not-valid-tip {
   position: absolute;
-  top: 12px;
-  left: 28px;
+  top: 100%;
+  left: 0;
+  margin-top: 5px;
+  padding-left: 25px;
 
   color: #ff2eb2;
 
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
 }
 

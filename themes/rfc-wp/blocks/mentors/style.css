@@ -141,7 +141,8 @@
 }
 
 .rfc-mentors__facts {
-  display: flex;
+  display: none;
+  flex-direction: column;
   align-items: center;
 
   color: var(--color-white);
@@ -152,43 +153,37 @@
   font-style: normal;
   line-height: 140%;
 
-  gap: 34px;
+  gap: 10px;
+  width: 100%;
 }
 
 .rfc-mentors__fact {
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  padding: 12px 22px;
-
-  white-space: nowrap;
+  padding: 12px 25px;
 
   border: 1px solid #d9d9d9;
-  border-radius: var(--radius-small);
+  border-radius: var(--radius-large);
 
   gap: 10px;
-}
-
-.rfc-mentors__fact::after {
-  width: 14px;
-  height: 13px;
-
-  content: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='0 0 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.5' d='M12.903 3.64282L10.2634 6.27466L9.95868 6.57837L10.2634 6.88208L12.903 9.51294L10.0036 12.4016L7.362 9.7688L7.05927 9.46704L6.75653 9.7688L4.15985 12.3547L1.26044 9.46606L3.85516 6.88208L4.15985 6.57837L3.85516 6.27466L1.26141 3.68872L4.15985 0.800049L6.75653 3.38794L7.05927 3.6897L7.362 3.38794L10.0036 0.75415L12.903 3.64282Z' stroke='white' stroke-width='0.857143'/%3E%3C/svg%3E%0A");
+  width: 100%;
+  text-align: center;
 }
 
 .rfc-mentors__more {
-  padding: 16px 48px;
+  padding: 12px 30px;
 
   color: var(--color-white);
-  border: 1px solid #d53289;
-  border-radius: var(--radius-small);
-  background: var(--gradient-transparent-50);
+  border-radius: var(--radius-large);
+  background: var(--gradient-main);
+  border: none;
 
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 140%;
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 29px;
 
   -webkit-filter: var(--shadow-medium);
   filter: var(--shadow-medium);
@@ -197,7 +192,15 @@
 }
 
 .rfc-mentors__description {
-  display: none;
+  display: block;
+  max-width: 260px;
+  text-align: center;
+  color: #fff;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 140%;
 }
 
 .rfc-mentors__socials {
@@ -218,9 +221,10 @@
   flex-shrink: 0;
   min-width: 44px;
   min-height: 44px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.rfc-mentors__social svg {
+.rfc-mentors__social img {
   width: 100%;
   height: 100%;
   min-width: 44px;
@@ -299,6 +303,7 @@
   position: relative;
   z-index: 2;
 
+  margin: 0 20px;
   width: 90%;
   width: 465px;
 }
@@ -323,19 +328,11 @@
 }
 
 .rfc-mentors__modal.active .rfc-mentors__description {
-  display: block;
+  display: none;
+}
 
-  max-width: 260px;
-
-  text-align: center;
-
-  color: #fff;
-
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 140%;
+.rfc-mentors__modal.active .rfc-mentors__facts {
+  display: flex;
 }
 
 .rfc-mentors__card--modal .rfc-mentors__more {
@@ -380,5 +377,11 @@
 
   .rfc-mentors__button:hover span {
     background: var(--gradient-main);
+  }
+
+  .rfc-mentors__social:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+    cursor: pointer;
   }
 }
