@@ -122,7 +122,7 @@
   background: var(--color-gray-dark);
 
   font-family: Inter;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   font-style: normal;
 }
@@ -147,7 +147,7 @@
   color: var(--color-white);
 
   font-family: Inter;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   line-height: 140%;
@@ -185,7 +185,7 @@
   background: var(--gradient-transparent-50);
 
   font-family: Inter;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-style: normal;
   line-height: 140%;
@@ -358,10 +358,6 @@
 }
 
 @media (max-width: 1180px) {
-  .rfc-mentors {
-    margin-bottom: var(--spacing-section-mobile);
-  }
-
   .rfc-mentors__card {
     padding: 20px;
   }

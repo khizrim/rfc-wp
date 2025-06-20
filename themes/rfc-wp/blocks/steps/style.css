@@ -1,5 +1,5 @@
 .rfc-steps {
-  margin-bottom: 120px;
+  margin-bottom: var(--spacing-section);
 
   color: var(--color-white);
 }
@@ -91,7 +91,8 @@
 }
 
 .rfc-step__image img {
-  width: 150%;
+  width: 100%;
+  max-width: 250px;
   height: auto;
   position: absolute;
   top: 0;
@@ -124,6 +125,7 @@
   .rfc-steps__inner {
     gap: 0;
   }
+
   .rfc-step {
     flex-wrap: nowrap;
 
@@ -162,6 +164,7 @@
   .rfc-step__image img {
     position: absolute;
     width: 100%;
+    max-width: unset;
     top: 0;
     right: 0;
     transform: translateY(-50%);

@@ -74,7 +74,7 @@
 .registration-modal__selected-shift {
   display: none;
 
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-item);
   padding: 24px;
 
   text-align: center;
@@ -89,7 +89,7 @@
   );
 
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 
   filter: drop-shadow(-24px 10px 50px rgba(0, 0, 0, 0.1));
   backdrop-filter: blur(150px);
@@ -178,7 +178,7 @@
   border-radius: 10px;
 
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .registration-modal__form .wpcf7-not-valid-tip {
@@ -186,7 +186,7 @@
 
   color: #ff2eb2;
 
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .registration-modal__form .wpcf7-list-item-label {
@@ -196,7 +196,7 @@
   color: #ababab;
 
   font-family: Nunito, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
 
   gap: 10px;
@@ -239,7 +239,7 @@
   }
 
   .registration-modal__subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .registration-modal__form input[type="text"],
@@ -261,7 +261,7 @@
   }
 
   .registration-modal__form .wpcf7-list-item-label {
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .registration-modal__form .wpcf7-acceptance .wpcf7-list-item label {

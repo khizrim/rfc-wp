@@ -102,7 +102,7 @@
   color: #ababab;
 
   font-family: Nunito;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 300;
   font-style: normal;
 
@@ -194,26 +194,25 @@
 
 @media (max-width: 1180px) {
   .rfc-trial-form {
-    margin-bottom: var(--spacing-section-mobile);
     padding: 20px 6px;
   }
 
   .rfc-trial-form__title {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-item);
 
     font-size: 36px;
   }
 
   .rfc-trial-form__subtitle {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-item);
 
     opacity: 0.5;
 
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .rfc-trial-form__divider {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-item);
   }
 
   .rfc-trial-form__client-name,
@@ -227,7 +226,7 @@
   }
 
   .rfc-trial-form__input-phone {
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-item);
   }
 
   .rfc-trial-form__submit {
@@ -237,7 +236,7 @@
   }
 
   .wpcf7-list-item-label {
-    font-size: 10px;
+    font-size: 16px;
   }
   .wpcf7-acceptance .wpcf7-list-item label {
     display: flex;
@@ -263,7 +262,7 @@ span.wpcf7-not-valid-tip {
 
   color: #ff2eb2;
 
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
 }
 

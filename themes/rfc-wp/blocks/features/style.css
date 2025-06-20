@@ -84,10 +84,6 @@
 }
 
 @media (max-width: 1180px) {
-  .rfc-features {
-    margin-bottom: var(--spacing-section-mobile);
-  }
-
   .rfc-features__inner {
     gap: 20px;
   }

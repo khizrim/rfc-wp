@@ -35,7 +35,7 @@
   gap: 20px;
   padding: 55px 45px;
   background: linear-gradient(135deg, #ff6a00, #ff2eb2);
-  border-radius: var(--radius-large);
+  border-radius: 22px;
 }
 
 /* Modifiers */
@@ -72,12 +72,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-large);
+  border-radius: 22px;
 }
 
 @media (max-width: 1180px) {
   .rfc-cards-mix {
-    margin-bottom: var(--spacing-section-mobile);
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
@@ -109,7 +108,7 @@
   }
 
   .rfc-cards-mix__card-description {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 

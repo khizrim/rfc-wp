@@ -110,7 +110,6 @@
 
   /* Common Spacing */
   --spacing-section: 100px;
-  --spacing-section-mobile: 100px;
   --spacing-component: 40px;
   --spacing-element: 30px;
   --spacing-item: 20px;
@@ -127,5 +126,11 @@ html {
 }
 
 :target {
-  scroll-margin-top: 150px;
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-section: 50px;
+  }
 }

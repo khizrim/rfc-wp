@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 60 60">
+  <g clip-path="url(#a)">
+    <mask id="b" width="60" height="60" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:luminance">
+      <path fill="#fff" d="M60 0H0v60h60V0Z"/>
+    </mask>
+    <g fill-rule="evenodd" clip-rule="evenodd" mask="url(#b)">
+      <path fill="#fff" d="M29.7 0C17.3 0 8.7 0 4.3 4.3 0 8.7 0 17.7 0 29.7c13.3-.4 19.4-.8 24.2-5.5 4.7-4.8 5-11 5.5-24.2ZM4.3 55.7C0 51.3 0 42.3 0 30.3c13.3.4 19.4.8 24.2 5.5 4.7 4.8 5 11 5.5 24.2-12.4 0-21 0-25.4-4.3Zm26 4.3c.4-13.3.8-19.4 5.5-24.2 4.8-4.7 11-5 24.2-5.5 0 12 0 21-4.3 25.4-4.4 4.3-13 4.3-25.4 4.3Zm0-60c.4 13.3.8 19.4 5.5 24.2 4.8 4.7 11 5 24.2 5.5 0-12 0-21-4.3-25.4C51.3 0 42.7 0 30.3 0Z"/>
+      <path fill="url(#c)" d="M35.8 35.8c-4.7 4.8-5 11-5.5 24.2 12.4 0 21 0 25.4-4.3C60 51.3 60 42.3 60 30.3c-13.3.4-19.4.8-24.2 5.5ZM0 30.3c0 12 0 21 4.3 25.4C8.7 60 17.3 60 29.7 60c-.4-13.3-.8-19.4-5.5-24.2-4.8-4.7-11-5-24.2-5.5ZM29.7 0C17.3 0 8.7 0 4.3 4.3 0 8.7 0 17.7 0 29.7c13.3-.4 19.4-.8 24.2-5.5 4.7-4.8 5-11 5.5-24.2Zm6.1 24.2c-4.7-4.8-5-11-5.5-24.2 12.4 0 21 0 25.4 4.3C60 8.7 60 17.7 60 29.7c-13.3-.4-19.4-.8-24.2-5.5Z"/>
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="c" x1="60" x2="60" y1="60" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".8" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#fff" stop-opacity=".1"/>
+    </linearGradient>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h60v60H0z"/>
+    </clipPath>
+  </defs>
+</svg>

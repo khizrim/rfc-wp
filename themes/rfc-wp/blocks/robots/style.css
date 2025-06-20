@@ -8,7 +8,7 @@
   justify-content: center;
 
   width: 100%;
-  margin-bottom: 150px;
+  margin-bottom: var(--spacing-section);
 
   background: center -50px/70% no-repeat url(../../images/robot-background-blur.png);
 }
@@ -174,10 +174,13 @@
 @media (max-width: 768px) {
   .rfc-robots {
     width: calc(100% + 80px);
-    margin-bottom: 100px;
 
     background-position: top;
     background-size: 150%;
+  }
+
+  .rfc-robots__slider.swiper {
+    height: 250px;
   }
 
   .robot-name {
@@ -196,7 +199,7 @@
     color: #fff;
 
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     font-style: normal;
   }
@@ -220,6 +223,7 @@
   }
 
   .rfc-robot__info {
+    height: 70px;
     max-width: 150px;
   }
 
@@ -242,7 +246,7 @@
     color: #fff;
 
     font-family: Inter;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     font-style: normal;
   }
@@ -253,6 +257,7 @@
     width: 100%;
     max-width: 180px;
 
+    margin-bottom: var(--spacing-item);
     gap: 10px;
   }
 
