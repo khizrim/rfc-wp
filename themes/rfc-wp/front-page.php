@@ -114,7 +114,7 @@ function generate_date_options($posts, $field_name, $input_format = 'd/m/Y', $ou
             Оставь заявку и мы свяжемся с тобой в ближайшее время для подтверждения брони!
           </p>
           <div class="registration-modal__form">
-            <?php echo do_shortcode('[contact-form-7 id="08b1275" title="Форма пробного периода"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="30594d1" title="Форма записи на смену"]'); ?>
           </div>
         </div>
       </div>
