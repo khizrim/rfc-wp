@@ -78,7 +78,6 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  width: 500px !important;
   max-width: 500px;
   height: 100%;
   flex-shrink: 0;
