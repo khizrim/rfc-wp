@@ -16,7 +16,7 @@
 /* Card Border */
 .rfc-cards-mix__card-border {
   height: 270px;
-  padding: 4px;
+  padding: 2px;
   background: linear-gradient(
     135deg,
     rgba(255, 106, 0, 0.5),
@@ -61,7 +61,7 @@
 .rfc-cards-mix__card-description {
   margin: 0;
   color: #fff;
-  font-family: Inter, sans-serif;
+  font-family: Jost, sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.4;

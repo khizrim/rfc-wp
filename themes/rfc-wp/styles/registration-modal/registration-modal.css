@@ -65,7 +65,7 @@
   opacity: 0.8;
   color: #b8b8b8;
 
-  font-family: Inter;
+  font-family: Jost, sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
@@ -88,7 +88,7 @@
     rgba(234, 82, 52, 0.2) 99.76%
   );
 
-  font-family: Inter, sans-serif;
+  font-family: Jost, sans-serif;
   font-size: 16px;
 
   filter: drop-shadow(-24px 10px 50px rgba(0, 0, 0, 0.1));
@@ -125,7 +125,7 @@
   border-radius: 25px;
   background: rgba(62, 62, 62, 0.4);
 
-  font-family: Inter, sans-serif;
+  font-family: Jost, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 12px;
@@ -177,7 +177,7 @@
 
   border-radius: 10px;
 
-  font-family: Inter, sans-serif;
+  font-family: Jost, sans-serif;
   font-size: 16px;
 }
 

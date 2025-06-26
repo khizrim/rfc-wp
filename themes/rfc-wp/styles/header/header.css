@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
 
-  gap: 20px;
+  gap: 10px;
 }
 
 .header__icon {
@@ -44,7 +44,6 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  border: 1px solid #d53289;
   border-radius: var(--radius-medium);
   background: linear-gradient(
     178deg,
@@ -68,17 +67,17 @@
   transition: all 0.5s ease;
 
   color: var(--color-text);
-  border: 2px solid var(--color-white-25);
   border-radius: var(--radius-main);
-  background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
 
   font-family: "Jost", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 11px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 21px;
 
   backdrop-filter: blur(75px);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 /* Logo Section */
@@ -183,8 +182,10 @@
 
   font-family: "Jost", sans-serif;
   font-size: 16px;
-  font-weight: 200;
-  line-height: 11px;
+  font-weight: 400;
+  line-height: 20px;
+
+  opacity: 0.5;
 }
 
 .header__phone {
@@ -192,13 +193,7 @@
   align-items: end;
   flex-direction: column;
 
-  color: var(--color-text);
-
-  font-family: "Jost", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-
-  gap: 10px;
+  gap: 4px;
 }
 
 .header__phone-link {
@@ -208,10 +203,9 @@
   color: #fff;
 
   font-family: Jost;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  font-style: normal;
-  line-height: 15px;
+  line-height: 24px;
 
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -224,10 +218,8 @@
 .header__social {
   display: none;
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
 
-  gap: 5px;
+  gap: 20px;
 }
 
 .header__social-icon {
@@ -235,7 +227,14 @@
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+
+  color: #fff;
+}
+
+.header__social-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .header__age {
@@ -246,13 +245,13 @@
   width: 50px;
   height: 50px;
 
-  border: 1px solid #d53289;
   border-radius: 50%;
-  background: linear-gradient(178deg, #d53289 0%, #ea5234 99.76%);
+  background: var(--gradient-main);
 
   font-family: "Jost", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 21px;
 }
 
 /* Mobile Menu */
@@ -312,7 +311,7 @@
 
   color: #fffefe;
 
-  font-family: Inter;
+  font-family: Jost, sans-serif;
   font-size: 20px;
   font-weight: 300;
   font-style: normal;
@@ -444,6 +443,8 @@
 
   .header__contact {
     display: flex;
+
+    gap: 20px;
   }
 
   .header__logo {
@@ -493,5 +494,10 @@
 
   .nav-bar__link:hover::after {
     width: 100%;
+  }
+
+  .header__social-icon:hover {
+    color: var(--color-accent);
+    transform: scale(1.1);
   }
 }
