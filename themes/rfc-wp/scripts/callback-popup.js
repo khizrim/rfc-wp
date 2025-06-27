@@ -1,33 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("callback-modal");
-  const wrapper = modal.querySelector(".callback-modal__wrapper");
+  const wrapper = modal?.querySelector(".callback-modal__wrapper");
 
-  console.log("Callback modal and wrapper initialized:", modal, wrapper);
-  if (!modal || !wrapper) {
-    console.error("Callback modal or wrapper not found");
-    return;
-  }
+  const callbackButtons = document.querySelectorAll(".open-callback-form");
 
-  // Обработчик для кнопок открытия попапа обратного звонка
-  document.querySelectorAll(".open-callback-form").forEach((button) => {
-    console.log(`Callback button found: ${button.textContent.trim()}`);
-
-    button.addEventListener("click", () => {
+  callbackButtons.forEach((button) => {
+    button.addEventListener("click", function () {
       modal.classList.add("active");
       document.body.classList.add("modal-open");
     });
   });
 
-  // Закрытие попапа по клику на overlay
+  // Закрытие при клике на overlay
   modal
-    .querySelector(".callback-modal__overlay")
-    .addEventListener("click", () => {
+    ?.querySelector(".callback-modal__overlay")
+    ?.addEventListener("click", function () {
       modal.classList.remove("active");
       document.body.classList.remove("modal-open");
     });
 
-  // Закрытие попапа по клику вне wrapper
-  modal.addEventListener("click", (e) => {
+  // Закрытие при клике вне wrapper
+  modal?.addEventListener("click", function (e) {
     if (!wrapper.contains(e.target)) {
       modal.classList.remove("active");
       document.body.classList.remove("modal-open");

@@ -44,20 +44,52 @@ function render_options($options) {
 /**
  * Генерация отсортированных опций по дате
  */
-function generate_date_options($posts, $field_name, $input_format = 'd/m/Y', $output_format = 'd.m.Y') {
+function generate_date_options($posts, $field_name) {
   $dates = [];
 
   foreach ($posts as $post) {
     $raw = get_field($field_name, $post->ID);
-    $date = DateTime::createFromFormat($input_format, $raw);
-    if ($date) {
-      $value = $date->format('Ymd');
-      $label = $date->format($output_format);
-      $dates[$value] = $label;
+
+    if (empty($raw)) continue;
+
+    $date = null;
+
+    // Пробуем разные форматы дат, которые может возвращать ACF
+    $formats = ['d/m/Y', 'Y-m-d', 'Ymd', 'm/d/Y', 'Y/m/d'];
+
+    foreach ($formats as $format) {
+      $date = DateTime::createFromFormat($format, $raw);
+      if ($date !== false) {
+        break;
+      }
+    }
+
+    // Если все форматы не подошли, попробуем strtotime
+    if ($date === false) {
+      $timestamp = strtotime($raw);
+      if ($timestamp !== false) {
+        $date = new DateTime();
+        $date->setTimestamp($timestamp);
+      }
+    }
+
+    if ($date !== false) {
+      $value = $raw; // Используем исходное значение как value
+      $label = $date->format('d.m.Y');
+
+      if (!isset($dates[$value])) {
+        $dates[$value] = $label;
+      }
     }
   }
 
-  ksort($dates);
+  // Сортируем по значению даты
+  uksort($dates, function ($a, $b) {
+    $dateA = strtotime($a);
+    $dateB = strtotime($b);
+    return $dateA <=> $dateB;
+  });
+
   render_options($dates);
 }
 ?>
@@ -97,6 +129,12 @@ function generate_date_options($posts, $field_name, $input_format = 'd/m/Y', $ou
           </select>
           <span class="shift-filter-arrow"></span>
         </div>
+
+        <button type="button" class="shift-filter-reset" id="reset-filters">
+          <svg width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.25 23.75L15 15M15 15L23.75 6.25M15 15L6.25 6.25M15 15L23.75 23.75" stroke="#9D8F94" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
       </div>
 
 

@@ -2,6 +2,74 @@
   margin-bottom: var(--spacing-section);
 }
 
+/* Добавляем плавные переходы для контейнера деталей смены */
+#shift-details {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  min-height: 400px; /* Минимальная высота для предотвращения скачков */
+}
+
+/* Состояние загрузки */
+#shift-details.loading {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+#shift-details.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 10;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Плавное появление контента */
+#shift-details.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#shift-details.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Состояния для smooth transitions */
+.shift-info {
+  transition: all 0.3s ease-in-out;
+}
+
+.shift-info.entering {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.shift-info.entered {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.shift-info.exiting {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 .shift-filter-wrapper {
   position: relative;
   display: inline-block;
@@ -93,7 +161,7 @@
 
 .shift-filter {
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   padding: 0 48px 0 20px; /* ← правый отступ под стрелку */
   text-align: left; /* важно, если вдруг центрируется */
   appearance: none;
@@ -129,6 +197,31 @@
   color: white;
   opacity: 0.8;
   pointer-events: none;
+}
+
+.shift-filter-reset {
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+
+  font-family: Jost, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.shift-filter-reset:hover {
+  opacity: 0.8;
+  background: rgba(62, 62, 62, 0.8);
 }
 
 .shift-info__title {
@@ -346,6 +439,24 @@
     font-size: 16px;
   }
 
+  .shift-filter-reset {
+    width: calc(100% - 80px);
+    height: 55px;
+    font-size: 16px;
+    padding: 0 20px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-medium);
+    background-color: rgba(38, 38, 38, 0.5);
+  }
+
+  .shift-filter-reset svg {
+    display: none;
+  }
+
+  .shift-filter-reset::after {
+    content: "Сбросить фильтры";
+  }
+
   .shift-details {
     gap: 40px;
   }
@@ -383,6 +494,18 @@
 
   .shift-info__button {
     width: calc(100% - 40px);
+  }
+
+  /* Адаптация анимаций для мобильных устройств */
+  #shift-details {
+    min-height: 300px; /* Уменьшенная минимальная высота для мобильных */
+  }
+
+  #shift-details.loading::before {
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border-width: 2px;
   }
 }
 
