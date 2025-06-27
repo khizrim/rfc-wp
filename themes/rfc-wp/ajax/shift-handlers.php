@@ -24,6 +24,11 @@ function get_default_shift_callback() {
     'posts_per_page' => 1,
     'orderby' => 'date',
     'order' => 'ASC',
+    'meta_query' => [[
+      'key' => 'visible',
+      'value' => '1',
+      'compare' => '='
+    ]]
   ]);
 
   if ($query->have_posts()) {
@@ -72,11 +77,19 @@ function get_shift_by_field_callback() {
   $query = new WP_Query([
     'post_type' => 'camp_shift',
     'posts_per_page' => 1,
-    'meta_query' => [[
-      'key' => $field,
-      'value' => $value,
-      'compare' => '='
-    ]]
+    'meta_query' => [
+      'relation' => 'AND',
+      [
+        'key' => $field,
+        'value' => $value,
+        'compare' => '='
+      ],
+      [
+        'key' => 'visible',
+        'value' => '1',
+        'compare' => '='
+      ]
+    ]
   ]);
 
   if ($query->have_posts()) {
@@ -142,6 +155,12 @@ function filter_shifts_callback() {
 
   foreach ($all_shifts as $shift) {
     $matches = true;
+
+    // Проверяем поле visible
+    $is_visible = get_field('visible', $shift->ID);
+    if (!$is_visible) {
+      continue; // Пропускаем невидимые смены
+    }
 
     foreach ($requested_filters as $filter_key => $filter_value) {
       $shift_value = get_field($filter_key, $shift->ID);
@@ -212,6 +231,12 @@ function get_available_field_values($field, $exclude_filters, $current_filters) 
     // Фильтруем смены через get_field()
     foreach ($all_shifts as $shift) {
       $matches = true;
+
+      // Проверяем поле visible
+      $is_visible = get_field('visible', $shift->ID);
+      if (!$is_visible) {
+        continue; // Пропускаем невидимые смены
+      }
 
       foreach ($current_filters as $filter_key => $filter_value) {
         if (in_array($filter_key, $exclude_filters)) {
@@ -291,6 +316,13 @@ function get_available_field_values($field, $exclude_filters, $current_filters) 
       ];
     }
   }
+
+  // Добавляем обязательное условие для поля visible
+  $query_filters[] = [
+    'key' => 'visible',
+    'value' => '1',
+    'compare' => '='
+  ];
 
   $query_args = [
     'post_type' => 'camp_shift',
