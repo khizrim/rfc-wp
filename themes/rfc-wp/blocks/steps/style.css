@@ -135,6 +135,8 @@
     border-radius: var(--radius-large) var(--radius-large) 0 0;
 
     padding: 45px 50px 45px 60px;
+
+    gap: 65px;
   }
 
   .rfc-step__content {
@@ -161,6 +163,7 @@
   .rfc-step__image {
     order: 3;
     height: 150px;
+    width: 250px;
     min-width: 250px;
     position: relative;
     overflow: visible;
