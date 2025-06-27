@@ -62,26 +62,6 @@ if (count($mentor_ids) === 3) {
             </div>
 
             <button class="rfc-mentors__more">Узнать больше</button>
-
-            <div class="rfc-mentors__modal-content">
-              <div class="rfc-mentors__socials">
-                <?php if ($telegram): ?>
-                  <a class="rfc-mentors__social" href="<?php echo esc_url($telegram); ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/telegram-social.svg" alt="Telegram">
-                  </a>
-                <?php endif; ?>
-                <?php if ($whatsapp): ?>
-                  <a class="rfc-mentors__social" href="<?php echo esc_url($whatsapp); ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/whatsapp-social.svg" alt="WhatsApp">
-                  </a>
-                <?php endif; ?>
-                <?php if ($instagram): ?>
-                  <a class="rfc-mentors__social" href="<?php echo esc_url($instagram); ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/icons/instagram-social.svg" alt="Instagram">
-                  </a>
-                <?php endif; ?>
-              </div>
-            </div>
           </div>
         </div>
       <?php endforeach; ?>

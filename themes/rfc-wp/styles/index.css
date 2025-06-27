@@ -21,6 +21,9 @@
 /* Модальное окно */
 @import url("./registration-modal/registration-modal.css");
 
+/* Попап обратного звонка */
+@import url("./callback-modal/callback-modal.css");
+
 /* Страница 404 */
 @import url("./not-found/not-found.css");
 

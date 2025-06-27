@@ -81,6 +81,14 @@ function rfc_enqueue_scripts() {
     null,
     true
   );
+
+  wp_enqueue_script(
+    'callback-popup',
+    get_template_directory_uri() . '/scripts/callback-popup.js',
+    [],
+    null,
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'rfc_enqueue_scripts');
 

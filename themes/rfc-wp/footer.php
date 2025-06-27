@@ -37,7 +37,7 @@ $rutube = get_field('rutube_link', 'option');
       </div>
 
       <div class="footer__callback">
-        <button class="footer__callback-button">Обратный звонок</button>
+        <button class="footer__callback-button open-callback-form">Обратный звонок</button>
       </div>
     </div>
   </div>
@@ -63,6 +63,21 @@ $rutube = get_field('rutube_link', 'option');
   <div class="rfc-mentors__modal-overlay"></div>
   <div class="rfc-mentors__modal-wrapper">
     <!-- карточка будет вставлена сюда динамически -->
+  </div>
+</div>
+
+<div class="callback-modal" id="callback-modal">
+  <div class="callback-modal__overlay"></div>
+  <div class="callback-modal__wrapper">
+    <div class="callback-modal__content">
+      <h2 class="callback-modal__title">Заказать звонок</h2>
+      <p class="callback-modal__subtitle">
+        Оставьте свои контакты и мы свяжемся с вами в ближайшее время!
+      </p>
+      <div class="callback-modal__form">
+        <?php echo do_shortcode('[contact-form-7 id="4507756" title="Форма обратного звонка"]'); ?>
+      </div>
+    </div>
   </div>
 </div>
 
