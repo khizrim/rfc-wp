@@ -19,7 +19,7 @@
   justify-content: center;
 
   width: 100%;
-  height: 380px;
+  height: 500px;
 }
 
 .swiper-slide.rfc-robot {
@@ -183,6 +183,10 @@
     height: 250px;
   }
 
+  .swiper-slide.rfc-robot {
+    max-width: 250px;
+  }
+
   .robot-name {
     color: #fff;
     text-align: center;
@@ -267,7 +271,7 @@
     width: 60px;
   }
 
-  ..rfc-robots__button span {
+  .rfc-robots__button span {
     border-radius: 18px;
   }
 
