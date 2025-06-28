@@ -13,22 +13,70 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function updateRobotPanel(swiperInstance) {
-    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-    if (!activeSlide) return;
+    // Ensure swiper instance and slides exist
+    if (
+      !swiperInstance ||
+      !swiperInstance.slides ||
+      swiperInstance.slides.length === 0
+    ) {
+      console.warn("Robot Slider: No slides available");
+      return;
+    }
 
-    document.getElementById("robot-name").textContent =
-      activeSlide.dataset.title;
-    document.getElementById("robot-team").textContent =
-      activeSlide.dataset.team;
-    document.getElementById("robot-attack").textContent =
-      activeSlide.dataset.attack;
-    document.getElementById("robot-defense").textContent =
-      activeSlide.dataset.defense;
+    // Get the active slide
+    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
+    if (!activeSlide) {
+      console.warn(
+        "Robot Slider: No active slide found at index",
+        swiperInstance.activeIndex
+      );
+      return;
+    }
+
+    // Check if all required DOM elements exist
+    const robotName = document.getElementById("robot-name");
+    const robotTeam = document.getElementById("robot-team");
+    const robotAttack = document.getElementById("robot-attack");
+    const robotDefense = document.getElementById("robot-defense");
+
+    if (!robotName || !robotTeam || !robotAttack || !robotDefense) {
+      console.warn("Robot Slider: One or more panel elements not found");
+      return;
+    }
+
+    // Get data from active slide with fallbacks
+    const title = activeSlide.dataset.title || "—";
+    const team = activeSlide.dataset.team || "—";
+    const attack = activeSlide.dataset.attack || "0";
+    const defense = activeSlide.dataset.defense || "0";
+
+    // Update panel with data
+    robotName.textContent = title;
+    robotTeam.textContent = team;
+    robotAttack.textContent = attack;
+    robotDefense.textContent = defense;
+
+    console.log("Robot Slider: Panel updated with data:", {
+      title,
+      team,
+      attack,
+      defense,
+    });
   }
 
   // Initialize slider only if the container exists
   const sliderContainer = document.querySelector(".rfc-robots__slider");
-  if (!sliderContainer) return;
+  if (!sliderContainer) {
+    console.warn("Robot Slider: Container not found");
+    return;
+  }
+
+  // Check if slides exist
+  const slides = sliderContainer.querySelectorAll(".swiper-slide");
+  if (slides.length === 0) {
+    console.warn("Robot Slider: No slides found in container");
+    return;
+  }
 
   const robotSwiper = new Swiper(".rfc-robots__slider", {
     loop: true,
@@ -64,11 +112,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       init(swiper) {
-        updateRobotPanel(swiper);
+        console.log("Robot Slider: Swiper initialized");
+        // Add a small delay to ensure everything is ready
+        setTimeout(() => {
+          updateRobotPanel(swiper);
+        }, 100);
       },
       slideChange: debounce(function (swiper) {
         updateRobotPanel(swiper);
       }, 100),
+      // Additional event to catch cases where init doesn't work properly
+      slidesUpdated(swiper) {
+        console.log("Robot Slider: Slides updated");
+        updateRobotPanel(swiper);
+      },
     },
   });
+
+  // Fallback: Try to update panel after a short delay if it's still empty
+  setTimeout(() => {
+    const robotName = document.getElementById("robot-name");
+    if (
+      robotName &&
+      (robotName.textContent === "—" || robotName.textContent.trim() === "")
+    ) {
+      console.log("Robot Slider: Fallback update triggered");
+      updateRobotPanel(robotSwiper);
+    }
+  }, 500);
 });
