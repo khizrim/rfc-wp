@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      scale: 0.5,
+      scale: 0.7,
       depth: 100,
       slideShadows: false,
     },
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       768: {
         slidesPerView: "auto",
-        spaceBetween: 0,
+        spaceBetween: 60,
       },
     },
     on: {

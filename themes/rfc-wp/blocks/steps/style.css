@@ -88,7 +88,7 @@
   order: 2;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 60%;
   height: 200px;
   position: absolute;
 }
@@ -97,9 +97,10 @@
   height: auto;
   position: absolute;
 
-  height: 350px;
-  top: -60px;
-  right: -60px;
+  height: 260px;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
   z-index: 9;
 }
 
@@ -171,7 +172,7 @@
 
   .rfc-step__image img {
     position: absolute;
-    width: 150%;
+    width: 120%;
     max-width: unset;
     height: auto;
     top: 50%;
