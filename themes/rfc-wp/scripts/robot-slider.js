@@ -55,13 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
     robotTeam.textContent = team;
     robotAttack.textContent = attack;
     robotDefense.textContent = defense;
-
-    console.log("Robot Slider: Panel updated with data:", {
-      title,
-      team,
-      attack,
-      defense,
-    });
   }
 
   // Initialize slider only if the container exists
@@ -112,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       init(swiper) {
-        console.log("Robot Slider: Swiper initialized");
         // Add a small delay to ensure everything is ready
         setTimeout(() => {
           updateRobotPanel(swiper);
@@ -123,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }, 100),
       // Additional event to catch cases where init doesn't work properly
       slidesUpdated(swiper) {
-        console.log("Robot Slider: Slides updated");
         updateRobotPanel(swiper);
       },
     },
@@ -136,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
       robotName &&
       (robotName.textContent === "—" || robotName.textContent.trim() === "")
     ) {
-      console.log("Robot Slider: Fallback update triggered");
       updateRobotPanel(robotSwiper);
     }
   }, 500);

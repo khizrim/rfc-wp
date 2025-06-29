@@ -20,11 +20,11 @@ if (!$slides) return;
     <div class="swiper-wrapper">
       <?php foreach ($slides as $slide): ?>
         <div class="rfc-hiw__slide swiper-slide"
-          data-title="<?php echo esc_attr($slide['title']); ?>"
-          data-description="<?php echo esc_attr($slide['description']); ?>">
+          data-title="<?php echo typo_process($slide['title']); ?>"
+          data-description="<?php echo typo_process($slide['description']); ?>">
           <figure class="rfc-hiw__image">
             <img src="<?php echo esc_url($slide['image']['url']); ?>"
-              alt="<?php echo esc_attr($slide['title']); ?>">
+              alt="<?php echo typo_process($slide['title']); ?>">
           </figure>
         </div>
       <?php endforeach; ?>
