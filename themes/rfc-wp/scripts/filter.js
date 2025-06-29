@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <h3 class="shift-info__subtitle">Описание занятий</h3>
               <p class="shift-info__text">${data.description}</p>
               <div class="shift-info__tags">
-                <span class="shift-info__tag">${data.price}₽</span>
+                <span class="shift-info__tag">${data.price} ₽</span>
                 <span class="shift-info__tag">${data.hours}</span>
               </div>
             </div>
