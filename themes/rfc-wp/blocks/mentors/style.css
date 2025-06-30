@@ -38,19 +38,6 @@
   position: relative;
 }
 
-.rfc-mentors__card-bg {
-  position: absolute;
-  z-index: 0;
-  bottom: 50px;
-  left: 50px;
-
-  width: 135px;
-  height: 135px;
-
-  border-radius: 50%;
-  background: var(--gradient-main);
-}
-
 .rfc-mentors__card {
   position: relative;
   z-index: 1;
@@ -64,7 +51,8 @@
 
   border: 2px solid var(--color-white-10);
   border-radius: var(--radius-main);
-  background: var(--color-bg-dark);
+  background: url("../../images/mentor-background-blur.png") center/cover
+    no-repeat;
 
   -webkit-backdrop-filter: var(--blur-xlarge);
   backdrop-filter: var(--blur-xlarge);

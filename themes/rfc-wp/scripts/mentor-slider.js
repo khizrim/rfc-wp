@@ -1,13 +1,13 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Initialize slider only if the container exists
-  const sliderContainer = document.querySelector('.rfc-mentors__swiper');
+  const sliderContainer = document.querySelector(".rfc-mentors__swiper");
   if (!sliderContainer) return;
 
-  const mentorsSwiper = new Swiper('.rfc-mentors__swiper', {
+  const mentorsSwiper = new Swiper(".rfc-mentors__swiper", {
     loop: true,
     centeredSlides: true,
     centeredSlidesBounds: true,
-    effect: 'coverflow',
+    effect: "coverflow",
     autoHeight: true,
     scrollable: true,
     watchSlidesProgress: true,
@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
       loadPrevNext: true,
       loadPrevNextAmount: 2,
     },
-    watchOverflow: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
@@ -24,19 +23,15 @@ document.addEventListener('DOMContentLoaded', function() {
       depth: 100,
       slideShadows: false,
     },
-    navigation: {
-      nextEl: '.rfc-mentors__button--next',
-      prevEl: '.rfc-mentors__button--prev',
-    },
     breakpoints: {
       0: {
-        slidesPerView: 'auto',
-        spaceBetween: 20
+        slidesPerView: "auto",
+        spaceBetween: 20,
       },
       768: {
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         spaceBetween: 140,
-      }
-    }
+      },
+    },
   });
 });

@@ -23,16 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Get the active slide
-    const activeSlide = swiperInstance.slides[swiperInstance.activeIndex];
-    if (!activeSlide) {
-      console.warn(
-        "Robot Slider: No active slide found at index",
-        swiperInstance.activeIndex
-      );
-      return;
-    }
-
     // Check if all required DOM elements exist
     const robotName = document.getElementById("robot-name");
     const robotTeam = document.getElementById("robot-team");
@@ -41,6 +31,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!robotName || !robotTeam || !robotAttack || !robotDefense) {
       console.warn("Robot Slider: One or more panel elements not found");
+      return;
+    }
+
+    // Get the real active index for loop mode
+    let realIndex =
+      swiperInstance.realIndex !== undefined
+        ? swiperInstance.realIndex
+        : swiperInstance.activeIndex;
+
+    // Find all original slides (not clones)
+    const originalSlides = Array.from(swiperInstance.slides).filter(
+      (slide) => !slide.classList.contains("swiper-slide-duplicate")
+    );
+
+    // Get the active slide from original slides
+    const activeSlide = originalSlides[realIndex];
+
+    if (!activeSlide) {
+      console.warn(
+        "Robot Slider: No active slide found at real index",
+        realIndex
+      );
       return;
     }
 
@@ -55,6 +67,26 @@ document.addEventListener("DOMContentLoaded", function () {
     robotTeam.textContent = team;
     robotAttack.textContent = attack;
     robotDefense.textContent = defense;
+  }
+
+  // Helper function to check if panel has data
+  function isPanelEmpty() {
+    const robotName = document.getElementById("robot-name");
+    const robotTeam = document.getElementById("robot-team");
+    const robotAttack = document.getElementById("robot-attack");
+    const robotDefense = document.getElementById("robot-defense");
+
+    return (
+      !robotName ||
+      !robotTeam ||
+      !robotAttack ||
+      !robotDefense ||
+      robotName.textContent === "—" ||
+      robotName.textContent.trim() === "" ||
+      robotTeam.textContent === "—" ||
+      robotAttack.textContent === "0" ||
+      robotDefense.textContent === "0"
+    );
   }
 
   // Initialize slider only if the container exists
@@ -105,29 +137,35 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       init(swiper) {
-        // Add a small delay to ensure everything is ready
+        // Add a longer delay to ensure everything is ready
         setTimeout(() => {
           updateRobotPanel(swiper);
-        }, 100);
+        }, 200);
       },
       slideChange: debounce(function (swiper) {
         updateRobotPanel(swiper);
       }, 100),
-      // Additional event to catch cases where init doesn't work properly
+      // Additional events to catch various initialization states
       slidesUpdated(swiper) {
+        updateRobotPanel(swiper);
+      },
+      loopFix(swiper) {
         updateRobotPanel(swiper);
       },
     },
   });
 
-  // Fallback: Try to update panel after a short delay if it's still empty
-  setTimeout(() => {
-    const robotName = document.getElementById("robot-name");
-    if (
-      robotName &&
-      (robotName.textContent === "—" || robotName.textContent.trim() === "")
-    ) {
-      updateRobotPanel(robotSwiper);
-    }
-  }, 500);
+  // Multiple fallback attempts with increasing delays
+  const fallbackAttempts = [300, 600, 1000];
+
+  fallbackAttempts.forEach((delay, index) => {
+    setTimeout(() => {
+      if (isPanelEmpty()) {
+        console.log(
+          `Robot Slider: Fallback attempt ${index + 1} at ${delay}ms`
+        );
+        updateRobotPanel(robotSwiper);
+      }
+    }, delay);
+  });
 });
