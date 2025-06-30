@@ -33,5 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
         spaceBetween: 140,
       },
     },
+    on: {
+      click() {
+        if (this.clickedIndex !== this.activeIndex) {
+          mentorsSwiper.slideTo(this.clickedIndex);
+        }
+      },
+    },
   });
 });

@@ -70,6 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
       slideChange: debounce(function (swiper) {
         updateHowItWasPanel(swiper);
       }, 100),
+      click() {
+        if (this.clickedIndex !== this.activeIndex) {
+          hiwSwiper.slideTo(this.clickedIndex);
+        }
+      },
     },
   });
 });

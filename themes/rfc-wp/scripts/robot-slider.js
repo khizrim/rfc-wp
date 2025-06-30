@@ -152,6 +152,11 @@ document.addEventListener("DOMContentLoaded", function () {
       loopFix(swiper) {
         updateRobotPanel(swiper);
       },
+      click() {
+        if (this.clickedIndex !== this.activeIndex) {
+          robotSwiper.slideTo(this.clickedIndex);
+        }
+      },
     },
   });
 
