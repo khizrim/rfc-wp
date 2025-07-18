@@ -44,12 +44,7 @@ $rutube = get_field('rutube_link', 'option');
 
   <div class="footer__nav">
     <nav class="footer__links" aria-label="Юридическая информация">
-      <ul class="footer__column">
-        <li><a href="#" class="footer__link">Реквизиты компании</a></li>
-        <li><a href="#" class="footer__link">Публичная оферта</a></li>
-        <li><a href="#" class="footer__link">Пользовательское соглашение</a></li>
-        <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
-      </ul>
+      <?php rfc_render_footer_menu(); ?>
     </nav>
 
     <p class="footer__year">

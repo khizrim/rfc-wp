@@ -128,3 +128,60 @@ function enqueue_filter_script() {
   ]);
 }
 add_action('wp_enqueue_scripts', 'enqueue_filter_script');
+
+/**
+ * Theme Setup
+ */
+function rfc_theme_setup() {
+  // Add theme support for menus
+  add_theme_support('menus');
+  
+  // Register navigation menus
+  register_nav_menus([
+    'footer-menu' => __('Footer Menu', 'rfc-wp'),
+  ]);
+}
+add_action('after_setup_theme', 'rfc_theme_setup');
+
+/**
+ * Get footer menu items
+ * 
+ * @return array|false Array of menu items or false if no menu
+ */
+function rfc_get_footer_menu() {
+  $locations = get_nav_menu_locations();
+  if (isset($locations['footer-menu'])) {
+    return wp_get_nav_menu_items($locations['footer-menu']);
+  }
+  return false;
+}
+
+/**
+ * Render footer menu
+ */
+function rfc_render_footer_menu() {
+  $menu_items = rfc_get_footer_menu();
+  
+  if ($menu_items): ?>
+    <ul class="footer__column">
+      <?php foreach ($menu_items as $item): ?>
+        <li>
+          <a href="<?php echo esc_url($item->url); ?>" 
+             class="footer__link"
+             <?php if ($item->target): ?>target="<?php echo esc_attr($item->target); ?>"<?php endif; ?>
+             <?php if ($item->xfn): ?>rel="<?php echo esc_attr($item->xfn); ?>"<?php endif; ?>>
+            <?php echo esc_html($item->title); ?>
+          </a>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  <?php else: ?>
+    <!-- Fallback меню -->
+    <ul class="footer__column">
+      <li><a href="#" class="footer__link">Реквизиты компании</a></li>
+      <li><a href="#" class="footer__link">Публичная оферта</a></li>
+      <li><a href="#" class="footer__link">Пользовательское соглашение</a></li>
+      <li><a href="#" class="footer__link">Политика конфиденциальности</a></li>
+    </ul>
+  <?php endif;
+}
