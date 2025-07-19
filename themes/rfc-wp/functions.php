@@ -46,10 +46,21 @@ function rfc_register_acf_blocks() {
 add_action('init', 'rfc_register_acf_blocks');
 
 /**
- * Restrict available blocks to only those defined in rfc_get_block_list()
+ * Restrict available blocks to only those defined in rfc_get_block_list() plus core WordPress blocks
  */
 function rfc_allowed_block_types($allowed_block_types, $block_editor_context) {
-  return array_map(fn($block) => "acf/rfc-{$block}", rfc_get_block_list());
+  $custom_blocks = array_map(fn($block) => "acf/rfc-{$block}", rfc_get_block_list());
+  
+  // Add core WordPress blocks
+  $core_blocks = [
+    'core/paragraph',  // Параграфы
+    'core/heading',    // Заголовки
+    'core/list',       // Списки
+    'core/list-item',  // Элементы списка
+    'core/image',      // Изображения
+  ];
+  
+  return array_merge($custom_blocks, $core_blocks);
 }
 add_filter('allowed_block_types_all', 'rfc_allowed_block_types', 10, 2);
 
