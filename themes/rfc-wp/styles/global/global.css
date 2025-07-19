@@ -132,5 +132,6 @@ html {
 @media (max-width: 768px) {
   :root {
     --spacing-section: 50px;
+    --font-size-title: 32px;
   }
 }

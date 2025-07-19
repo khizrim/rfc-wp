@@ -30,7 +30,9 @@ $telegram = get_field('telegram_link', 'option');
     </div>
 
     <div class="header__logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" />
+      <a href="<?php echo home_url('/'); ?>" aria-label="Главная страница">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" />
+      </a>
     </div>
 
     <div class="header__right">

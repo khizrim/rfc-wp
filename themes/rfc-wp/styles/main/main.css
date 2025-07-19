@@ -9,10 +9,19 @@
 .main__inner {
   display: flex;
   overflow-x: hidden;
-  align-items: center;
   flex-direction: column;
 
   width: 100%;
+}
+
+.main__title {
+  font-size: var(--font-size-title);
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-item);
+  word-break: break-word;
 }
 
 @media (max-width: 1180px) {
