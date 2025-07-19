@@ -251,7 +251,6 @@
 @media (max-width: 1180px) {
   .page__content {
     max-width: 100%;
-    padding: 0 var(--spacing-md);
   }
 
   .page__content h1,
@@ -309,7 +308,7 @@
 @media (max-width: 768px) {
   .page__content {
     max-width: 100%;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-component);
   }
   
   .page__content hr {
