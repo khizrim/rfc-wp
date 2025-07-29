@@ -22,7 +22,6 @@ $age = get_field('age_limit', 'option') ? get_field('age_limit', 'option') : '12
   <header class="header">
     <div class="header__left">
       <div class="header__age"><?php echo $age; ?>+</div>
-      </div>
       <a href="tel:<?php echo preg_replace('/\D+/', '', $phone); ?>" class="header__icon header__icon--call" aria-label="Позвонить">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
           <path fill="#FDFDFD" d="M17.46 18.38c-1.83 0-3.63-.4-5.4-1.2-1.79-.8-3.4-1.92-4.86-3.38a16.17 16.17 0 0 1-3.38-4.85c-.8-1.78-1.2-3.58-1.2-5.4a.89.89 0 0 1 .92-.92H7.1c.2 0 .38.06.54.2.16.14.26.3.29.5l.57 3.06c.03.23.02.43-.02.59a.92.92 0 0 1-.25.41L6.1 9.54c.3.54.64 1.06 1.04 1.56s.84.99 1.33 1.46a15.44 15.44 0 0 0 3 2.31l2.05-2.05a1.42 1.42 0 0 1 1.14-.35l3.02.61c.2.06.37.17.5.32s.2.32.2.51v3.55a.89.89 0 0 1-.92.91Z" />
