@@ -12,6 +12,8 @@
 $phone = get_field('phone_number', 'option');
 $vk = get_field('vk_link', 'option');
 $telegram = get_field('telegram_link', 'option');
+$age = get_field('age_limit', 'option') ? get_field('age_limit', 'option') : '12';
+
 ?>
 
 
@@ -19,7 +21,7 @@ $telegram = get_field('telegram_link', 'option');
   <!-- Header -->
   <header class="header">
     <div class="header__left">
-      <div class="header__age">12+</span>
+      <div class="header__age"><?php echo $age; ?>+</div>
       </div>
       <a href="tel:<?php echo preg_replace('/\D+/', '', $phone); ?>" class="header__icon header__icon--call" aria-label="Позвонить">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
@@ -118,7 +120,7 @@ $telegram = get_field('telegram_link', 'option');
 
     <div class="mobile-menu__bottom">
       <div class="mobile-menu__contact">
-        <div class="mobile-menu__age">12+</div>
+        <div class="mobile-menu__age"><?php echo $age; ?>+</div>
         <button class="mobile-menu__callback-btn open-callback-form">Обратный звонок</button>
       </div>
 
