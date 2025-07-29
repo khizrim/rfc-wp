@@ -3,7 +3,8 @@
 
   overflow: hidden;
 
-  width: calc(100% + 80px);
+  width: 100%;
+  margin: 0 auto;
   margin-bottom: var(--spacing-section);
 }
 
@@ -314,6 +315,11 @@
 }
 
 @media (max-width: 1180px) {
+  .rfc-mentors {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+  }
+
   .rfc-mentors__card {
     padding: 20px;
   }
