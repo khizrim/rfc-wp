@@ -100,6 +100,22 @@ function rfc_enqueue_scripts() {
     null,
     true
   );
+
+  wp_enqueue_script(
+    'form-popup',
+    get_template_directory_uri() . '/scripts/form-popup.js',
+    [],
+    null,
+    true
+  );
+
+  wp_enqueue_script(
+    'phone-mask',
+    get_template_directory_uri() . '/scripts/phone-mask.js',
+    [],
+    null,
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'rfc_enqueue_scripts');
 
