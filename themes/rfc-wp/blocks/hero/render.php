@@ -20,7 +20,7 @@ $button_subtext = get_field('button_subtext');
           <?php
           $file_type = wp_check_filetype($image['url']);
           if ($file_type['type'] === 'video/mp4'): ?>
-            <video class="rfc-hero__img" autoplay muted loop playsinline poster="<?php echo esc_url($poster['url']); ?>">
+            <video class="rfc-hero__img" autoplay muted loop playsinline poster="<?php echo esc_url($poster['url']); ?>" fetchpriority="high" preload="auto">
               <source src="<?php echo esc_url($image['url']); ?>" type="video/mp4">
             </video>
           <?php else: ?>
