@@ -8,7 +8,7 @@
  * - smartcaptcha_server_key
  */
 
-const RFC_SMARTCAPTCHA_WIDGET_URL = 'https://smartcaptcha.yandexcloud.net/captcha.js?render=onload';
+const RFC_SMARTCAPTCHA_WIDGET_URL = 'https://smartcaptcha.yandexcloud.net/captcha.js';
 const RFC_SMARTCAPTCHA_VALIDATE_URL = 'https://smartcaptcha.yandexcloud.net/validate';
 
 /**
@@ -72,7 +72,12 @@ function rfc_smartcaptcha_keys() {
 }
 
 /**
- * Enqueue the SmartCaptcha widget script
+ * Enqueue the SmartCaptcha widget script and its init script
+ *
+ * The widget is rendered manually (see scripts/smartcaptcha.js) instead of
+ * via the API's own auto-render mode, because auto-render binds directly to
+ * the closest <form> and resubmits it natively, which bypasses Contact Form
+ * 7's own AJAX submit handler and breaks form submission.
  */
 function rfc_enqueue_smartcaptcha_script() {
   if (!rfc_smartcaptcha_keys()) {
@@ -80,6 +85,14 @@ function rfc_enqueue_smartcaptcha_script() {
   }
 
   wp_enqueue_script('yandex-smartcaptcha', RFC_SMARTCAPTCHA_WIDGET_URL, [], null, true);
+
+  wp_enqueue_script(
+    'yandex-smartcaptcha-init',
+    get_template_directory_uri() . '/scripts/smartcaptcha.js',
+    ['yandex-smartcaptcha'],
+    null,
+    true
+  );
 }
 add_action('wp_enqueue_scripts', 'rfc_enqueue_smartcaptcha_script');
 
