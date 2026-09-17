@@ -12,6 +12,9 @@ require_once get_template_directory() . '/post-types/camp-shift.php';
 // Include AJAX handlers
 require_once get_template_directory() . '/ajax/shift-handlers.php';
 
+// Include integrations
+require_once get_template_directory() . '/integrations/yandex-smartcaptcha.php';
+
 /**
  * Block Management
  */
