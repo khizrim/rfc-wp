@@ -10,6 +10,7 @@ $badges = get_field('badges');
 $title = get_field('title');
 $button_text = get_field('button_text');
 $button_subtext = get_field('button_subtext');
+$button_link = get_field('button_link') ?: '#shift';
 ?>
 
 <section class="rfc-hero">
@@ -49,7 +50,7 @@ $button_subtext = get_field('button_subtext');
 
     <div class="rfc-hero__buttons">
       <?php if ($button_text): ?>
-        <a href="#shift" class="rfc-hero__button">
+        <a href="<?php echo esc_url($button_link); ?>" class="rfc-hero__button">
           <span class="rfc-hero__button-text"><?php echo esc_html($button_text); ?></span>
           <?php if ($button_subtext): ?>
             <span class="rfc-hero__button-subtext"><?php echo esc_html($button_subtext); ?></span>

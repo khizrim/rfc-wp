@@ -58,6 +58,7 @@
 
 .footer__social-icons {
   display: flex;
+  flex-wrap: wrap;
 
   gap: 32px;
 }
@@ -262,6 +263,10 @@
   .footer__social {
     align-items: start;
     order: 3;
+  }
+
+  .footer__social-icons {
+    gap: 16px;
   }
 
   .footer__social img {

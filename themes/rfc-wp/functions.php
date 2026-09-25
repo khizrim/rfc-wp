@@ -14,6 +14,7 @@ require_once get_template_directory() . '/ajax/shift-handlers.php';
 
 // Include integrations
 require_once get_template_directory() . '/integrations/yandex-smartcaptcha.php';
+require_once get_template_directory() . '/integrations/acf-content-fields.php';
 
 /**
  * Block Management

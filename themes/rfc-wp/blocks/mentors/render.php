@@ -32,7 +32,7 @@ if (count($mentor_ids) === 3) {
         <div class="swiper-slide rfc-mentors__card-wrapper">
           <div class="rfc-mentors__card">
             <img class="rfc-mentors__logo"
-              src="<?php echo get_template_directory_uri(); ?>/images/logo.png"
+              src="<?php echo esc_url(rfc_get_logo_url('logo_header', 'logo.png')); ?>"
               alt="<?php bloginfo('name'); ?>">
 
             <div class="rfc-mentors__photo-ring">
