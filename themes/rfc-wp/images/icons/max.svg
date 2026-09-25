@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 60 60">
+  <mask id="m">
+    <rect width="60" height="60" fill="#fff"/>
+    <text x="30" y="36.5" fill="#000" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">MAX</text>
+  </mask>
+  <circle cx="30" cy="30" r="30" fill="#fff" mask="url(#m)"/>
+</svg>

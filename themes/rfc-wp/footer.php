@@ -3,6 +3,17 @@ $vk = get_field('vk_link', 'option');
 $telegram = get_field('telegram_link', 'option');
 $zen = get_field('zen_link', 'option');
 $rutube = get_field('rutube_link', 'option');
+$max = get_field('max_link', 'option');
+$wa_link = rfc_get_whatsapp_link();
+
+$footer_socials = [
+  ['url' => $vk, 'icon' => 'vk.svg', 'label' => 'ВКонтакте'],
+  ['url' => $telegram, 'icon' => 'tg.svg', 'label' => 'Telegram'],
+  ['url' => $wa_link, 'icon' => 'wa.svg', 'label' => 'WhatsApp'],
+  ['url' => $max, 'icon' => 'max.svg', 'label' => 'MAX'],
+  ['url' => $zen, 'icon' => 'zen.svg', 'label' => 'Zen'],
+  ['url' => $rutube, 'icon' => 'rt.svg', 'label' => 'Rutube'],
+];
 ?>
 
 
@@ -11,18 +22,13 @@ $rutube = get_field('rutube_link', 'option');
     <div class="footer__social">
       <p class="footer__social-title">Контакты</p>
       <div class="footer__social-icons">
-        <a href="<?php echo esc_url($vk); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/icons/vk.svg" alt="ВКонтакте">
-        </a>
-        <a href="<?php echo esc_url($telegram); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/icons/tg.svg" alt="Telegram">
-        </a>
-        <a href="<?php echo esc_url($zen); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Zen">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/icons/zen.svg" alt="Zen">
-        </a>
-        <a href="<?php echo esc_url($rutube); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="Rutube">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/icons/rt.svg" alt="Rutube">
-        </a>
+        <?php foreach ($footer_socials as $social): ?>
+          <?php if ($social['url']): ?>
+            <a href="<?php echo esc_url($social['url']); ?>" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="<?php echo esc_attr($social['label']); ?>">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/icons/<?php echo $social['icon']; ?>" alt="<?php echo esc_attr($social['label']); ?>">
+            </a>
+          <?php endif; ?>
+        <?php endforeach; ?>
       </div>
 
       <div class="footer__social-contacts">
@@ -33,7 +39,7 @@ $rutube = get_field('rutube_link', 'option');
 
     <div class="footer__info">
       <div class="footer__logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/logo-full.svg" alt="<?php bloginfo('name'); ?>">
+        <img src="<?php echo esc_url(rfc_get_logo_url('logo_footer', 'logo-full.svg')); ?>" alt="<?php bloginfo('name'); ?>">
       </div>
 
       <div class="footer__callback">
