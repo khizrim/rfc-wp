@@ -1,0 +1,489 @@
+[
+    {
+        "key": "group_homepage_settings",
+        "title": "Настройки главной",
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "main"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "fields": [
+            {
+                "key": "field_rfc_tab_contacts",
+                "label": "Контакты",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_phone_number",
+                "label": "Номер телефона",
+                "name": "phone_number",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "В международном формате, например +7 925 000 00 00.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_6889cf4f5b621",
+                "label": "Номер WhatsApp",
+                "name": "whatsapp_number",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Если пусто, используется номер телефона.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "title",
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_685532fcf5f67",
+                "label": "Email",
+                "name": "email",
+                "aria-label": "",
+                "type": "email",
+                "instructions": "Показывается в подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "title",
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_rfc_tab_socials",
+                "label": "Соцсети и мессенджеры",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_6889cf5d5b622",
+                "label": "Telegram-чат",
+                "name": "telegram_chat_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "Иконка Telegram в шапке и мобильном меню.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "title",
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 1,
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_telegram_link",
+                "label": "Telegram-канал",
+                "name": "telegram_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "Иконка Telegram в подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_rfc_max_link",
+                "label": "MAX",
+                "name": "max_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "Иконка в шапке, мобильном меню и подвале.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": ""
+            },
+            {
+                "key": "field_vk_link",
+                "label": "ВКонтакте",
+                "name": "vk_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": ""
+            },
+            {
+                "key": "field_685532def5f65",
+                "label": "Дзен",
+                "name": "zen_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "none",
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_685532eef5f66",
+                "label": "Rutube",
+                "name": "rutube_link",
+                "aria-label": "",
+                "type": "url",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "none",
+                "default_value": "",
+                "allow_in_bindings": 1,
+                "placeholder": ""
+            },
+            {
+                "key": "field_rfc_socials_note",
+                "label": "",
+                "name": "",
+                "aria-label": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Иконка соцсети скрывается, если ссылка пустая.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_rfc_tab_header",
+                "label": "Шапка",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_68893e99e15db",
+                "label": "Возрастное ограничение",
+                "name": "age_limit",
+                "aria-label": "",
+                "type": "number",
+                "instructions": "Показывается как «7+» в шапке и мобильном меню.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "none",
+                "default_value": 10,
+                "min": 0,
+                "max": "",
+                "allow_in_bindings": 0,
+                "placeholder": "",
+                "step": "",
+                "prepend": "",
+                "append": "+"
+            },
+            {
+                "key": "field_6889d23d44d72",
+                "label": "Текст кнопки",
+                "name": "cta_button_text",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "33",
+                    "class": "",
+                    "id": ""
+                },
+                "wp-typography": "title",
+                "default_value": "",
+                "maxlength": "",
+                "allow_in_bindings": 0,
+                "placeholder": "Выбрать смену",
+                "prepend": "",
+                "append": ""
+            },
+            {
+                "key": "field_rfc_header_button_link",
+                "label": "Ссылка кнопки",
+                "name": "header_button_link",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Якорь на странице (например, #shift) или полный адрес.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "34",
+                    "class": "",
+                    "id": ""
+                },
+                "placeholder": "#shift",
+                "default_value": ""
+            },
+            {
+                "key": "field_rfc_tab_logos",
+                "label": "Логотипы",
+                "name": "",
+                "aria-label": "",
+                "type": "tab",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placement": "top",
+                "endpoint": 0,
+                "selected": 0
+            },
+            {
+                "key": "field_rfc_logo_header",
+                "label": "Логотип в шапке",
+                "name": "logo_header",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Также в карточках наставников. Если не задан, используется логотип темы.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "preview_size": "medium"
+            },
+            {
+                "key": "field_rfc_logo_footer",
+                "label": "Логотип в подвале",
+                "name": "logo_footer",
+                "aria-label": "",
+                "type": "image",
+                "instructions": "Если не задан, используется логотип темы.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "50",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "library": "all",
+                "preview_size": "medium"
+            }
+        ]
+    },
+    {
+        "key": "group_rfc_hero_link",
+        "title": "RFC Hero: ссылка кнопки",
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf/rfc-hero"
+                }
+            ]
+        ],
+        "menu_order": 10,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "fields": [
+            {
+                "key": "field_rfc_hero_button_link",
+                "label": "Ссылка кнопки",
+                "name": "button_link",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "Якорь на странице (например, #shift) или полный адрес.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placeholder": "#shift",
+                "default_value": ""
+            }
+        ]
+    },
+    {
+        "key": "group_rfc_trial_form_texts",
+        "title": "RFC Форма пробного периода: тексты",
+        "location": [
+            [
+                {
+                    "param": "block",
+                    "operator": "==",
+                    "value": "acf/rfc-trial-form"
+                }
+            ]
+        ],
+        "menu_order": 10,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "fields": [
+            {
+                "key": "field_rfc_trial_form_title",
+                "label": "Заголовок",
+                "name": "trial_title",
+                "aria-label": "",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "placeholder": "Попробуй бесплатно!",
+                "default_value": ""
+            },
+            {
+                "key": "field_rfc_trial_form_subtitle",
+                "label": "Подзаголовок",
+                "name": "trial_subtitle",
+                "aria-label": "",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "rows": 2,
+                "new_lines": "",
+                "default_value": ""
+            }
+        ]
+    }
+]
