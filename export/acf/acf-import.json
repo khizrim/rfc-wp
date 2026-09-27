@@ -273,7 +273,7 @@
                 "name": "age_limit",
                 "aria-label": "",
                 "type": "number",
-                "instructions": "Показывается как «7+» в шапке и мобильном меню.",
+                "instructions": "Только число: на сайте показывается как «7+» в шапке и мобильном меню.",
                 "required": 0,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -289,7 +289,7 @@
                 "placeholder": "",
                 "step": "",
                 "prepend": "",
-                "append": "+"
+                "append": ""
             },
             {
                 "key": "field_6889d23d44d72",
