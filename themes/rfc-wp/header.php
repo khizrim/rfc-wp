@@ -18,7 +18,7 @@ $age = get_field('age_limit', 'option') ? get_field('age_limit', 'option') : '12
 $wa_link = rfc_get_whatsapp_link();
 $max = get_field('max_link', 'option');
 
-$header_button_text = get_field('header_button_text', 'option') ?: 'Выбрать смену';
+$header_button_text = get_field('cta_button_text', 'option') ?: 'Выбрать смену';
 $header_button_link = get_field('header_button_link', 'option') ?: '#shift';
 ?>
 
@@ -50,7 +50,7 @@ $header_button_link = get_field('header_button_link', 'option') ?: '#shift';
       </button>
       <div class="header__contact">
         <div class="header__social">
-          <?php if ($telegram): ?>
+          <?php if ($telegram_chat): ?>
             <a href="<?php echo esc_url($telegram_chat); ?>" class="header__social-icon header__social-icon--telegram" target="_blank" aria-label="Telegram">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_123_250)">
@@ -142,7 +142,7 @@ $header_button_link = get_field('header_button_link', 'option') ?: '#shift';
 
       <div class="mobile-menu__social">
         <div class="mobile-menu__social-icons">
-          <?php if ($telegram): ?>
+          <?php if ($telegram_chat): ?>
             <a href="<?php echo esc_url($telegram_chat); ?>" class="header__social-icon header__social-icon--telegram" target="_blank" aria-label="Telegram">
               <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_123_250)">
@@ -189,7 +189,7 @@ $header_button_link = get_field('header_button_link', 'option') ?: '#shift';
                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons/max-social.svg" alt="MAX" width="16" height="16" />
               </a>
             <?php endif; ?>
-            <?php if ($telegram): ?>
+            <?php if ($telegram_chat): ?>
               <a href="<?php echo esc_url($telegram_chat); ?>" class="header__social-icon header__social-icon--telegram" target="_blank" aria-label="Telegram">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/icons/telegram-social.svg" alt="Telegram" width="16" height="16" />
               </a>

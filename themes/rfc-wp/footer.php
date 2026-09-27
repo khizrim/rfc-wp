@@ -4,6 +4,7 @@ $telegram = get_field('telegram_link', 'option');
 $zen = get_field('zen_link', 'option');
 $rutube = get_field('rutube_link', 'option');
 $max = get_field('max_link', 'option');
+$email = get_field('email', 'option');
 $wa_link = rfc_get_whatsapp_link();
 
 $footer_socials = [
@@ -31,10 +32,12 @@ $footer_socials = [
         <?php endforeach; ?>
       </div>
 
-      <div class="footer__social-contacts">
-        <p class="footer__social-text">По любым вопросам пишите на:</p>
-        <a href="mailto:<?php echo get_field('email', 'option'); ?>" class="footer__social-link"><?php echo get_field('email', 'option'); ?></a>
-      </div>
+      <?php if ($email): ?>
+        <div class="footer__social-contacts">
+          <p class="footer__social-text">По любым вопросам пишите на:</p>
+          <a href="mailto:<?php echo esc_attr($email); ?>" class="footer__social-link"><?php echo esc_html($email); ?></a>
+        </div>
+      <?php endif; ?>
     </div>
 
     <div class="footer__info">
